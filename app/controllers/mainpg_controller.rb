@@ -1,3 +1,6 @@
-class MainpgController > ApplicationController
+class MainpgController < ApplicationController
 
+  def index
+  end
+  
 end
