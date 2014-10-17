@@ -7,8 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <div class="navbar navbar-default navbar-fixed">
+    <div class="container">
+      <!-- navbar here -->
+    </div>
+  </div>
+  <div class="container">
+    <%= yield %>
+  </div>
+  <footer>
+    <div class="container">
+      <!-- footer stuff here -->
+    </div>
+  </footer>
 
 </body>
 </html>
