@@ -1,0 +1,60 @@
+
+  <h2>
+    Current Users
+      <small class="pull-right">
+        <%= link_to 'Create', new_user_path, class: "btn btn-info"%>
+      </small>
+  </h2>
+
+  <div class="row">
+    <div class="col-md-10">
+      <table>
+        <thead>
+          <tr>
+            <th class="col-sm-1">
+              First Name
+            </th>
+            <th class="col-sm-1">
+              Last Name
+            </th>
+            <th class="col-sm-1">
+              Age
+            </th>
+            <th class="col-sm-1">
+              email
+            </th>
+            <th>
+              Edit?
+            </th>
+            <th>
+              Delete?
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <%@users.each do |user|%>
+          <tr>
+            <td class="col-sm-1">
+              <%=user.first_name  %>
+            </td>
+            <td class="col-sm-1">
+              <%=user.last_name  %>
+            </td>
+            <td class="col-sm-1">
+              <%=user.age  %>
+            </td>
+            <td class="col-sm-1">
+              <%=user.email  %>
+            </td>
+            <td>
+              <%= link_to "Edit", edit_user_path(user) %>
+            </td>
+            <td>
+              <%= link_to "delete", user_path(user), method: :delete %>
+            </td>
+          </tr>
+          <%end%>
+        </tbody>
+      </table>
+    </div>
+  </div>

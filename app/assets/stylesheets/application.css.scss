@@ -1,8 +1,36 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.navbar {background-color: #000000;
+         border: none;
+         color: #CCCCFF;
+         font-family: "Courier";
+         font-size: 125%}
 
+div.navbar.navbar-default.navbar-fixed div.container div.row {
+                       padding-top: 20px;
+                      }
 
+body {
+        background-image: url('46LYRs.jpg');
+        background-repeat:no-repeat;
+        background-size: 100%;
+      }
+
+.BBGhead {
+          font-family: "Courier";
+          color: #CCCCFF;
+          text-align: center;
+          }
+
+table {
+        color: white;
+      }
+      
+a {
+   text-decoration: none;
+   color: #CCCCFF;
+   }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

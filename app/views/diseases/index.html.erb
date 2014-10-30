@@ -1,0 +1,50 @@
+<div>
+  <%if notice.present?%>
+  <div class="alert alert-success">
+    <%= notice %>
+  </div>
+  <%end%>
+  <h1 class="BBGhead">
+    <strong>Big Bang Genetic's</strong>
+  </h1>
+
+  <div>
+    <h3>
+      CSV Import of your personal Genomic Data
+    <h3>
+    <%= form_tag import_diseases_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= submit_tag "Import CSV" %>
+    <%end%>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            First Input
+          </th>
+          <th>
+            Second Input
+          </th>
+          <th>
+            Third Input
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <%@diseases.each do |disease|%>
+        <tr>
+          <td>
+            <%= disease.input1 %>
+          </td>
+          <td>
+            <%= disease.input2 %>
+          </td>
+          <td>
+            <%= disease.input3 %>
+          </td>
+        </tr>
+        <%end%>
+      </tbody>
+    </table>
+  </div>
+</div>

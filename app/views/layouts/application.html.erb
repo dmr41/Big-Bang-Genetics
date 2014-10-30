@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>BigBangGenetics</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div class="navbar navbar-default navbar-fixed">
-    <div class="container">
-      <!-- navbar here -->
-    </div>
-  </div>
-  <div class="container">
-    <%= yield %>
-  </div>
-  <footer>
-    <div class="container">
-      <!-- footer stuff here -->
-    </div>
-  </footer>
+  <head>
+    <title>BigBangGenetics</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-</body>
+    <div class="navbar navbar-default navbar-fixed">
+      <div class="container">
+        <div class="row">
+            <%= link_to("BBGenetics", root_path) %>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <%= yield %>
+
+      <footer>
+        <div class="row">
+          <div class="col-sm-3">
+            <%= link_to("Home", root_path) %> |
+            <%= link_to("Users", users_path) %> |
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
