@@ -12,7 +12,7 @@ div.navbar.navbar-default.navbar-fixed div.container div.row {
                       }
 
 body {
-        background-image: url('46LYRs.jpg');
+        background-image: asset_url('46LYRs.jpg');
         background-repeat:no-repeat;
         background-size: 100%;
       }
@@ -26,7 +26,7 @@ body {
 table {
         color: white;
       }
-      
+
 a {
    text-decoration: none;
    color: #CCCCFF;
