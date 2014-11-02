@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-gem "pg"
 group :production do
 
 gem "rails_12factor"
