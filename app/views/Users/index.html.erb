@@ -1,5 +1,5 @@
 
-  <h2>
+  <h2 class="headformat">
     Current Users
       <small class="pull-right">
         <%= link_to 'Create', new_user_path, class: "btn btn-info"%>
@@ -11,16 +11,16 @@
       <table>
         <thead>
           <tr>
-            <th class="col-sm-1">
+            <th class="col-md-2">
               First Name
             </th>
-            <th class="col-sm-1">
+            <th class="col-md-2">
               Last Name
             </th>
-            <th class="col-sm-1">
+            <th class="col-md-2">
               Age
             </th>
-            <th class="col-sm-1">
+            <th class="col-md-2">
               email
             </th>
             <th>
@@ -34,16 +34,16 @@
         <tbody>
           <%@users.each do |user|%>
           <tr>
-            <td class="col-sm-1">
+            <td class="col-md-2">
               <%=user.first_name  %>
             </td>
-            <td class="col-sm-1">
+            <td class="col-md-2">
               <%=user.last_name  %>
             </td>
-            <td class="col-sm-1">
+            <td class="col-md-2">
               <%=user.age  %>
             </td>
-            <td class="col-sm-1">
+            <td class="col-md-2">
               <%=user.email  %>
             </td>
             <td>

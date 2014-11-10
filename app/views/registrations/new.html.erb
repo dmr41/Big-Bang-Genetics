@@ -1,0 +1,42 @@
+<%= form_for(@user, url: signup_path) do |f| %>
+  <h1>Register</h1>
+
+  <% if f.object.errors.any? %>
+    <ul class="errors">
+      <% f.object.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, autofocus: true %>
+  </div>
+
+  <div>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= f.label :age %>
+    <%= f.number_field :age%>
+  </div>
+
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation, "Confirm" %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div>
+    <%= f.submit "Register" %>
+  </div>
+<% end %>

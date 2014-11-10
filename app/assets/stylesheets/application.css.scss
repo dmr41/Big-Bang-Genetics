@@ -1,6 +1,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+text.pull-right {font-size: 75%;}
+div h3 {color: white;
+        font-family: "Courier"}
+
+div p {color: white;
+       font-family: "Courier";
+       font-size: 80% }
+
+div p strong {color: red;}
+
 .navbar {background-color: #000000;
          border: none;
          color: #CCCCFF;
@@ -17,20 +27,30 @@ body {
         background-size: 100%;
       }
 
+div.form-group div.col-sm-2 { font-family: "Courier";
+                              color: white; }
+
+h2.headformat { font-family: "Courier";
+                color: #EDE;}
+
 .BBGhead {
           font-family: "Courier";
           color: #CCCCFF;
           text-align: center;
           }
 
-table {
+table { font-family: "Courier";
         color: white;
       }
+th { font-size: 16px;}
+
 
 a {
    text-decoration: none;
    color: #CCCCFF;
    }
+
+div.col-sm-offset-2.submit_fit {padding-left: 1em}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

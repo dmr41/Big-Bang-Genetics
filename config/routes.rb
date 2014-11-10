@@ -4,7 +4,14 @@ root "mainpg#index"
 resources :diseases do
   collection {post :import}
 end
+
 resources :users
+
+get "signin" => "authentication#new"
+post "signin" => "authentication#create"
+get "signout" => "authentication#destroy"
+get "signup" => 'registrations#new'
+post "signup" => 'registrations#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
