@@ -6,8 +6,8 @@ class AuthenticationController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path
     else
-      @sign_in_error = "Username / password combination is invalid"
-      render template: "mainpg/index"
+      @sign_in_error = "Username or password are incorrect"
+      render "mainpg/index"
     end
   end
 

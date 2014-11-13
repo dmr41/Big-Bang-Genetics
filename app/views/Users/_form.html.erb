@@ -1,6 +1,14 @@
 <div class="container">
 <%= form_for(@user, {class: "form-horizontal center"}) do |f| %>
 
+  <% if f.object.errors.any? %>
+    <ul class="errors">
+      <% f.object.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
     <div class="form-group">
       <div class="col-sm-2">
         <%= f.label :first_name, class: "control-label"%>

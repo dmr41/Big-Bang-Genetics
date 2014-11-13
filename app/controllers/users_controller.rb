@@ -18,8 +18,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.save
-    redirect_to users_path, notice: "User created!"
+    if @user.save
+      redirect_to users_path, notice: "User created!"
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -30,8 +33,11 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to users_path, notice: "You successfully updated!"
+    if @user.update(user_params)
+      redirect_to users_path, notice: "You successfully updated!"
+    else
+      render :edit
+    end
   end
 
   private

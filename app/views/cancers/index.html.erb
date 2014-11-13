@@ -1,0 +1,38 @@
+<% if notice != nil %>
+  <div class="alert alert-danger">
+    <%= notice %>
+</div>
+<h2>Cancer types</h2>
+
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-md-1">
+          Cancer
+        </th>
+        <th class="col-md-3">
+          Associated Genes
+        </th>
+        <th class="col-md-1">
+          Edit
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cancers.each do |cancer| %>
+      <tr>
+        <td class="col-md-1">
+          <%= cancer.name %>
+        </td>
+        <td class="col-md-3">
+          <%= cancer.genes%>
+        </td>
+        <td class="col-md-1">
+          <%= link_to "Edit", edit_cancer_path(cancer) %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

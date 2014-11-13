@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
 
 root "mainpg#index"
+resources :cancers do
+  collection {post :import}
+end
 resources :diseases do
   collection {post :import}
 end
 
 resources :users
+resources :genes
 
 get "signin" => "authentication#new"
 post "signin" => "authentication#create"

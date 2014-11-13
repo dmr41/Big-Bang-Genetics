@@ -1,0 +1,27 @@
+
+<%= form_for(@cancer, {class: "form-horizontal center"}) do |f| %>
+
+    <% if f.object.errors.any? %>
+      <ul class="errors">
+        <% f.object.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+  <div class="form-group">
+    <%= f.label :name, class: "control-label" %>
+    <%= f.text_field :name, class: "form-control"%>
+  </div>
+
+
+  <div class="form-group">
+    <%= f.label :genes, class: "control-label" %>
+    <%= f.text_field :genes, class: "form-control"%>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-primary'%>
+  </div>
+
+<% end %>

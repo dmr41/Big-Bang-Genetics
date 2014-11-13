@@ -1,0 +1,10 @@
+<% if notice != nil %>
+  <div class="alert alert-danger">
+    <%= notice %>
+</div>
+<% end %>
+<div class='container alert alert-warning col-md-12'>
+
+<h4>Cancer type: <%=" #{@cancer.name}"%></h4>
+<h4>Genes involved: <%=" #{@cancer.genes}"%></h4>
+</div>

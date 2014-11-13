@@ -15,20 +15,8 @@
               <text class="pull-right">
               <% if current_user %>
                 <%= link_to "Sign Out", signout_path %>
-              <% else %>
-                <%= form_for :authy, url: signin_path do |f| %>
-                  <% if @sign_in_error %>
-                      <p><%= @sign_in_error %></p>
-                  <% end %>
-                  <div>
-                    <%= link_to "Sign Up", signup_path %> |
-                    <%= f.label :email%>
-                    <%= f.email_field :email%>
-                    <%= f.label :password%>
-                    <%= f.password_field :password %>
-                    <%= f.submit "Login" %>
-                  </div>
-                <% end %>
+              <% else  %>
+                <%= render "layouts/nav_login" unless @reg == "reg"  %>
               <% end %>
             </text>
         </div>
@@ -40,11 +28,12 @@
 
       <footer>
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-5">
             <%= link_to("Home", root_path) %> |
             <%= link_to("Users", users_path) %> |
             <%= link_to("Upload", diseases_path) %> |
-            <%= link_to("Registration", signup_path) %>
+            <%= link_to("Registration", signup_path) %> |
+            <%= link_to("Cancers", new_cancer_path) %>
           </div>
         </div>
       </footer>
