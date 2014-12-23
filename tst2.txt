@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+
+	<html lang="en">
+<head><meta content="text/html; charset=utf-8" http-equiv="Content-Type" /><script type="text/javascript">
+   var _U = "undefined";
+   var g_HttpRelativeWebRoot = "/acs/";
+   var SSContributor = false;
+   var SSForceContributor = false;
+   var SSHideContributorUI = false;
+   var ssUrlPrefix = "/";
+   var ssUrlType = "1";
+   var ssDomainNum = "5c38e88";
+   var g_navNode_Path = new Array();
+       g_navNode_Path[0] = '0';
+       g_navNode_Path[1] = '100001';
+       g_navNode_Path[2] = '529';
+       g_navNode_Path[3] = '530';
+   var g_ssSourceNodeId = "530";
+   var g_ssSourceSiteId = "CancerOrg";
+   var g_strLanguageId = "en";
+</script>
+<script id="SSNavigationFunctionsScript" type="text/javascript" src="/acs/websites/CancerOrg/sitenavigationfunctions.js"></script>
+<script id="SSNavigationScript" type="text/javascript" src="/acs/websites/CancerOrg/sitenavigation.js"></script>
+
+	<script type="text/javascript" src="/acs/resources/wcm/sitestudio/wcm.toggle.js"></script>
+	<script type="text/javascript" src="/acs/resources/sitestudio/ssajax/ssajax.js"></script>
+		
+
+
+
+<script id="ssInfo" type="text/xml" warning="DO NOT MODIFY!">
+	<ssinfo>
+
+      
+      <fragmentinstance  id="fragment4" fragmentid="ACSBreadcrumb" library="server:ACS-GLOBAL-BREADCRUMB">
+      </fragmentinstance>
+      <fragmentinstance  id="fragment5" fragmentid="TextSizer" library="server:ACS-TEXT-SIZER">
+        
+      </fragmentinstance>
+      
+      
+      
+      <region  id="region1" name="region1" flags="111100100011" metadata="" dccommand="ssIncDynamicConversionByRulesEngine(SS_DATAFILE)">
+        <switchregioncontent  createnewxml="false" createnewnative="false" choosemanaged="true" chooselocal="false" choosenone="false">
+          <choosemanagedquerytext  corecontentonly="FALSE">
+            <![CDATA[xWebsiteObjectType <Matches> `Data File` <OR> xWebsiteObjectType <Matches> `Native Document`]]>
+          </choosemanagedquerytext>
+        </switchregioncontent>
+      </region>
+    </ssinfo>
+</script>
+
+
+
+
+
+
+	         
+    
+<!-- SS_BEGIN_SNIPPET(fragment4,1)-->
+
+			
+<!-- SS_END_SNIPPET(fragment4,1)-->
+		
+	
+<!--c="has doc info"-->
+	
+		
+		<title id="articleTitle">What is anal cancer? | American Cancer Society</title>
+ 
+
+	<meta name="title" content="What is anal cancer? | American Cancer Society" />
+	<meta name="searchTitle" content="What is anal cancer?" />	
+		<meta name="keywords" content="anus, anal cancer, rectum, cancer" />
+		<meta name="description" content="Anal cancer is cancer that starts in the anus.The anus is the body's opening at the lower end of the intestines." />
+		<meta name="xCategory" content="Learn About Cancer" />
+		<meta name="xSubCategory" content="Chunk-yes, Web Page(Default)" />
+		<meta name="xCancerTypeCategory" content="definition" />
+	 
+
+
+
+
+<!-- LESS/CSS -->
+<link rel="stylesheet" type="text/css" media="screen, projection" href="/acs/fragments/acs_refresh_scripts/css/legacy/acs-global.css" />
+<link rel="stylesheet" type="text/css" href="/acs/fragments/acs_refresh_scripts/css/legacy_style.css">
+<!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="/acs/fragments/acs_refresh_scripts/css/ie7.css" /><![endif]-->
+
+<script src="/acs/fragments/acs_refresh_scripts/js/libs/jquery.min.js" type="text/javascript"></script>
+<script src="/acs/fragments/acs_refresh_scripts/js/libs/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/acs/fragments/acs_refresh_scripts/js/libs/jquery.cookie.js" type="text/javascript"></script>
+<script src="/acs/fragments/acs_refresh_scripts/js/libs/placeholder.min.js" type="text/javascript"></script>
+<script src="/acs/fragments/acs_javascript/jquery-plugins.js" ></script>
+<script src="/acs/fragments/acs_javascript/jquery.jscrollpane.min.js" ></script>
+<script src="/acs/fragments/acs_javascript/flowplayer/flowplayer-3.2.6.min.js" ></script>
+<script src="/acs/fragments/acs_javascript/flowplayer/general.js" ></script>
+
+ 
+
+			 
+                    
+			 
+
+<!-- analytics domain: www.cancer.org -->
+<script src="//s3.amazonaws.com/searchdiscovery-satellite-production/fdd8a5c34af4a173986b916f554ecf31cd8b444f/satelliteLib-d4608ad690a6a3c0845a1e8f6356b554a7de77de.js"></script>
+
+<script src="https://account.cancer.org/login/scripts/sts.js" type="text/javascript" rel="forceLoad"></script>
+<script src="/acs/fragments/acs_refresh_scripts/js/site.legacy.r.js" type="text/javascript"></script>
+<script src="/acs/fragments/acs_refresh_scripts/js/event_tagging.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC4KO6LCndNwrnz64h56mMYbplKmWEwHEw&sensor=false"></script>
+<script src="/acs/fragments/acs_refresh_scripts/js/google.maps.js" ></script>
+<script src="/acs/fragments/acs_refresh_scripts/js/MyAcsPreferencesModal_r.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-50379ea47e169d13"></script>
+
+<!-- Google hosted html5shiv -->
+<!--[if lt IE 9]>
+	<script src="/acs/fragments/acs_refresh_scripts/js/libs/html5.js"></script>
+<![endif]-->
+
+
+
+<style type="text/css">
+#main-article.section-triple {
+	padding-top:12px;
+}
+
+.entry-style-1 h3 a, .entry-style-2 h3 a, .entry-style-3 h3 a {
+line-height:20px;
+}
+
+#officeChoice {padding-top:10px}
+
+.news-article h3, .main-article h3 {
+    padding-top: 10px;
+}
+.omega h3 {
+	padding-top: 0;
+	line-height: 100%;
+	margin-bottom: 0;
+	}
+.omega p {
+	margin-top: 15px;
+	margin-bottom: 0;
+	}
+.section-triple .description, #local-search-criteria .description {
+    margin-bottom: 10px;
+    /* margin-top: -15px; */
+	margin-top:0px;
+}
+
+.main-article #blog-nav li {list-style-image:none}
+
+.hero-nav, .home-page #hero-home .wa-fg .hero-nav {
+	margin-bottom:0;
+}
+
+#slideDesc {
+	margin-bottom:5px;
+}
+
+#thumbs li, #thumbs li a {
+	list-style-image:none;
+    border:none;
+}
+
+.myACS-close #close-button, #text-minus, #text-plus  {
+	border:none;
+}
+
+#page-wrapper .formbox .right {
+	background: none repeat scroll 0 0 #EFEFEF;
+	width: 545px;
+}
+
+.cid-wrapper .right .head {
+    text-align: left;
+	margin-bottom:0px;
+}
+
+#quick-finder li {
+    padding-left:0px;
+	margin-bottom:0px;
+} 
+
+#cid-content .article #quick-finder li, #cid-content .teal-theme #quick-finder li {
+	border-top:none;
+}
+
+.cid-wrapper #cid-toc-container li {background:none}
+</style>
+</head>
+
+<body class="theme-learn teal-theme">
+
+
+    
+        
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+<header class="site">
+    <nav>
+        <div class="narrow-container">
+            <ul class="social-icons">
+                <li><a tabindex="6" target="_blank" href="http://www.facebook.com/AmericanCancerSociety"><img src="/acs/fragments/acs_refresh_scripts/images/ui/facebook.png" alt="Facebook " class="social" /></a></li>
+                <li><a tabindex="7" target="_blank" href="https://plus.google.com/101317382538991343937"><img src="/acs/fragments/acs_refresh_scripts/images/ui/googleplus.png" alt="Google Plus" class="social" /></a></li>
+                <li><a tabindex="8" target="_blank" href="http://www.twitter.com/AmericanCancer"><img src="/acs/fragments/acs_refresh_scripts/images/ui/twitter.png" alt="Twitter" class="social" /></a></li>
+                <li><a tabindex="9" target="_blank" href="http://www.youtube.com/user/AmerCancerSociety/explore"><img src="/acs/fragments/acs_refresh_scripts/images/ui/youtube.png" alt="YouTube" class="social" /></a></li>
+            </ul>          
+
+            <ul class="languages">
+            
+            		<li><a tabindex="4" href="/Espanol">Espa&ntilde;ol</a></li>
+                <li><a tabindex="5" href="/AsianLanguageMaterials">Asian &amp; Pacific Languages</a></li>
+            </ul>
+            <ul class="email">
+                <li><a tabindex="3" href="/aboutus/howwehelpyou/emailsignup/app/enewsletter-sign-up.aspx">Sign Up for Email</a></li>
+            </ul>
+
+                <div id="logged-section">
+  <ul class="users">
+    <li><a tabindex="1" href="/myacs/account/signin" class="signInLink">Sign In</a></li>
+    <li><a tabindex="2" href="/account/profile/Register.aspx" onClick="STS.register();return false;">Register</a></li>
+  </ul>
+</div>
+        </div>
+    </nav>
+    <div class="narrow-container image-bar">
+       	<a tabindex="10" href="/index"><img src="/acs/fragments/acs_refresh_scripts/images/acs_logo.gif" alt="American Cancer Society" class="logo"/></a>        
+        <a tabindex="11" href="/Involved/Donate/DonateOnlineNow/index" class="donate-button">Donate</a>
+        
+        	<img src="/acs/fragments/acs_refresh_scripts/images/acs_fightcancer.gif" alt="Join the fight against cancer" class="join_fight logo"/>
+        
+    </div>
+</header>
+
+<div class="banner-background-right" style="background: #071e2c; height: 258px;"></div>
+<div class="banner-background-left" style="background: #071e2c; height: 258px;"></div>
+<section class="banner small-banner" style="background: url('/acs/groups/content/documents/image/acspc-043691.jpg') no-repeat top center transparent; height: 258px;">
+<img class="onepx" src="/acs/fragments/acs_refresh_scripts/images/1px.png" alt="2 in every 3 people diagnosed with cancer today survive at least 5 years, thanks in part to the American Cancer Society." />
+
+	 
+    <nav class="main withShadow">
+    	<div class="narrow-container">
+			<form action="/Search/index" method="get">
+				<ul class="help">
+					<li>
+					    <label for="search">How can we help you?</label> 
+					    <input tabindex="13" type="text" name="QueryText" id="search" placeholder="search cancer.org" />
+					    <button tabindex="14" type="submit"><i class="icon magnify"></i> Search</button>
+					</li>
+					<li class="live-chat">
+                            <i class="icon speechbubble"></i> 
+                            <a href="https://livechat.boldchat.com/aid/5386287375352862963/bc.chat?resize=true&amp;cwdid=1134019502191338137" target="_blank" onclick="window.open((window.pageViewer &amp;&amp; pageViewer.link || function(link){return link;})(this.href + (this.href.indexOf('?')>=0 ? '&amp;' : '?') + 'url=' + escape(document.location.href)), 'Chat4972879359643679338', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=640,height=480');return false;">
+  <script language="JavaScript" type="text/javascript"> document.write(unescape('%3Cscript language="JavaScript" type="text/javascript" src="' + (('https:' == document.location.protocol) ? 'https:' : 'http:') + '//cbi.boldchat.com/aid/5386287375352862963/bc.cbhs"%3E%3C/script%3E')); </script>
+  <script language="JavaScript" type="text/javascript"> bt_showChatHTML('Live Chat','Live Chat'); </script>
+  <noscript>Live Chat</noscript>
+</a>
+                    </li>
+					<li class="call"><i class="icon phone"></i> <a tabindex="16" href="/AboutUs/HowWeHelpYou/ContactUs/Index"><span itemscope itemtype="http://data-vocabulary.org/Organization"><span itemprop="tel">800-227-2345</span></span></a></li>
+				</ul>
+			</form>
+			
+            
+                
+    <ul class="tabs">
+                 
+                    <li class="tab-home" id="nav-home"><a href="/index">Home</a></li>
+                 
+                    <li class="selected tab-learn" id="nav-cancer"><a href="/Cancer/index">Learn About Cancer</a></li>
+                 
+                    <li class="tab-healthy" id="nav-healthy"><a href="/Healthy/index">Stay Healthy</a></li>
+                 
+                    <li class="tab-support" id="nav-treatment"><a href="/Treatment/index">Find Support & Treatment</a></li>
+                 
+                    <li class="tab-explore" id="nav-research"><a href="/Research/index">Explore Research</a></li>
+                 
+                    <li class="tab-involved" id="nav-involved"><a href="/Involved/index">Get Involved</a></li>
+                                 
+                    <li class="tab-local" id="nav-myacs"><a href="/MyACS/index">Find Local ACS</a></li>
+                                                                                                                                    </ul>
+	<div class="current-pointer"></div>
+
+			<div class="current-pointer"></div>
+		</div>
+	    <div id="setAreaFormModal" class="container_12 find-local-dropdown-container"></div>		 			
+	</nav>
+
+</section>
+
+<div id="login-wrapper"></div>
+
+	
+	<div id="mw_hidden_content" style="display:none;">
+      	<div id="banner_imgs">
+          	<a href="https://donate.cancer.org/index?campaign=NovLightboxCY14">
+              	<img data-src="/acs/groups/content/documents/image/acspc-044187.jpg" data-title="Fight+Cancer.+Save+Lives.+%2F+Home+Hero" data-docname="ACSPC-044187" alt="Fight+Cancer.+Save+Lives.+%2F+Home+Hero" />
+          	</a>
+      	</div>
+ 	</div>
+ 
+<script src="/acs/fragments/lightbox_cancerhome/js/eoy14-lightbox.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/acs/fragments/lightbox_cancerhome/css/lightBox.css">
+
+<!-- SS_BEGIN_SNIPPET(fragment4,2)-->
+<section class="utility-bar">
+    <div class="container_12">
+
+
+	<div class="breadcrumbs grid_9">
+	
+
+	
+    										
+     		 			     		 		
+     		 			
+     		 			<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+     		 				<a href = "/Cancer/index" itemprop="url">
+    						<span itemprop="title">Learn About Cancer</span>
+     		 				</a>
+     		 			</span>
+    										
+     		 			&raquo;     		 		
+     		 			
+     		 			<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+     		 				<a href = "/Cancer/AnalCancer/index" itemprop="url">
+    						<span itemprop="title">Anal Cancer</span>
+     		 				</a>
+     		 			</span>
+    										
+     		 			&raquo;     		 		
+     		 			
+     		 			<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+     		 				<a href = "/Cancer/AnalCancer/DetailedGuide/index.htm" itemprop="url">
+    						<span itemprop="title">Detailed Guide</span>
+     		 				</a>
+     		 			</span>
+    		
+    			&raquo;
+    			<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+     				<span itemprop="title">What is anal cancer?</span>     			
+     			</span>
+  			
+	</div><!--end breadcrumbs-->
+
+
+<div id="share-this-wrapper" class="modal-wrapper share-wrapper">
+	<div id="share-this"> 
+		<div class="modal-header">
+			<div class="share-this-h3">Share this Page</div>
+			<p><a tabindex="-1" href="#" onclick="tabIndexOff('share-wrapper');" class="modal-close" id="close-button-share" title="close">Close</a></p>
+		</div><!--end modal-header-->
+		<div style="text-indent: -1000px;">Push escape to close share window.</div>
+		<div>
+
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+<a class="addthis_button_email"></a>
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_google_plusone_share"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_compact"></a>
+<a class="addthis_counter addthis_bubble_style"></a>
+</div>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-503bd630515eedc0"></script>
+<!-- AddThis Button END -->
+		
+		</div><!--end modal-content-->
+	</div><!--end share-this-->
+</div><!--end share-this-wrapper-->
+
+	
+	<div class="actions grid_3">
+		<a href="?ssDomainNum=5c38e88&print=true" id="printThis" class="button small reversed printThis"><i class="icon print"></i> Print</a>
+		<a href="http://www.cancer.org/#" onclick="tabIndexOn('share-wrapper');" id="click-to-share" class="button small reversed shareThis"><i class="icon share-arrow-small"></i> Share</a>
+    	<a onclick="tabIndexOn('save-wrapper');"  href="/NotLoggedIn/index" class="button small reversed saveThis"><i class="icon save"></i> Save</a>
+	</div><!--end actions-->
+
+	<div class="save-wrapper" id="saved-articles-wrapper" style="display:none;">
+		<div id="saved-articles">
+    		<header>
+    			<h3>Saved this Article</h3>
+    			<div class="close"><a href="#" class="image">Close</a></div>
+    			<div style="text-indent: -1000px;">Push escape to close saved articles window.</div>
+    		</header>
+    		<div class="content">
+    			<div> <a class="sa_show_hide" tabindex="-1" href="/MyAcs/index">My Saved Articles <span class="arrow">&raquo;</span></a> <a class="close" tabindex="-1" href="/MyAcs/index">My ACS <span class="arrow">&raquo;</span></a> </div>
+    			<div id="article-saved"></div>
+    		</div>
+		</div>
+	</div>
+	
+	<div id="saveddocs-modal-wrapper" class="modal-saved-docs" style="display:none;" >
+		<div id="saveddocs-modal">
+			<div class="modal-prefs-content">
+			</div>
+		</div>
+	</div> 
+	</div><!--container_12--> 
+</section>  
+				
+			
+<!-- SS_END_SNIPPET(fragment4,2)-->
+
+<div id="page-wrapper"  class="main-article container_12">
+
+<div class="left">
+  <div class="left-column news-article cid resize">
+    
+    
+
+  <a name="top" id="top"></a>
+  <!-- left nav goes here -->
+  <div style="font-size:22px;font-weight:700;color:#565454;margin-bottom:12px;">
+   
+    Anal Cancer
+</div>
+  
+  <!-- SS_BEGIN_SNIPPET(fragment5,body)-->				<div id="font-resize">
+	<p><a href="javascript:void(0)" id="text-plus">+</a> <a href="javascript:void(0)" id="text-minus">-</a><span style="float:right;">Text Size</span> </p>
+	<div style="clear:both;"></div>
+</div>
+<script src="/acs/fragments/textsizer/textResizer.js"></script> 
+  
+			<!-- SS_END_SNIPPET(fragment5,body)-->
+  
+  <div class="btn btn-18"> <a href='anal-cancer-pdf'><span class="text">Download Printable Version [PDF]<span class="arrow">»</span></span></a> </div>
+  
+  <div class="text-box">
+ 
+      <div style="text-transform: uppercase; color: #565454; font-size: 16px; font-weight: 700; line-height: 118%; margin-bottom: 10px;">What Is Anal Cancer? TOPICS</div>
+ 
+    <div id='formView' style="float: left;display: none;">
+      <form name="docs" method="get" action="" id="docs">
+        <span style='text-indent:-10000px;position:absolute;'><label for='docSelected'>Document Topics</label></span><select name='docSelected' id='docSelected'><option value='anal-cancer-what-is-cancer'>What is cancer?</option><option selected value='anal-cancer-what-is-anal-cancer'>What is anal cancer?</option><option value='anal-cancer-what-is-key-statistics'>What are the key statistics about anal cancer?</option></select>
+      </form>
+    </div>
+    <div id='buttonLinks' style="display: none" class="buttonContainer">
+      <div class="btn btn-18 top-1 btn-cid-menu"> <a href="javascript:determinePage();"><span class="text">GO <span class="arrow">»</span></span></a> </div>
+      <div class="btn btn-18 top-1"> <a id='listToggle' href="." name="listToggle"><span class="text" id='listText'>SEE A LIST <span class="arrow">»</span></span></a> </div>
+    </div>
+  </div>
+  <div id='listView'>
+    <ul><li><a href='anal-cancer-what-is-cancer'>What is cancer?</a></li><li><a href='anal-cancer-what-is-anal-cancer'>What is anal cancer?</a></li><li><a href='anal-cancer-what-is-key-statistics'>What are the key statistics about anal cancer?</a></li></ul>
+  </div>
+  <div class="cid-nav">
+    <div class='cid-left'><a id='cid-left-image' href='anal-cancer-what-is-cancer'></a></div><div class='cid-left' style='width:300px;'><h3>Previous Topic</h3><h2><a href='anal-cancer-what-is-cancer'>What is cancer?</a></h2></div><div class='cid-right'><div class='cid-right'><a href='anal-cancer-what-is-key-statistics' id='cid-right-image'></a></div><div class='cid-right' style='width:300px;' ><h3>Next Topic</h3><h2><a href='anal-cancer-what-is-key-statistics'>What are the key statistics about anal cancer?</a></h2></div></div>
+  </div>
+
+  <script type='text/javascript'>
+    $('#formView,#listView').css({display: ''})
+    $('#buttonLinks').css({display: ''})
+    </script>
+
+<div class="section-triple separate-sections" id="cid-content">
+<h1>What is anal cancer?</h1>
+  <!-- SS_BEGIN_OPENREGIONMARKER(region1)-->
+
+
+	<style type="text/css">
+#dynamic-converter-document table, div #dynamic-converter-document tr,
+#dynamic-converter-document td { border:1px solid black; }
+#dynamic-converter-document table { margin-bottom: 15px; }
+#dynamic-converter-document td { padding: 5px; }
+#dynamic-converter-document .table-2 { font-size: 10px; } 
+#dynamic-converter-document .caption { font-size:10px; }
+#dynamic-converter-document .list-item-2 { margin-left: 20px; }
+#dynamic-converter-document li { list-style: disc; background: none; margin-bottom: 15px; margin-left:15px;}
+#dynamic-converter-document h3 {border-top: 0px; }
+#dynamic-converter-document h2 { border-top: 1px solid #D6D6D6 }
+#dynamic-converter-document .single-space { margin-bottom:0px; }
+#dynamic-converter-document ul { margin-bottom: 15px; }
+#dyanmic-converter-document .news-article h3, .main-article h3 { float: none; width: 100%;}
+#dyanmic-converter-document .print-only {font-color:white; }
+#dyanmic-converter-document .sup{font-size:xx-small; vertical-align:top; !important;} 
+#dyanmic-converter-document .sub{font-size:xx-small; vertical-align:bottom; !important;} 
+
+</style>
+
+<div id="dynamic-converter-document" class="main-article font-size">
+
+
+<p>Anal cancer starts in the anus. To understand anal cancer, it helps to know about the normal structure and function of the anus.</p><h2>The anus</h2>
+
+<p>The anus is the opening at the lower end of the intestines. </p>
+
+<p>As food is digested, it passes from the stomach to the small intestine. It then travels from the small intestine into the main part of the large intestine (called the <i>colon</i>). The colon absorbs water and salt from the digested food. The waste matter that is left after going through the colon is known as <i>feces</i> or <i>stool</i>. Feces are stored in the lower part of the large intestine, called the <i>rectum</i>, which is the final 6 inches of the digestive system. From there, they pass out of the body through the anus as a bowel movement.</p>
+
+<p><img src="/acs/groups/cid/documents/webcontent/%7Eexport/003083-2%7E19%7EDYN_ACS_CID_TEMPLATE/182136-1.gif" border="1" width="588" height="444"/></p>
+
+<p>The anal opening is connected to the rectum by the <i>anal canal</i>. The anal canal is about an inch and a half long. It goes from the rectum to the <i>anal verge</i> (where the canal meets the outside skin at the anus). </p>
+
+<p align="center"><a name="P9_930"><img src="/acs/groups/cid/documents/webcontent/%7Eexport/003083-2%7E19%7EDYN_ACS_CID_TEMPLATE/182136-2.gif" border="1" width="425" height="300"/></a> </p>
+
+<p>The inner lining of the anal canal is the <i>mucosa</i>. Most anal cancers start from cells in the mucosa.</p>
+
+<p>Glands and ducts (tubes leading from the glands) are found under the mucosa. The glands make mucus, which acts as a lubricating fluid. Anal cancers that start from cells in the glands are called <i>adenocarcinomas</i>. </p>
+
+<p>The anal canal changes as it goes from the rectum to the anal verge:</p>
+
+  <ul><li>  Cells above the anal canal (in the rectum) and in the part of the anal canal close to the rectum are shaped like tiny columns. </li>
+
+  <li> Most cells near the middle of the anal canal are shaped like cubes and are called <i>transitional cells</i>. This area is called the <i>transitional zone</i>.</li>
+
+  <li> About midway down the anal canal is the <i>dentate line</i>, which is where most of the anal glands empty into the anus. </li>
+
+  <li> Below the dentate line are flat (squamous) cells. </li>
+
+  <li> At the anal verge, the squamous cells of the lower anal canal merge with the skin just outside the anus. This skin around the anal verge (called the <i>perianal skin</i> or the <i>anal margin</i>) is also made up of squamous cells, but it also contains sweat glands and hair follicles, which are not found in the lining of the lower anal canal. </li>
+
+</ul><p>Anal cancers are often divided into 2 groups, which are sometimes treated differently:</p>
+
+  <ul><li> Cancers of the anal canal (above the anal verge) </li>
+
+  <li> Cancers of the anal margin (below the anal verge)</li>
+
+</ul><p>Sometimes anal cancers extend from one area into the other, so it&#8217;s hard to know exactly where they started.</p>
+
+<p>The anal canal is surrounded by a sphincter, which is a circular muscle that keeps feces from coming out until it relaxes during a bowel movement. </p><h2>Anal tumors</h2>
+
+<p>Many types of tumors can develop in the anus. Not all of these tumors are cancers &#8211; some are benign (non-cancerous). Some growths start off as benign but over time can develop into cancer. These are called <i>pre-cancerous</i> conditions. This section discusses all of these types of abnormal growths.</p><h3>Benign (non-cancerous) anal tumors</h3>
+
+<p><b>Polyps:</b> Polyps are small, bumpy, or mushroom-like growths that develop in the mucosa or just under it. There are several kinds.</p>
+
+  <ul><li> <b>Inflammatory polyps</b> start because of inflammation from injury or infection.</li>
+
+  <li> <b>Lymphoid polyps</b> are caused by an overgrowth of lymph tissue (which is part of the immune system). Small nodules of lymph tissue are normally present under the anal inner lining.</li>
+
+  <li> <b>Hypertrophied anal papillae</b> are benign growths of connective tissue that are covered by squamous cells. They are simply enlarged normal papillae, which are small folds of mucosa found at the dentate line. Hypertrophied anal papillae are also called <i>fibroepithelial polyps</i>. </li>
+
+</ul><p><b>Skin tags: </b>Skin tags are benign growths of connective tissue that are covered by squamous cells. Skin tags are often mistaken for hemorrhoids (swollen veins inside the anus or rectum), but they are not truly hemorrhoids. </p>
+
+<p><b>Anal warts:</b> Anal warts (also called <i>condylomas</i>) are growths that occur just outside the anus and in the lower anal canal below the dentate line. Occasionally they can be found just above the dentate line. They are caused by infection with the <i>human papilloma virus</i> (HPV). Anal warts are unlikely to develop into anal cancer, but people who have had anal warts are more likely to get anal cancer (see &#8220;Potentially pre-cancerous anal conditions&#8221; below and the section &#8220;<!-- TRANSIT - HYPERLINK --><!-- ./ssLINK/anal-cancer-risk-factors. --><a href="/ssLINK/anal-cancer-risk-factors" target="_top">What are the risk factors for anal cancer?</a>&#8221;).</p>
+
+<p><b>Other benign tumors:</b> In rare cases, benign tumors can grow in other tissues of the anus. These include:</p>
+
+  <ul><li> <b>Adnexal tumors:</b> Usually benign growths that start in hair follicles or sweat glands of the skin just outside of the anus. These tumors stay in the perianal skin area and do not grow into the anal region.</li>
+
+  <li> <b>Leiomyomas:</b> Benign tumors that develop from smooth muscle cells</li>
+
+  <li> <b>Granular cell tumors:</b> Tumors that develop from nerve cells and are composed of cells that contain lots of tiny spots (granules) </li>
+
+  <li> <b>Hemangiomas:</b> Tumors that start in the cells lining blood vessels</li>
+
+  <li> <b>Lipomas:</b> Benign tumors that start from fat cells</li>
+
+  <li> <b>Schwannomas:</b> Tumors that develop from cells that cover nerves</li></ul><h3>Potentially pre-cancerous anal conditions </h3>
+
+<p>Some changes in the anal mucosa are harmless in their early stages but might later develop into a cancer. A common term for these potentially pre-cancerous conditions is <i>dysplasia</i>. Some warts, for example, contain areas of dysplasia that can develop into cancer. </p>
+
+<p>Dysplasia occurring in the anus is also known as<i> anal intraepithelial neoplasia</i> (AIN)<i> </i>and as <i>anal squamous intraepithelial lesions (SILs)</i>. Depending on how the cells look, AIN (or anal SIL) can be divided into 2 groups: </p>
+
+<p><b>Low-grade AIN (sometimes called AIN1 or low-grade anal SIL):</b> The cells in low-grade AIN resemble normal cells in many ways. Low-grade AIN often goes away without treatment. It has a low chance of turning into cancer. </p>
+
+<p><b>High-grade AIN (sometimes called AIN2 or AIN3, or high-grade anal SIL):</b> The cells in high-grade AIN look much more abnormal. High-grade AIN is less likely to go away without treatment and could eventually become cancer, so it needs to be watched closely. Some cases of high-grade AIN need to be treated. </p><h3>Carcinoma in situ</h3>
+
+<p>Sometimes abnormal cells on the inner surface layer of the anus look like cancer cells but have not grown into any of the deeper layers. This condition is known as <i>carcinoma in situ</i>, (pronounced in SY-too), or <i>CIS</i>. Another name for this condition is <i>Bowen disease</i>. Some doctors view this as the earliest form of anal cancer and others consider it the most advanced type of AIN, which is considered a pre-cancer but not a true cancer. </p><h3>Invasive anal cancers </h3>
+
+<p>Different types of cancer can start in the anal region:</p>
+
+<p><b>Squamous cell carcinomas: </b>Most anal cancers in the United States are squamous cell carcinomas. These tumors come from the squamous cells that line most of the anal canal and the anal margin. </p>
+
+<p>Squamous cell carcinomas in the anal canal have grown beyond the surface and into the deeper layers of the lining (as opposed to carcinoma in situ). </p>
+
+<p><i>Cloacogenic carcinomas</i> (also called <i>basaloid</i> or <i>transitional cell carcinomas</i>) are a type of squamous cell cancer. They develop in the transitional zone, also called the <i>cloaca</i>. These cancers look slightly different under a microscope, but they behave and are treated like other squamous cell carcinomas of the anal canal.</p>
+
+<p>Squamous cell carcinomas of the anal margin (perianal skin) are treated similarly to squamous cell carcinomas of the skin elsewhere in the body. For more information, see our document <i><!-- TRANSIT - HYPERLINK --><!-- ./ssLINK/skin-cancer-basal-and-squamous-detailed-guide-toc. --><a href="/ssLINK/skin-cancer-basal-and-squamous-detailed-guide-toc" target="_top">Skin Cancer: Basal and Squamous Cell</a>.</i></p>
+
+<p><b>Adenocarcinomas:</b> A small number of anal cancers are known as <i>adenocarcinomas</i>. These can develop in cells that line the upper part of the anus near the rectum, or in the glands under the anal mucosa that release their secretions into the anal canal. Most anal adenocarcinomas are treated the same way as rectal carcinomas. For more information, see our document <i><!-- TRANSIT - HYPERLINK --><!-- ./ssLINK/colon-rectum-cancer-detailed-guide-toc. --><a href="/ssLINK/colon-rectum-cancer-detailed-guide-toc" target="_top">Colorectal Cancer</a>.</i></p>
+
+<p>Adenocarcinomas can also start in apocrine glands (a type of sweat gland of the perianal skin). <i>Paget&#8217;s disease</i> is a type of apocrine gland carcinoma that spreads through the surface layer of the skin. Paget&#8217;s disease can affect skin anywhere in the body but most often affects skin of the perianal area, vulva, or breast. This condition should not be confused with Paget&#8217;s disease of the bone, which is a different disease. </p>
+
+<p><b>Basal cell carcinomas:</b> Basal cell carcinomas are a type of skin cancer that can develop in the perianal skin. These tumors are much more common in areas of skin exposed to the sun, such as the face and hands, and account for only a small number of anal cancers. They are often treated with surgery to remove the cancer. For more information, see our document<i> <!-- TRANSIT - HYPERLINK --><!-- ./ssLINK/skin-cancer-basal-and-squamous-detailed-guide-toc. --><a href="/ssLINK/skin-cancer-basal-and-squamous-detailed-guide-toc" target="_top">Skin Cancer: Basal and Squamous Cell</a>.</i></p>
+
+<p><b>Melanomas:</b><i> </i>These cancers develop from cells in the skin or anal lining that make the brown pigment called <i>melanin</i>. Only a very small portion of anal cancers are melanomas. Melanomas are far more common on the skin in other parts of the body. If melanomas are found at an early stage (before they have grown deeply into the skin or spread to lymph nodes) they can be removed with surgery, and the outlook for long-term survival is very good. But because anal melanomas are hard to see, most are found at a later stage. If possible, the entire tumor is removed with surgery. If all of the tumor can be removed, a cure is possible. If the melanoma has spread too far to be removed completely, other treatments may be given. For more information, see our document <i><!-- TRANSIT - HYPERLINK --><!-- ./ssLINK/skin-cancer-melanoma-detailed-guide-toc. --><a href="/ssLINK/skin-cancer-melanoma-detailed-guide-toc" target="_top">Melanoma Skin Cancer</a>.</i> </p>
+
+<p><b>Gastrointestinal stromal tumors (GISTs):</b> These cancers are much more common in the stomach or small intestine, but rarely they can start in the anal region. When these tumors are found at an early stage, they are removed with surgery. If they have spread beyond the anus, they can be treated with drug therapy. For more information, see our document <i><!-- TRANSIT - HYPERLINK --><!-- .gastrointestinal-stromal-tumor-gist-detailed-guide. --><a href="gastrointestinal-stromal-tumor-gist-detailed-guide" target="_top">Gastrointestinal Stromal Tumor (GIST)</a>.</i></p>
+
+<p><b>The rest of this document focuses mainly on anal squamous cell carcinomas, which account for the vast majority of anal cancers. </b></p></div>
+	<COMMENT>
+  <!-- SS_END_OPENREGIONMARKER(region1)-->
+  <!-- SS_BEGIN_CLOSEREGIONMARKER(region1)-->
+	</COMMENT>
+  <!-- SS_END_CLOSEREGIONMARKER(region1)-->
+  <br />
+  Last Medical Review: 04/09/2014<br />
+  Last Revised: 05/02/2014<br /><br />
+  <div class="btn btn-18 top-20"> <a href="#top"><span class="text">Back to top <span class="arrow">»</span></span></a> </div>
+</div>
+<!-- /cid-content -->
+</div>
+<!-- /cid -->
+</div>
+<!-- /left -->
+<div class="right" id="right">
+		<!-- Begin RightHandNav -->
+		
+	
+	<div class="boxed quick-finder">
+		<div class="head">
+			Guide Topics
+			<div class="current-pointer"></div>	
+		</div>		
+			<ul id="quick-finder-list">
+								<ul><li class='active'><a href='anal-cancer-what-is-cancer'>What Is Anal Cancer?</a></li><li><a href='anal-cancer-risk-factors'>Causes, Risk Factors, and Prevention</a></li><li><a href='anal-cancer-detection'>Early Detection, Diagnosis, and Staging</a></li><li><a href='anal-cancer-treating-general-info'>Treating Anal Cancer</a></li><li><a href='anal-cancer-talking-with-your-doctor'>Talking With Your Doctor</a></li><li><a href='anal-cancer-after-follow-up'>After Treatment</a></li><li><a href='anal-cancer-new-research'>What`s New in Anal Cancer Research?</a></li><li><a href='anal-cancer-additional-resources'>Other Resources and References</a></li></ul>
+								
+								
+															
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+	
+			</ul>
+	</div>
+
+<!-- END RightHandNav-->
+
+<div class="clearboth"> 
+</div>
+
+
+		
+</div>
+</div>
+<!--END LEFT DIV-->
+<!--END RIGHT COLUMN-->
+
+<!--</div>-->
+<footer class="site">
+	<script>
+ 
+function get_hostname(url) {
+    var m = ((url||'')+'').match(/^http:\/\/[^/]+/);
+    return m ? m[0] : null;
+}
+ 
+$(document).ready(function(){
+        var currentDomain = get_hostname(window.location.href).split("//")[1].toLowerCase();
+        if(currentDomain == "m.cancer.org" || currentDomain == "mstage.qa.cancer.org")
+        {
+                $("#footerPromo").hide();
+         
+        }
+                                                               
+});
+</script>
+
+
+
+<div class="column-links container_12"> 
+	<nav>
+	    <ul>
+			<li><h4>Cancer Information
+</h4></li>
+			
+				<li><a href="/Cancer/CancerBasics/index">Cancer Basics</a></li>		
+				<li><a href="/Healthy/FindCancerEarly/CancerScreeningGuidelines/index">Cancer Prevention & Detection</a></li>		
+				<li><a href="/Cancer/CancerBasics/signs-and-symptoms-of-cancer">Signs & Symptoms of Cancer</a></li>		
+				<li><a href="/Treatment/TreatmentsandSideEffects/index">Treatments & Side Effects</a></li>		
+				<li><a href="/research/cancerfactsstatistics/index">Cancer Facts & Statistics</a></li>		
+				<li><a href="/Cancer/news/index">News About Cancer</a></li>		
+				<li><a href="/cancer/news/expertvoices/default">Expert Voices Blog</a></li>		
+			
+		</ul>
+		<ul>
+			<li><h4>Programs & Services</h4></li>
+			
+				<li><a href="/treatment/supportprogramsservices/reach-to-recovery">Breast Cancer Support</a></li>		
+				<li><a href="http://www.tlcdirect.org">TLC Hair Loss & Mastectomy Products</a></li>		
+				<li><a href="/treatment/supportprogramsservices/hopelodge/index">Hope Lodge® Lodging</a></li>		
+				<li><a href="/treatment/supportprogramsservices/road-to-recovery">Rides To Treatment</a></li>		
+				<li><a href="/Treatment/SupportProgramsServices/OnlineCommunities/index">Online Support Communities</a></li>		
+				<li><a href="http://acs.whatnext.com">WhatNext</a></li>		
+			
+		</ul>
+		<ul>
+			<li><h4>ACS Events</h4></li>
+			
+				<li><a href="http://makingstrides.acsevents.org/site/PageServer?pagename=MSABC_CY14_FindAnEvent">Making Strides Against Breast Cancer Walks</a></li>		
+				<li><a href="/Involved/Participate/CoachesvsCancer/index">Coaches vs. Cancer</a></li>		
+				<li><a href="http://www.relayforlife.org">Relay For Life Events</a></li>		
+				<li><a href="http://college.relayforlife.org/">College Relay For Life</a></li>		
+				<li><a href="http://www.relayrecess.org">Relay Recess</a></li>		
+				<li><a href="/Involved/Donate/OtherWaystoGive/cars-for-a-cure-donate-your-car-to-charity-to-help-fight-cancer">Donate a Car</a></li>		
+			
+		</ul>
+		<ul>
+			<li><h4>About ACS</h4></li>
+			
+				<li><a href="/AboutUs/index">About Us</a></li>		
+				<li><a href="/AboutUs/HowWeHelpYou/ContactUs/Index">Contact Us</a></li>		
+				<li><a href="/Treatment/SupportProgramsServices/index">Local Offices</a></li>		
+				<li><a href="/Involved/Volunteer/index">Volunteer</a></li>		
+				<li><a href="/AboutUs/EmploymentOpportunities/index">Employment</a></li>		
+				<li><a href="/aboutus/become-a-supplier">Become a Supplier</a></li>		
+				<li><a href="/AboutUs/WhoWeAre/Governance/report-fraud-or-abuse">Report Fraud or Abuse</a></li>		
+			
+		</ul>
+		<ul>
+			<li><h4>More ACS Sites</h4></li>			
+			
+				<li><a href="/Cancer/Bookstore/index">Bookstore</a></li>		
+				<li><a href="http://www.acscan.org">ACS CAN</a></li>		
+				<li><a href="http://www.acsgiftshop.com/">Gift Shop</a></li>		
+				<li><a href="http://global.cancer.org">Global Health</a></li>		
+				<li><a href="http://cancer.org/fight">Finish the Fight</a></li>		
+				<li><a href="http://pressroom.cancer.org">Press Room</a></li>		
+				<li><a href="http://m.cancer.org">Mobile Site</a></li>		
+							
+		</ul>
+	</nav>
+</div>	
+
+
+
+	<script type="text/javascript">_satellite.pageBottom();</script>
+	
+		<div class="footer-bottom container_12">
+        	<ul class="pipes">				
+			<li><a href="/AboutUs/HowWeHelpYou/OnlineHelp/index">Help</a></li>
+			<li><a href="/AboutUs/Sitemap/index">Site Map</a></li>
+			<li><a href="/AboutUs/ACSPolicies/PrivacyPolicies/index">Privacy</a></li>
+			<li><a href="/AboutUs/ACSPolicies/accessibility-at-the-american-cancer-society-policy">Accessibility</a></li>
+			<li><a href="/AboutUs/ACSPolicies/user-agreement">Terms of Use</a></li>
+			<li><a href="/AboutUs/ACSPolicies/state-fundraising-notices">State Fundraising Notices</a></li>
+			<li>			
+			<a style="font-weight:bold" onclick="iperceptions.ipeCC()" href="javascript:void(0);">Site Comments</a>
+			</li>
+		</ul>
+		<ul class="grid_8">
+			<li><a  class="aimg" href="http://charityreports.bbb.org/public/seal.aspx?ID=1413312005"><img src="/acs/groups/content/documents/webasset/footer-bbb.jpg" alt="BBB" /></a> <a href="http://www.bbb.org/charity-reviews/national/cancer/american-cancer-society-in-atlanta-ga-186">Better Business Bureau</a></li>
+			<li><a  class="aimg" href="http://www.hon.ch/"><img src="/acs/groups/content/documents/webasset/footer-hon.jpg" alt="HON" /></a> <a href="http://www.hon.ch/HONcode/Conduct.html?HONConduct788421">Health On The Net</a></li>
+			<li><a  class="aimg" href="http://www.nationalhealthcouncil.org/"><img src="/acs/groups/content/documents/webasset/footer-nhc.jpg" alt="National Health Council Standards of Excellence Certification Program" /></a> <a href="http://www.nationalhealthcouncil.org/pages/standards.php">National Health Council</a></li>
+		</ul>
+		<p class="small-print grid_4">&copy; 2014 American Cancer Society, Inc. All rights reserved.
+			The American Cancer Society is a qualified 501(c)(3) tax-exempt organization.
+			Cancer.org is provided courtesy of the <a href="/AboutUs/HonoringPeopleWhoAreMakingADifference/the-leo-rosen-family">Leo and Gloria Rosen</a> family.
+		</p>
+	</div>
+<script type="text/javascript">
+
+iperceptions = window.iperceptions || {};
+
+//BEGIN Configuration variables
+iperceptions.imgRootPath = "/iperceptions/118332/en/images/";
+iperceptions.imgSizeOut = [68, 68];
+iperceptions.imgSizeOver = [180, 68];
+iperceptions.blockMobile = true;
+iperceptions.surveyID = 118332;
+iperceptions.langID = 1;
+iperceptions.posX = 'right';
+iperceptions.posY = 'middle';
+iperceptions.winWidth = 480;
+iperceptions.winHeight = 580;
+
+//Reserved for advanced use.  Do not modify these.
+iperceptions.iconBrandID = null;
+iperceptions.logoBrandID = null;
+iperceptions.siteID = null;
+iperceptions.imgOut = iperceptions.imgRootPath + "mr" + (iperceptions.iconBrandID ? "_" + iperceptions.iconBrandID : "") + ".png";
+iperceptions.imgOver = iperceptions.imgRootPath + "mr_over" + (iperceptions.iconBrandID ? "_" + iperceptions.iconBrandID : "") + ".png";
+//END Configuration variables.
+
+
+iperceptions.isMobile = (function(a){return (/android|avantgo|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od|ad)|iris|kindle|lge |maemo|midp|mmp|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino|googlebot|google web preview|msbot|yahoo|bingbot|silk|mobile|rim tablet|hp-tablet|touch;|touch\)|wpdesktop/i.test(a))})(navigator.userAgent || navigator.vendor || window.opera);
+
+//API function to add floating icon
+iperceptions.ipeIcon = function(config) {
+    config = config || {};
+    if(iperceptions.launchedIcon) {
+        return;
+    }
+    iperceptions.launchedIcon = true;
+
+    var _pos_x = config.pos_x || iperceptions.posX, //left|middle|right
+        _pos_y = config.pos_y || iperceptions.posY, //'top'|middle|bottom 
+        _img_out = config.img_out || iperceptions.imgOut,
+        _img_over = config.img_over || iperceptions.imgOver, 
+        _size_out = iperceptions.imgSizeOut || [68, 68],
+        _size_over = iperceptions.imgSizeOver || [180, 68],
+        _size_current = _size_out,
+        _id = Math.ceil(Math.random() * 10000),
+        _img_id = 'UIF-IMG-' + _id,
+		_page = '<img id="' + _img_id + '" ' +
+        ' src="' + _img_out + '"' +
+        'style="display:none;position:fixed;cursor:pointer;margin:0px!important;padding:0px!important;border:0px!important;' +
+        'z-index: 2147483647!important;' +
+		(_pos_x == 'right' ? 'text-align:right!important;' : 'text-align:left!important;') +
+		(_pos_y == 'bottom' ? 'vertical-align:bottom!important;' : 'vertical-align:top!important;') +
+        'background-color:transparent!important;"/>', 
+		_img, _is_ie, _icon_timer,
+      
+        //Generic method to attach an event to a DOM element
+        domAddEvent = function (target, eventName, handlerFn) {
+            if (target.addEventListener)
+                target.addEventListener(eventName, handlerFn, true);
+            else if (target.attachEvent)
+                target.attachEvent("on" + eventName, handlerFn);
+            else
+                target["on" + eventName] = handlerFn;
+        },
+
+        ipeSetPos = function(pos_x, pos_y) {
+            var divW = _size_current[0],
+                divH = _size_current[1],
+                viewsize = iperceptions.viewSize(),
+                bodyWidth, bodyHeight, winW, winH;
+
+            //Our default viewsize calculation sometimes to include the scrollbar.  document.documentElement.client[Width|Height] do not include scrollbar.
+            bodyWidth = document.documentElement.clientWidth;
+            if (bodyWidth > 0 && bodyWidth < viewsize[0]) {
+                viewsize[0] = bodyWidth;
+            }
+
+            bodyHeight = document.documentElement.clientHeight;
+            if (bodyHeight > 0 && bodyHeight < viewsize[1]) {
+                viewsize[1] = bodyHeight;
+            }
+
+            winW = parseInt((viewsize[0] - divW));
+            winH = parseInt((viewsize[1] - divH));
+               
+            if (pos_x == 'left') { _img.style.left = '0px'; }
+            else if (pos_x == 'right') { _img.style.right = '0px'; }
+            else if(winW >= 0) { _img.style.left = (winW / 2 >> 0) + 'px'; }
+            if (pos_y == 'top') { _img.style.top = '0px'; }
+            else if (pos_y == 'bottom') { _img.style.bottom = "0px"; }
+            else if(winH >= 0) { _img.style.top = (winH / 2 >> 0) + 'px'; }
+        },
+
+        isIE = function() {
+            var ua = navigator.userAgent.toLowerCase(),
+            isOpera = (ua.indexOf('opera') != -1);
+            return ua.indexOf('msie') != -1 && !isOpera && (ua.indexOf('webtv') == -1);
+        },
+
+        IEMajorVersion = function() {
+            var m = /MSIE\s*(\d*)/.exec(navigator.userAgent),
+                v = (m && m[1]) || -1;
+            if(isNaN(parseInt(v, 10))) {
+                v = -1;
+            }
+            return v;
+        },
+
+		ipeIconComplete = function() {
+            _img = document.getElementById(_img_id);
+            _img.style.display = "block";
+            ipeSetPos(_pos_x, _pos_y);
+
+            domAddEvent(window, 'resize', function () { ipeSetPos(_pos_x, _pos_y); });
+            domAddEvent(window, 'scroll', function () { ipeSetPos(_pos_x, _pos_y); }); 
+            domAddEvent(_img, "mouseout", function () {
+                    _img.src = _img_out;
+                    _size_current = _size_out;
+                });
+            domAddEvent(_img, "mouseover", function () {
+                    _img.src = _img_over;
+                    _size_current = _size_over;
+            });
+            domAddEvent(_img, "click", function (e) {
+                iperceptions.ipeCC(config);
+            });
+        };
+
+    _is_ie = isIE();
+
+    //Now blocking IE6 and mobile devices
+    if(_is_ie && IEMajorVersion() < 7) {
+        return;
+    }
+    if(iperceptions.blockMobile && iperceptions.isMobile) {
+        return;
+    }
+
+    _icon_timer = setInterval(function() {
+        if(document.readyState === "complete") {
+            if (_is_ie && IEMajorVersion() < 10) {
+                document.body.insertAdjacentHTML("beforeEnd", _page);
+            } else {
+                _dL = document.createElement("div");
+                _dL.innerHTML = _page;
+                document.body.appendChild(_dL);
+            }
+            clearInterval(_icon_timer);
+            ipeIconComplete();
+        }  
+    }, 250);
+}
+
+
+//API function to launch comment card
+iperceptions.ipeCC = function(config) {
+    var config = config || {};
+    config.surveyID = config.surveyID || iperceptions.surveyID;
+
+    iperceptions.launch(config);
+}
+
+iperceptions.viewSize = function() {
+    var width = 0, height = 0;
+    if (typeof (window.innerWidth) == 'number') {
+        width = window.innerWidth;
+        height = window.innerHeight;
+    } else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+        width = document.documentElement.clientWidth;
+        height = document.documentElement.clientHeight;
+    } else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+        width = document.body.clientWidth;
+        height = document.body.clientHeight;
+    }
+    return [width, height];
+}
+
+iperceptions.launch = function(config) {
+    config.langID = config.langID || iperceptions.langID;
+
+    var RC = function(n){var nEQ= n+'='; var ca= document.cookie.split(';');for(var i=0;i < ca.length;i++) {var c= ca[i];while (c.charAt(0)==' ') c= c.substring(1,c.length);if (c.indexOf(nEQ) == 0) return c.substring(nEQ.length,c.length);} };
+
+    var name = "IPerceptions_comment_" + config.surveyID;
+    var w = 0, h = 0, url = "", l = 0, t = 0, vs = iperceptions.viewSize(), 
+        sdfc = "e8abdf4f" + "-" + config.surveyID + "-" + "3a07d5ce-0cd2-4702-bb09-9246b2aa907e";
+    w = iperceptions.winWidth || 480;
+    h = iperceptions.winHeight || 580;
+    l = Math.max((vs[0] - w) / 2, 0);
+    t = Math.max((vs[1] - h) / 2, 0);
+    url = window.location.protocol + "//ips-invite.iperceptions.com/WebValidator.aspx?lID=" + config.langID + "&sdfc=" + sdfc + "&source=91787&destination=commentcard&referrer=" + encodeURIComponent(window.location.href) + (iperceptions.logoBrandID ? "&brandID=" + iperceptions.logoBrandID : "" ) + (iperceptions.siteID ? "&siteID=" + iperceptions.siteID : "" );
+ 
+    var features = "width=" + w + ",height=" + h + ", left=" + l + ", top=" + t + ", resizable=yes, toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, copyhistory=no";
+
+    window.open(url, name, features);
+}
+
+</script>
+      
+
+</footer>
+
+
+
+<script type="text/javascript">
+      function determinePage() {
+        placeToGo = $('#docSelected').val();
+        window.location = placeToGo;
+      }
+      
+      var cidListShow = 0;
+      
+      $(document).ready(function() {
+      $("#listView").hide();
+             $("#listToggle").click(function(event){
+             event.preventDefault();
+              
+          if ( cidListShow === 1 ) {
+            $("#listView").hide('slow');
+            cidListShow = 0;
+            $("#listText").text("SEE A LIST");
+          }
+          else {
+            $("#listView").show('slow');
+            cidListShow = 1;
+            $("#listText").text("HIDE THE LIST");
+          }
+            });
+       });
+</script>
+
+</body>
+
+
+
+
+
+</html>

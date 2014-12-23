@@ -20,13 +20,13 @@
       <thead>
         <tr>
           <th>
-            First Input
+            Primary Site
           </th>
           <th>
-            Second Input
+            Primary Histology
           </th>
           <th>
-            Third Input
+            Cancer Census
           </th>
         </tr>
       </thead>
@@ -34,13 +34,16 @@
         <%@diseases.each do |disease|%>
         <tr>
           <td>
-            <%= disease.input1 %>
+            <%= disease.primary_site %>
           </td>
           <td>
-            <%= disease.input2 %>
+            <%= disease.primary_histology %>
           </td>
           <td>
-            <%= disease.input3 %>
+            <%= disease.in_cancer_census %>
+          </td>
+          <td>
+            <%= disease.gene_name %>
           </td>
         </tr>
         <%end%>

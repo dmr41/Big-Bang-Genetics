@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= favicon_link_tag '46LYRs.jpg'%>
     <title>BigBangGenetics</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all'%>
@@ -31,9 +32,7 @@
           <div class="col-sm-5">
             <%= link_to("Home", root_path) %> |
             <%= link_to("Users", users_path) %> |
-            <%= link_to("Upload", diseases_path) %> |
-            <%= link_to("Registration", signup_path) %> |
-            <%= link_to("Cancers", new_cancer_path) %>
+            <%= link_to("Cancers", cancers_path) %>
           </div>
         </div>
       </footer>

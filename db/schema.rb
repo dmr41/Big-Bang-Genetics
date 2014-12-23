@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113054053) do
+ActiveRecord::Schema.define(version: 20141223011542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,12 +19,46 @@ ActiveRecord::Schema.define(version: 20141113054053) do
   create_table "cancers", force: true do |t|
     t.string "name"
     t.string "genes"
+    t.string "search_name"
+    t.string "gene_search_name"
+  end
+
+  create_table "consensus_cancer_genes", force: true do |t|
+    t.string "gene_symbol"
+    t.string "name"
+    t.string "entrez_geneid"
+    t.string "chr"
+    t.string "chr_band"
+    t.string "somatic"
+    t.string "germline"
+    t.string "tumour_types_somatic",  default: false
+    t.string "tumour_types_germline", default: false
+    t.string "cancer_syndrome"
+    t.string "tissue_type"
+    t.string "molecular_genetics"
+    t.string "mutation_types"
+    t.string "translocation_partner"
+    t.string "other_germline_mut"
+    t.string "other_syndrome"
+    t.string "synonyms"
   end
 
   create_table "diseases", force: true do |t|
-    t.string "input1"
-    t.string "input2"
-    t.string "input3"
+    t.integer "cosmic_sample_id"
+    t.string  "sample_name"
+    t.string  "sample_source"
+    t.string  "tumour_source"
+    t.string  "gene_name"
+    t.string  "accession_number"
+    t.integer "cosmic_mutation_id"
+    t.string  "cds_mutation_syntax"
+    t.string  "aa_mutation_syntax"
+    t.string  "zygosity"
+    t.string  "primary_site"
+    t.string  "primary_histology"
+    t.integer "pubmed_id"
+    t.integer "gene_id"
+    t.string  "in_cancer_census"
   end
 
   create_table "users", force: true do |t|

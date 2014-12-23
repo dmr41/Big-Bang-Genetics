@@ -1,14 +1,31 @@
+
+
 <% if notice != nil %>
   <div class="alert alert-danger">
     <%= notice %>
 </div>
 <% end %>
-<h2>Cancer types</h2>
+<div>
 
+<%= link_to "New Cancer", new_cancer_path, class: "btn btn-primary pull-right" %>
+<h2><%= "There are currently #{@consensus_genes_count.count} genes linked to cancer."%></h2>
+</div>
+<br>
 <div class="table">
   <table>
     <thead>
-      <tr>
+     <tr>
+      <th class="col-md-1">
+       Cancer Genes
+      </th>
+      <th class="col-md-1">
+       Mutation Type
+      </th>
+      <th class="col-md-1">
+       Chromosome
+      </th>
+     </tr>
+      <!-- <tr>
         <th class="col-md-1">
           Cancer
         </th>
@@ -18,22 +35,38 @@
         <th class="col-md-1">
           Edit
         </th>
-      </tr>
+      </tr> -->
     </thead>
     <tbody>
-      <% @cancers.each do |cancer| %>
+
+     <% @consensus_cancer_genes.sort.each do |cancer_genes| %>
+     <tr>
+     <td class="col-md-1">
+     <%= link_to "#{cancer_genes.gene_symbol}", "http://www.ncbi.nlm.nih.gov/gene/#{cancer_genes.entrez_geneid}"%>
+    </td>
+    <td class="col-md-1">
+    <%= "#{cancer_genes.mutation_types}"%>
+   </td>
+   <td class="col-md-1">
+   <%= "#{cancer_genes.chr}"%>
+  </td>
+ </tr>
+ <% end %>
+
+      <!-- <%# @cancers.sort.each do |cancer| %>
       <tr>
         <td class="col-md-1">
-          <%= cancer.name %>
+          <%#= link_to "#{cancer.name}", "http://en.wikipedia.org/wiki/#{cancer.search_name}" %>
         </td>
         <td class="col-md-3">
-          <%= cancer.genes%>
+          <%#= link_to "#{cancer.genes}", "http://en.wikipedia.org/wiki/#{cancer.gene_search_name}" %>
         </td>
         <td class="col-md-1">
-          <%= link_to "Edit", edit_cancer_path(cancer) %>
+          <%#= link_to "Edit", edit_cancer_path(cancer) %>
         </td>
       </tr>
-      <% end %>
+      <%# end %> -->
     </tbody>
   </table>
 </div>
+<%= paginate @consensus_cancer_genes %>

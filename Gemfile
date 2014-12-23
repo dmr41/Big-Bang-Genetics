@@ -1,8 +1,14 @@
-source 'https://rubygems.org'
+ source 'https://rubygems.org'
 group :production do
 gem "rails_12factor"
 
 end
+
+gem 'kaminari', '~> 0.16.1'
+
+gem 'nokogiri', '~> 1.6.4.1'
+
+gem 'json'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 

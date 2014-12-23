@@ -11,6 +11,9 @@ end
 resources :users
 resources :genes
 
+
+post "/cancers(.:format)" => "cancers#acs_cancer_list"
+
 get "signin" => "authentication#new"
 post "signin" => "authentication#create"
 get "signout" => "authentication#destroy"
