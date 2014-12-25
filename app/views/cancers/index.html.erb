@@ -6,11 +6,18 @@
 </div>
 <% end %>
 <div>
-
 <%= link_to "New Cancer", new_cancer_path, class: "btn btn-primary pull-right" %>
 <h2><%= "There are currently #{@consensus_genes_count.count} genes linked to cancer."%></h2>
 </div>
 <br>
+<div>
+ <%= form_tag cancers_path, :method => 'get' do %>
+ <p>
+  <%= text_field_tag :search, params[:search], class: "label-control" %>
+  <%= submit_tag "Search", name: nil%>
+ </p>
+ <% end %>
+</div>
 <div class="table">
   <table>
     <thead>
@@ -69,4 +76,5 @@
     </tbody>
   </table>
 </div>
+
 <%= paginate @consensus_cancer_genes %>

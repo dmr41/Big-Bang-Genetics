@@ -6,13 +6,18 @@ div.well.col-md-3.col-md-offset-2.csvform h4 {color: black;}
 div.whitespace { padding-top:45em}
 
 text.pull-right {font-size: 75%;}
-div h3 {color: white;
+div h3 {color: red;
         font-family: "Courier"}
-h2 {color: white;
+h2 {color: magenta;
          font-family: "Courier"}
-div p {color: white;
+div p {color: black;
        font-family: "Courier";
        font-size: 80% }
+
+.field input {
+        color: black}
+
+
 
 div p strong {color: red;}
 
@@ -33,7 +38,7 @@ body {
       }
 
 div.form-group div.col-sm-2 { font-family: "Courier";
-                              color: white; }
+                              color: red; }
 
 h2.headformat { font-family: "Courier";
                 color: #EDE;}
@@ -53,6 +58,7 @@ th { font-size: 16px;}
 a {
    text-decoration: none;
    color: #CCCCFF;
+   font-size: 18px;
    }
 
 div.col-sm-offset-2.submit_fit {padding-left: 1em}

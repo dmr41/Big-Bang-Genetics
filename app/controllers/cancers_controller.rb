@@ -2,7 +2,11 @@ class CancersController < ApplicationController
 
   def index
     @cancers = Cancer.order(params[:name])
-    @consensus_cancer_genes = ConsensusCancerGene.all.page params[:page]
+    if params[:search].present?
+      @consensus_cancer_genes = ConsensusCancerGene.search(params[:search]).page params[:page]
+    else
+      @consensus_cancer_genes = ConsensusCancerGene.all.page params[:page]
+    end
     @consensus_genes_count = ConsensusCancerGene.all
   end
 

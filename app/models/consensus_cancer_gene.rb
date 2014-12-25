@@ -31,8 +31,14 @@ class ConsensusCancerGene < ActiveRecord::Base
    :synonyms => row[16]
    ).save!
   end
+ end
 
-
+ def self.search(search)
+  if search
+   self.where("gene_symbol like ?", "%#{search}%")
+  else
+   self.all
+  end
  end
  # def self.import(file)
  #  CSV.foreach(file.path, headers: true) do |row|
