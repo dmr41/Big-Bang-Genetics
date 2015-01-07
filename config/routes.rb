@@ -8,6 +8,7 @@ resources :diseases do
   collection {post :import}
 end
 
+resources :mutations
 resources :users
 resources :genes
 

@@ -6,7 +6,8 @@ class DiseasesController < ApplicationController
   end
 
   def index
-    @diseases = Disease.all
+    # @diseases = Disease.all
+    @diseases = Disease.all.page params[:page]
   end
 
   def import

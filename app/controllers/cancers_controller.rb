@@ -19,8 +19,18 @@ class CancersController < ApplicationController
   end
 
   def show
-    @cancer = Cancer.find(params[:id])
     @consensus_cancer_gene = ConsensusCancerGene.find(params[:id])
+    @diseases = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).uniq.page params[:page]
+    @uniq_mutations = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).select(:cds_mutation_syntax).map(&:cds_mutation_syntax).uniq
+    unless @uniq_mutations.kind_of?(Array)
+     @uniq_mutations = @uniq_mutations.page(params[:page])
+    else
+      @uniq_mutations = Kaminari.paginate_array(@uniq_mutations).page(params[:page])
+    end
+    @mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).count
+    @uniq_mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).select(:cds_mutation_syntax).map(&:cds_mutation_syntax).uniq.count
+    # @diseases = Disease.all.page params[:page]
+    # @disease = @diseases.mutations.find(@consensus_cancer_gene)
   end
 
   def acs_cancer_list

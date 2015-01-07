@@ -31,6 +31,9 @@
       <th class="col-md-1">
        Chromosome
       </th>
+      <th class="col-md-1">
+       Gene show page
+      </th>
      </tr>
       <!-- <tr>
         <th class="col-md-1">
@@ -56,6 +59,10 @@
    </td>
    <td class="col-md-1">
    <%= "#{cancer_genes.chr}"%>
+   <td class="col-md-1">
+    <%= link_to "#{cancer_genes.gene_symbol}", cancer_path(cancer_genes)%>
+   </td>
+
   </td>
  </tr>
  <% end %>

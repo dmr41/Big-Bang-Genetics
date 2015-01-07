@@ -1,7 +1,6 @@
 class Cancer < ActiveRecord::Base
 
-  # validates :name, presence: true, uniqueness: true
-  # validates :genes, presence: true
+ has_many :diseases, through: :mutations
   #
   # def self.import(file)
   #     CSV.foreach(file.path, headers: true) do |row|
@@ -11,7 +10,7 @@ class Cancer < ActiveRecord::Base
 
   def self.import(file)
        CSV.foreach(file.path, headers: true) do |row|
-          Cancer.create! row.to_hash
+           Cancer.create! row.to_hash
         end
     end
 

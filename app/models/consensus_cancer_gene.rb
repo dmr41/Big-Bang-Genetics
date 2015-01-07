@@ -7,30 +7,30 @@ class ConsensusCancerGene < ActiveRecord::Base
 
  def self.import(file)
   CSV.foreach(file.path, headers: true) do |row|
-   unless row[12].nil?
-    row[12].gsub!(/[ADFNOST]/, 'A' => 'Amplification', 'D' => 'Deletion(Large)', 'F' => 'Frameshift', 'N' => 'Nonsense', 'O' => 'Other', 'S' => 'Splice-site', 'T' => 'Translocation')
-    row[12].gsub!(/Mis/, 'Missense')
+    unless row[12].nil?
+     row[12].gsub!(/[ADFNOST]/, 'A' => 'Amplification', 'D' => 'Deletion(Large)', 'F' => 'Frameshift', 'N' => 'Nonsense', 'O' => 'Other', 'S' => 'Splice-site', 'T' => 'Translocation')
+     row[12].gsub!(/Mis/, 'Missense')
+    end
+    ConsensusCancerGene.new(
+    :gene_symbol => row[0],
+    :name => row[1],
+    :entrez_geneid => row[2],
+    :chr => row[3],
+    :chr_band => row[4],
+    :somatic => row[5],
+    :germline => row[6],
+    :tumour_types_somatic => row[7],
+    :tumour_types_germline => row[8],
+    :cancer_syndrome => row[9],
+    :tissue_type => row[10],
+    :molecular_genetics => row[11],
+    :mutation_types => row[12],
+    :translocation_partner => row[13] ,
+    :other_germline_mut => row[14],
+    :other_syndrome => row[15],
+    :synonyms => row[16]
+    ).save!
    end
-   ConsensusCancerGene.new(
-   :gene_symbol => row[0],
-   :name => row[1],
-   :entrez_geneid => row[2],
-   :chr => row[3],
-   :chr_band => row[4],
-   :somatic => row[5],
-   :germline => row[6],
-   :tumour_types_somatic => row[7],
-   :tumour_types_germline => row[8],
-   :cancer_syndrome => row[9],
-   :tissue_type => row[10],
-   :molecular_genetics => row[11],
-   :mutation_types => row[12],
-   :translocation_partner => row[13] ,
-   :other_germline_mut => row[14],
-   :other_syndrome => row[15],
-   :synonyms => row[16]
-   ).save!
-  end
  end
 
  def self.search(search)
