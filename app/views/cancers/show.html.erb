@@ -21,6 +21,12 @@
         <th class="col-md-2 " >
           Nature of Mutation
         </th>
+        <th class="col-md-2 " >
+          Starting Position
+        </th>
+        <th class="col-md-2 " >
+          End position
+        </th>
         <th class="col-md-2">
           Original sequence
         </th>
@@ -48,6 +54,16 @@
        </td>
        <td class="col-md-2">
          <%= "#{genes.ins_del_single}" %>
+       </td>
+       <td class="col-md-2">
+         <%= "#{genes.nuc_position1}"%>
+       </td>
+       <td class="col-md-2">
+         <% if genes.nuc_position1 == genes.nuc_position2  %>
+           <%= "-" %>
+         <% else %>
+           <%= "#{genes.nuc_position2}"%>
+          <% end %>
        </td>
        <td class="col-md-2">
          <%= "#{genes.nuc_change_from}"%>
