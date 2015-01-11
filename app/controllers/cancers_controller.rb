@@ -27,10 +27,12 @@ class CancersController < ApplicationController
 
     @uniq_mutations = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).select(:cds_mutation_syntax).map(&:cds_mutation_syntax).uniq
 
-    @uniq_mutations = Kaminari.paginate_array(@uniq_mutations).page(params[:page])
+    @uniq_mutations = Kaminari.paginate_array(@uniq_mutations).page (params[:page])
 
     @mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).count
     @uniq_mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).select(:cds_mutation_syntax).map(&:cds_mutation_syntax).uniq.count
+    @mutties = @consensus_cancer_gene.mutations.page params[:page]
+    @mutties = @mutties.all.page params[:page]
 
   end
 
@@ -91,18 +93,18 @@ class CancersController < ApplicationController
           @split_allele = @allele.gsub(/del/,'_').split('_')
           @mutty[:nuc_position1] = @split_allele[0].to_i
           @mutty[:nuc_position2] = @split_allele[0].to_i
-          @mutty[:nuc_change_from] = "deletion"
+          @mutty[:nuc_change_from] = @split_allele[2]
           if @split_allele[2].to_i != 0 || @split_allele[2] == "?"
             @mutty[:nuc_change_to] = "unknown"
           else
-            @mutty[:nuc_change_to] = @split_allele[2]
+            @mutty[:nuc_change_to] = "-"
           end
         elsif @allele.include?("_?ins")
           @mutty[:ins_del_single] = "insertion"
           @split_allele = @allele.gsub(/ins/,'_').split('_')
           @mutty[:nuc_position1] = @split_allele[0].to_i
           @mutty[:nuc_position2] = @split_allele[0].to_i
-          @mutty[:nuc_change_from] = "insertion"
+          @mutty[:nuc_change_from] = "-"
           if @split_allele[2].to_i != 0 || @split_allele[2] == "?"
             @mutty[:nuc_change_to] = "unknown"
           else
@@ -113,18 +115,18 @@ class CancersController < ApplicationController
           @split_allele = @allele.gsub(/del/,'_').split('_')
           @mutty[:nuc_position1] = @split_allele[0].to_i
           @mutty[:nuc_position2] = @split_allele[1].to_i
-          @mutty[:nuc_change_from] = "deletion"
+          @mutty[:nuc_change_from] = @split_allele[2]
           if @split_allele[2].to_i != 0 || @split_allele[2] == "?"
             @mutty[:nuc_change_to] = "unknown"
           else
-            @mutty[:nuc_change_to] = @split_allele[2]
+            @mutty[:nuc_change_to] = "-"
           end
         elsif @allele.include?("ins") && @allele.include?("_")
           @mutty[:ins_del_single] = "insertion"
           @split_allele = @allele.gsub(/ins/,'_').split('_')
           @mutty[:nuc_position1] = @split_allele[0].to_i
           @mutty[:nuc_position2] = @split_allele[1].to_i
-          @mutty[:nuc_change_from] = "insertion"
+          @mutty[:nuc_change_from] = "-"
           if @split_allele[2].to_i != 0 || @split_allele[2] == "?"
             @mutty[:nuc_change_to] = "unknown"
           else
@@ -135,18 +137,18 @@ class CancersController < ApplicationController
           @split_allele = @allele.gsub(/del/,'_').split('_')
           @mutty[:nuc_position1] = @split_allele[0].to_i
           @mutty[:nuc_position2] = @split_allele[0].to_i
-          @mutty[:nuc_change_from] = "deletion"
+          @mutty[:nuc_change_from] = @split_allele[1]
           if @split_allele[1].to_i != 0 || @split_allele[1] == "?"
             @mutty[:nuc_change_to] = "unknown"
           else
-            @mutty[:nuc_change_to] = @split_allele[1]
+            @mutty[:nuc_change_to] = "-"
           end
         elsif @allele.include?("ins")
           @mutty[:ins_del_single] = "insertion"
           @split_allele = @allele.gsub(/ins/,'_').split('_')
           @mutty[:nuc_position1] = @split_allele[0].to_i
           @mutty[:nuc_position2] = @split_allele[0].to_i
-          @mutty[:nuc_change_from] = "insertion"
+          @mutty[:nuc_change_from] = "-"
           if @split_allele[1].to_i != 0 || @split_allele[1] == "?"
             @mutty[:nuc_change_to] = "unknown"
           else
@@ -156,15 +158,15 @@ class CancersController < ApplicationController
           @split_allele = @allele.gsub(/[>_+-]/, '_').split('_')
           @middle_value = @split_allele[1]
           @second_position = @middle_value.gsub(/[ACTG]/,'')
-          @unmutated_seq = @middle_value.gsub(/#{@second_position}/, '')
+          @unmutated_seq = @middle_value.gsub(/["#{@second_position}"]/, '')
           if @allele.include?("+")
-            @mutty[:ins_del_single] = "splice site mutation"
+            @mutty[:ins_del_single] = "splice site"
             @mutty[:nuc_position2] = @second_position.to_i
           elsif @allele.include?("-")
-            @mutty[:ins_del_single] = "intronic mutation"
+            @mutty[:ins_del_single] = "intronic"
             @mutty[:nuc_position2] = @second_position.to_i
           elsif @allele.include?("_")
-            @mutty[:ins_del_single] = "standard mutation"
+            @mutty[:ins_del_single] = "standard"
             @mutty[:nuc_position2] = @second_position.to_i
           end
           @mutty[:nuc_position1] = @split_allele[0].to_i
@@ -178,10 +180,10 @@ class CancersController < ApplicationController
           @split_allele = @allele.split('>')
           @middle_value = @split_allele[0]
           @first_position = @middle_value.gsub(/[ACTG]/,'')
-          @unmutated_seq = @middle_value.gsub(/#{@second_position}/, '')
+          @unmutated_seq = @middle_value.gsub(/["#{@first_position}"]/, '')
           @mutty[:nuc_position1] = @first_position.to_i
           @mutty[:nuc_position2] = @first_position.to_i
-          @mutty[:ins_del_single] = "standard mutation"
+          @mutty[:ins_del_single] = "standard"
           @mutty[:nuc_change_from] = @unmutated_seq
           @mutty[:nuc_change_to] = @split_allele[1]
         else

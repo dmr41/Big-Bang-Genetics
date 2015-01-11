@@ -15,23 +15,46 @@
   <table>
     <thead>
       <tr>
-        <th class="col-md-1 ">
+        <th class="col-md-2 ">
           Gene Name
         </th>
-        <th class="col-md-1 pull-left">
-          Mutation
+        <th class="col-md-2 " >
+          Nature of Mutation
+        </th>
+        <th class="col-md-2">
+          Original sequence
+        </th>
+        <th class="col-md-2">
+          Mutated sequence
         </th>
       </tr>
     </thead>
     <tbody>
-     <% @uniq_mutations.each do |genes| %>
+     <%# @uniq_mutations.each do |genes| %>
      <tr>
       <td class="col-md-1 ">
-       <%= "#{@consensus_cancer_gene.gene_symbol}"%>
+       <%#= "#{@consensus_cancer_gene.gene_symbol}"%>
       </td>
-      <td class="col-md-3 pull-left">
-       <%= "#{genes}"%>
+      <td class="col-md-2">
+       <%#= "#{genes}"%>
       </td>
+     </tr>
+     <%#end %>
+
+     <% @mutties.each do |genes| %>
+     <tr>
+       <td class="col-md-2 ">
+         <%= "#{genes.disease.gene_name}"%>
+       </td>
+       <td class="col-md-2">
+         <%= "#{genes.ins_del_single}" %>
+       </td>
+       <td class="col-md-2">
+         <%= "#{genes.nuc_change_from}"%>
+       </td>
+       <td class="col-md-2">
+         <%= "#{genes.nuc_change_to}"%>
+       </td>
      </tr>
      <%end %>
 
@@ -50,4 +73,5 @@
 
 </div>
 <%#= paginate @diseases %>
-<%= paginate @uniq_mutations %>
+<%#= paginate @uniq_mutations %>
+<%= paginate @mutties%>
