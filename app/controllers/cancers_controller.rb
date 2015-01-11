@@ -1,3 +1,5 @@
+require 'capybara'
+
 class CancersController < ApplicationController
 
   def index
@@ -12,6 +14,7 @@ class CancersController < ApplicationController
 
   def new
     @cancer = Cancer.new
+
   end
 
   def edit
@@ -20,17 +23,15 @@ class CancersController < ApplicationController
 
   def show
     @consensus_cancer_gene = ConsensusCancerGene.find(params[:id])
-    @diseases = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).uniq.page params[:page]
+    @diseases = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).page params[:page]
+
     @uniq_mutations = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).select(:cds_mutation_syntax).map(&:cds_mutation_syntax).uniq
-    unless @uniq_mutations.kind_of?(Array)
-     @uniq_mutations = @uniq_mutations.page(params[:page])
-    else
-      @uniq_mutations = Kaminari.paginate_array(@uniq_mutations).page(params[:page])
-    end
+
+    @uniq_mutations = Kaminari.paginate_array(@uniq_mutations).page(params[:page])
+
     @mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).count
     @uniq_mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).select(:cds_mutation_syntax).map(&:cds_mutation_syntax).uniq.count
-    # @diseases = Disease.all.page params[:page]
-    # @disease = @diseases.mutations.find(@consensus_cancer_gene)
+
   end
 
   def acs_cancer_list
@@ -47,13 +48,115 @@ class CancersController < ApplicationController
   # end
 
   def import
-   ConsensusCancerGene.delete_all
-     if params[:file]
+    if params[:file]
+      ConsensusCancerGene.delete_all
+      CancerImporter.new(params[:file]).import
       ConsensusCancerGene.import(params[:file])
-       redirect_to cancers_path, notice: "csv of Cancers imported."
-     else
-       redirect_to new_cancer_path, notice: "Error! Must upload cancer file."
-     end
+      mutations_join_table
+      redirect_to cancers_path, notice: "COSMIC Consensus Cancer Genes successfully imported."
+    else
+      redirect_to new_cancer_path, notice: "File not found!"
+    end
+  end
+
+  def mutations_join_table
+    Mutation.delete_all
+    @consensus_cancer_genes = ConsensusCancerGene.all
+    @consensus_cancer_genes.each do |consensus_cancer_gene|
+      @diseases = Disease.where(gene_name: consensus_cancer_gene.gene_symbol).page params[:page]
+      @diseases.each do |disease|
+        @mutty = Mutation.new
+        @mutty[:consensus_cancer_gene_id] = consensus_cancer_gene.id
+        @mutty[:disease_id] = disease.id
+        @mutty[:original_mutation_string] = disease.cds_mutation_syntax
+        @allele = disease.cds_mutation_syntax
+        @allele.gsub!(/c\./, '')
+        @allele.gsub!(/\)_/, '')
+        @allele.gsub!(/\)/, '')
+        @allele.gsub!(/\(/, '')
+        if @allele.include? "?" && @allele.length == 1
+          @mutty[:nuc_position1] = 0
+          @mutty[:nuc_position2] = 0
+          @mutty[:ins_del_single] = "unknown"
+          @mutty[:nuc_change_from] = "unknown"
+          @mutty[:nuc_change_to] = "unknown"
+        elsif @allele.include? "?_?"
+          @mutty[:nuc_position1] = 0
+          @mutty[:nuc_position2] = 0
+          @mutty[:ins_del_single] = "unknown"
+          @mutty[:nuc_change_from] = "unknown"
+          @mutty[:nuc_change_to] = "unknown"
+        elsif @allele.include? "_?del"
+          @mutty[:ins_del_single] = "deletion"
+          @split_allele = @allele.gsub(/del/,'_').split('_')
+          @mutty[:nuc_position1] = @split_allele[0].to_i
+          @mutty[:nuc_position2] = @split_allele[0].to_i
+          @mutty[:nuc_change_from] = "deletion"
+          if @split_allele[2].to_i != 0 || @split_allele[2] == "?"
+            @mutty[:nuc_change_to] = "unknown"
+          else
+            @mutty[:nuc_change_to] = @split_allele[2]
+          end
+        elsif @allele.include? "_?ins"
+          @mutty[:ins_del_single] = "insertion"
+          @split_allele = @allele.gsub(/ins/,'_').split('_')
+          @mutty[:nuc_position1] = @split_allele[0].to_i
+          @mutty[:nuc_position2] = @split_allele[0].to_i
+          @mutty[:nuc_change_from] = "insertion"
+          if @split_allele[2].to_i != 0 || @split_allele[2] == "?"
+            @mutty[:nuc_change_to] = "unknown"
+          else
+           @mutty[:nuc_change_to] = @split_allele[2]
+          end
+        elsif @allele.include? "del" && @allele.include? "_"
+          @mutty[:ins_del_single] = "deletion"
+          @split_allele = @allele.gsub(/del/,'_').split('_')
+          @mutty[:nuc_position1] = @split_allele[0].to_i
+          @mutty[:nuc_position2] = @split_allele[1].to_i
+          @mutty[:nuc_change_from] = "deletion"
+          if @split_allele[2].to_i != 0 || @split_allele[2] == "?"
+            @mutty[:nuc_change_to] = "unknown"
+          else
+            @mutty[:nuc_change_to] = @split_allele[2]
+          end
+        elsif @allele.include? "ins" && @allele.include? "_"
+          @mutty[:ins_del_single] = "insertion"
+          @split_allele = @allele.gsub(/ins/,'_').split('_')
+          @mutty[:nuc_position1] = @split_allele[0].to_i
+          @mutty[:nuc_position2] = @split_allele[1].to_i
+          @mutty[:nuc_change_from] = "insertion"
+          if @split_allele[2].to_i != 0 || @split_allele[2] == "?"
+            @mutty[:nuc_change_to] = "unknown"
+          else
+            @mutty[:nuc_change_to] = @split_allele[2]
+          end
+        elsif @allele.include? "del"
+          @mutty[:ins_del_single] = "deletion"
+          @split_allele = @allele.gsub(/del/,'_').split('_')
+          @mutty[:nuc_position1] = @split_allele[0].to_i
+          @mutty[:nuc_position2] = @split_allele[0].to_i
+          @mutty[:nuc_change_from] = "deletion"
+          if @split_allele[1].to_i != 0 || @split_allele[1] == "?"
+            @mutty[:nuc_change_to] = "unknown"
+          else
+            @mutty[:nuc_change_to] = @split_allele[1]
+          end
+        elsif @allele.include? "ins"
+          @mutty[:ins_del_single] = "insertion"
+          @split_allele = @allele.gsub(/ins/,'_').split('_')
+          @mutty[:nuc_position1] = @split_allele[0].to_i
+          @mutty[:nuc_position2] = @split_allele[0].to_i
+          @mutty[:nuc_change_from] = "insertion"
+          if @split_allele[1].to_i != 0 || @split_allele[1] == "?"
+            @mutty[:nuc_change_to] = "unknown"
+          else
+            @mutty[:nuc_change_to] = @split_allele[1]
+          end
+        end
+      end
+        @mutty.save
+      end
+    end
   end
 
   def create
@@ -116,4 +219,8 @@ class CancersController < ApplicationController
   def cancer_params
     params.require(:cancer).permit(:name, :genes, :search_name, :gene_search_name)
   end
+
+  # def mutation_params
+  #  params.require(:mutation).permit(:consensus_cancer_gene_id, :disease_id)
+  # end
 end

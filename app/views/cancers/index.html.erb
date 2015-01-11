@@ -6,7 +6,7 @@
 </div>
 <% end %>
 <div>
-<%= link_to "New Cancer", new_cancer_path, class: "btn btn-primary pull-right" %>
+<%= link_to "COSMIC upload", new_cancer_path, class: "btn btn-primary pull-right" %>
 <h2><%= "There are currently #{@consensus_genes_count.count} genes linked to cancer."%></h2>
 </div>
 <br>
@@ -26,7 +26,10 @@
        Cancer Genes
       </th>
       <th class="col-md-1">
-       Mutation Type
+       Somatic Tumours
+      </th>
+      <th class="col-md-1">
+       Germline Tumours
       </th>
       <th class="col-md-1">
        Chromosome
@@ -55,8 +58,11 @@
      <%= link_to "#{cancer_genes.gene_symbol}", "http://www.ncbi.nlm.nih.gov/gene/#{cancer_genes.entrez_geneid}"%>
     </td>
     <td class="col-md-1">
-    <%= "#{cancer_genes.mutation_types}"%>
-   </td>
+     <%= "#{cancer_genes.tumour_types_somatic}"%>
+    </td>
+    <td class="col-md-1">
+     <%= "#{cancer_genes.tumour_types_germline}"%>
+    </td>
    <td class="col-md-1">
    <%= "#{cancer_genes.chr}"%>
    <td class="col-md-1">

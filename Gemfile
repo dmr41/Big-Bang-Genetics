@@ -50,7 +50,7 @@ group :development, :test do
 end
 
 gem 'wikipedia-client'
-
+gem 'selenium-webdriver'
 # Use unicorn as the app server
 # gem 'unicorn'
 
