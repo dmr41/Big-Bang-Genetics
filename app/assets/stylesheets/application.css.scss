@@ -1,6 +1,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+*, *:before, *:after {
 
+}
+
+table {
+  overflow: scroll;
+}
+
+.whitey {
+  color: white;
+  font-family: "Courier";
+  font-size: 150%;
+}
 div.well.col-md-3.col-md-offset-2.csvform h4 {color: black;}
 
 div.whitespace { padding-top:45em}
@@ -17,7 +29,7 @@ div p {color: black;
 .field input {
         color: black}
 
-
+footer {overflow: auto;}
 
 div p strong {color: red;}
 
@@ -35,6 +47,7 @@ body {
         background-image: asset_url('46LYRs.jpg');
         background-repeat:no-repeat;
         background-size: 100%;
+
       }
 
 div.form-group div.col-sm-2 { font-family: "Courier";

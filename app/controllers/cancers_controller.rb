@@ -14,7 +14,6 @@ class CancersController < ApplicationController
 
   def new
     @cancer = Cancer.new
-
   end
 
   def edit
@@ -23,19 +22,19 @@ class CancersController < ApplicationController
 
   def show
     @consensus_cancer_gene = ConsensusCancerGene.find(params[:id])
-    @diseases = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).page params[:page]
-
-    @uniq_mutations = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).select(:cds_mutation_syntax).map(&:cds_mutation_syntax).uniq
-
-    @uniq_mutations = Kaminari.paginate_array(@uniq_mutations).page (params[:page])
-
+    @diseases = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol)
+    # @uniq_mutations = Kaminari.paginate_array(@uniq_mutations).page (params[:page])
+    #
     @mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).count
     @uniq_mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).select(:cds_mutation_syntax).map(&:cds_mutation_syntax).uniq.count
-    @mutties = @consensus_cancer_gene.mutations.order('nuc_position1').page params[:page]
-    @mutties = @mutties.all.page params[:page]
+    @mutties = @consensus_cancer_gene.mutations.order('nuc_position1')
+    @page_mutties = @mutties.where.not(nuc_position1: 0).uniq.page params[:page]
+    # @uniq_mutations = Kaminari.paginate_array(@mutties.map(&:original_mutation_string).uniq).page (params[:page])
 
   end
-
+#postgres promote heroku
+#store file on s3 and write rake task to import it to heroku Or provide api and run locally.
+#increaes dyno count---- 50
   def acs_cancer_list
   end
 
@@ -65,24 +64,15 @@ class CancersController < ApplicationController
     Mutation.delete_all
     @consensus_cancer_genes = ConsensusCancerGene.all
     @consensus_cancer_genes.each do |consensus_cancer_gene|
-      @diseases = Disease.where(gene_name: consensus_cancer_gene.gene_symbol).page params[:page]
+      @diseases = Disease.where(gene_name: consensus_cancer_gene.gene_symbol)
       @diseases.each do |disease|
         @mutty = Mutation.new
         @mutty[:consensus_cancer_gene_id] = consensus_cancer_gene.id
         @mutty[:disease_id] = disease.id
         @mutty[:original_mutation_string] = disease.cds_mutation_syntax
         @allele = disease.cds_mutation_syntax
-        @allele.gsub!(/c\./, '')
-        @allele.gsub!(/\)_/, '')
-        @allele.gsub!(/\)/, '')
-        @allele.gsub!(/\(/, '')
-        if @allele.include?("?") && @allele.length == 1
-          @mutty[:nuc_position1] = 0
-          @mutty[:nuc_position2] = 0
-          @mutty[:ins_del_single] = "unknown"
-          @mutty[:nuc_change_from] = "unknown"
-          @mutty[:nuc_change_to] = "unknown"
-        elsif @allele.include?("?_?")
+        remove_beginning_allele
+        if @allele.include?("?") && @allele.length == 1 || @allele.include?("?_?")
           @mutty[:nuc_position1] = 0
           @mutty[:nuc_position2] = 0
           @mutty[:ins_del_single] = "unknown"
@@ -197,6 +187,18 @@ class CancersController < ApplicationController
       end
     end
   end
+
+  def remove_beginning_allele
+    if @allele == nil
+       @allele = ''
+    else
+      @allele.gsub!(/c\./, '')
+      @allele.gsub!(/\)_/, '')
+      @allele.gsub!(/\)/, '')
+      @allele.gsub!(/\(/, '')
+    end
+  end
+
 
   def create
     Cancer.delete_all

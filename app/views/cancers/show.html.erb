@@ -7,7 +7,7 @@
 
 <h4>Cancer type: <%=" #{@consensus_cancer_gene.name}"%></h4>
 <h4>Genes involved: <%=" #{@consensus_cancer_gene.gene_symbol}"%></h4>
-<h4>Mutations found: <%= @mutation_count %></h4>
+<h4>Mutations found: <%= @mutties.count %></h4>
 <h4>Unique Mutations found: <%= @uniq_mutation_count %></h4>
 </div>
 
@@ -15,9 +15,6 @@
   <table>
     <thead>
       <tr>
-        <th class="col-md-2 ">
-          Gene Name
-        </th>
         <th class="col-md-2 " >
           Nature of Mutation
         </th>
@@ -33,25 +30,14 @@
         <th class="col-md-2">
           Mutated sequence
         </th>
+        <th class="col-md-2">
+          Unedited mut
+        </th>
       </tr>
     </thead>
     <tbody>
-     <%# @uniq_mutations.each do |genes| %>
+     <% @page_mutties.each do |genes| %>
      <tr>
-      <td class="col-md-1 ">
-       <%#= "#{@consensus_cancer_gene.gene_symbol}"%>
-      </td>
-      <td class="col-md-2">
-       <%#= "#{genes}"%>
-      </td>
-     </tr>
-     <%#end %>
-
-     <% @mutties.each do |genes| %>
-     <tr>
-       <td class="col-md-2 ">
-         <%= "#{genes.disease.gene_name}"%>
-       </td>
        <td class="col-md-2">
          <%= "#{genes.ins_del_single}" %>
        </td>
@@ -66,28 +52,23 @@
           <% end %>
        </td>
        <td class="col-md-2">
-         <%= "#{genes.nuc_change_from}"%>
+         <% if genes.nuc_change_from.to_i == 0  %>
+           <%= "#{genes.nuc_change_from}"%>
+          <% else %>
+          <%= "unknown"%>
+          <% end %>
        </td>
        <td class="col-md-2">
          <%= "#{genes.nuc_change_to}"%>
        </td>
+       <td class="col-md-2">
+         <%= "#{genes.original_mutation_string}"%>
+       </td>
      </tr>
      <%end %>
 
-      <!-- <%# @diseases.each do |genes| %>
-      <tr>
-        <td class="col-md-1 ">
-          <%#= "#{genes.gene_name}"%>
-        </td>
-        <td class="col-md-3 pull-left">
-          <%#= "#{genes.cds_mutation_syntax}"%>
-        </td>
-      </tr>
-      <%#end %> -->
     </tbody>
   </table>
 
 </div>
-<%#= paginate @diseases %>
-<%#= paginate @uniq_mutations %>
-<%= paginate @mutties%>
+<%= paginate @page_mutties %>
