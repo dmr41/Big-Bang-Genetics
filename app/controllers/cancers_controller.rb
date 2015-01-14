@@ -252,7 +252,11 @@ class CancersController < ApplicationController
           @mutty[:nuc_change_to] = "UNCHANGED"
         end
         if Mutation.where(:original_mutation_string => @mutty.original_mutation_string).exists?
+          @hold_original = Mutation.where(:original_mutation_string => @mutty.original_mutation_string).first
+          @hold_original[:mutation_counter] = @hold_original.mutation_counter + 1
+          @hold_original.save
         else
+          @mutty[:mutation_counter] = 1
           @mutty.save
         end
       end
