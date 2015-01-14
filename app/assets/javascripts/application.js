@@ -14,39 +14,94 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require_tree .
-function filled_circle(cx, cy, rad)
-{
-  dc.beginPath();
-  dc.arc(cx, cy, rad, 0,2*Math.PI, false);
-  dc.fill();
-}
 
-refresh(dc, width, height) // Sample code by Jim Bumgardner
-{
-  dc.clearRect(0,0,width,height);
+// console.log('d3 here: ', d3.h);
+// console.log('jQuery here: ', $);
 
-  dc.fillStyle='#000';
-  var nbr_circles = 100;
 
-  var angle_incr = 2 * Math.PI/180;  // 2 degrees, converted to radians
+// $('document').ready(function() {
+//   thing1 = $(".chart").data('thing')
+//   d3.select(".chart")
+//     .selectAll("div")
+//     .data(thing1)
+//     .enter().append("div").attr('class', 'bar')
+//     .style("width", function(d) { return d * 100 + "px"; })
+//     .text(function(d) { return d; });
+// });
 
-  var cx = width/2;
-  var cy = height/2;
-  var outer_rad = width*.45;
+$('document').ready(function() {
+  // thing2 = [{
+  //     letter: 'B',
+  //     frequency: 10
+  //   },
+  // {
+  //   letter: 'A',
+  //   frequency: 5
+  // },
+  // {
+  //   letter: 'F',
+  //   frequency: 1
+  // }];
+  var thing2 = $(".monkeys").data('thong')
+  thang1 = $(".sheep").data('thang')
+  var margin = {top: 20, right: 20, bottom: 30, left: 40},
+  width = 960 - margin.left - margin.right,
+  height = 500 - margin.top - margin.bottom;
 
-  var sm_rad = 2;
+  var x = d3.scale.ordinal()
+  .rangeRoundBands([0, width], .1);
 
-  for (var i = 1; i <= nbr_circles; ++i) {
-    var ratio = i/nbr_circles;
-    var angle = i*angle_incr;
-    var spiral_rad = ratio * outer_rad;
-    var x = cx + Math.cos(angle) * spiral_rad;
-    var y = cy + Math.sin(angle) * spiral_rad;
+  var y = d3.scale.linear()
+  .range([height, 0]);
 
-    // draw tiny circle at x,y
-    dc.beginPath();
-    dc.arc(x, y, sm_rad, 0, 2*Math.PI, false);
-    dc.fill();
+  var xAxis = d3.svg.axis()
+  .scale(x)
+  .orient("bottom");
+
+  var yAxis = d3.svg.axis()
+  .scale(y)
+  .orient("left")
+  .ticks(10, "%");
+
+  var svg = d3.select(".monkeys").append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    x.domain(thing2.map(function(d) {
+      return d.letter;
+    }));
+
+    y.domain([0, d3.max(thing2, function(d) { return d.frequency; })]);
+
+    svg.append("g")
+    .attr("class", "x axis")
+    .attr("transform", "translate(0," + height + ")")
+    .call(xAxis);
+
+    svg.append("g")
+    .attr("class", "y axis")
+    .call(yAxis)
+    .append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 6)
+    .attr("dy", ".71em")
+    .style("text-anchor", "end")
+    .text("Frequency");
+
+    svg.selectAll(".bar")
+    .data(thing2)
+    .enter().append("rect")
+    .attr("class", "bar")
+    .attr("x", function(d) { return x(d.letter); })
+    .attr("width", x.rangeBand())
+    .attr("y", function(d) { return y(d.frequency); })
+    .attr("height", function(d) { return height - y(d.frequency); });
+
+  function type(d) {
+    d.frequency = +d.frequency;
+    return d;
   }
 
-}
+ });

@@ -1,18 +1,62 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 *, *:before, *:after {
+}
+
+div.monkeys {
+  background:white;
+}
+.bar {
+  fill: blue;
+}
+
+.bar:hover {
+  fill: green;
+}
+
+.axis {
+
+  font: 10px sans-serif;
+  width: 100%;
+  overflow: scroll;
+  fill: purple;
+  color: white;
 
 }
 
-table {
+.axis path,
+.axis line {
+  fill: none;
+  stroke: red;
+  color: white;
+  shape-rendering: crispEdges;
+}
+
+
+.x.axis path {
+  display: none;
+  color: white;
+}
+
+.chart {
+  background: white;
+  width: 100%;
   overflow: scroll;
 }
+
+
+.bar {
+  background: #515164;
+  color: green;
+}
+
 
 .whitey {
   color: white;
   font-family: "Courier";
   font-size: 150%;
 }
+
 div.well.col-md-3.col-md-offset-2.csvform h4 {color: black;}
 
 div.whitespace { padding-top:45em}

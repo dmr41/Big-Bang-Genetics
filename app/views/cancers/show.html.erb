@@ -10,11 +10,17 @@
 <h4>Mutations found: <%= @mutties.count %></h4>
 <h4>Unique Mutations found: <%= @uniq_mutation_count %></h4>
 </div>
-
+<div>
+<!--
+#<div class="monkeys" data-thong="<%#=@thong.to_json%>"></div>
+</div> -->
 <div class="table">
   <table>
     <thead>
       <tr>
+        <th class="col-md-2 " >
+          mut id
+        </th>
         <th class="col-md-2 " >
           Nature of Mutation
         </th>
@@ -38,6 +44,9 @@
     <tbody>
      <% @page_mutties.each do |genes| %>
      <tr>
+       <td class="col-md-2">
+         <%= "#{genes.id}" %>
+       </td>
        <td class="col-md-2">
          <%= "#{genes.ins_del_single}" %>
        </td>

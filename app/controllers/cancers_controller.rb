@@ -21,6 +21,74 @@ class CancersController < ApplicationController
   end
 
   def show
+    @thong = [{
+        "letter"=> "AA",
+        "frequency"=> 1
+      },
+      {
+        "letter"=> "AB",
+        "frequency"=> 2
+      },
+      {
+        "letter"=> "AC",
+        "frequency"=> 3
+      },
+      {
+        "letter"=> "AD",
+        "frequency"=> 4
+      },
+      {
+        "letter"=> "AE",
+        "frequency"=> 5
+      },
+      {
+        "letter"=> "AF",
+        "frequency"=> 6
+      },
+      {
+        "letter"=> "AG",
+        "frequency"=> 7
+      },
+      {
+        "letter"=> "AH",
+        "frequency"=> 8
+      },
+      {
+        "letter"=> "AI",
+        "frequency"=> 10
+      },
+      {
+        "letter"=> "AJ",
+        "frequency"=> 11
+      },
+      {
+        "letter"=> "AK",
+        "frequency"=> 12
+      },
+      {
+        "letter"=> "AL",
+        "frequency"=> 16
+      },
+      {
+        "letter"=> "AM",
+        "frequency"=> 4
+      },
+      {
+        "letter"=> "AN",
+        "frequency"=> 20
+      },
+      {
+        "letter"=> "AO",
+        "frequency"=> 17
+      },
+      {
+        "letter"=> "AP",
+        "frequency"=> 13
+      },
+      {
+        "letter"=> "AQ",
+        "frequency"=> 9
+      }]
     @consensus_cancer_gene = ConsensusCancerGene.find(params[:id])
     @diseases = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol)
     # @uniq_mutations = Kaminari.paginate_array(@uniq_mutations).page (params[:page])
@@ -28,9 +96,9 @@ class CancersController < ApplicationController
     @mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).count
     @uniq_mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).select(:cds_mutation_syntax).map(&:cds_mutation_syntax).uniq.count
     @mutties = @consensus_cancer_gene.mutations.order('nuc_position1')
-    @page_mutties = @mutties.where.not(nuc_position1: 0).uniq.page params[:page]
+    @page_mutties = @mutties.where.not(nuc_position1: 0).page params[:page]
+    @uniq_array = @mutties.map(&:original_mutation_string).uniq
     # @uniq_mutations = Kaminari.paginate_array(@mutties.map(&:original_mutation_string).uniq).page (params[:page])
-
   end
 #postgres promote heroku
 #store file on s3 and write rake task to import it to heroku Or provide api and run locally.
@@ -183,7 +251,10 @@ class CancersController < ApplicationController
           @mutty[:nuc_change_from] = "UNCHANGED"
           @mutty[:nuc_change_to] = "UNCHANGED"
         end
-        @mutty.save
+        if Mutation.where(:original_mutation_string => @mutty.original_mutation_string).exists?
+        else
+          @mutty.save
+        end
       end
     end
   end
