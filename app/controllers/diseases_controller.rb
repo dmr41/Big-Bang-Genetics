@@ -11,7 +11,7 @@ class DiseasesController < ApplicationController
   end
 
   def import
-     Disease.delete_all
+    #  Disease.delete_all
      if params[:file]
        Disease.import(params[:file])
        redirect_to diseases_path, notice: "csv imported."
