@@ -21,7 +21,7 @@ class DiseasesController < ApplicationController
   end
 
   def create
-    @disease = Disease.new(disease_params)
+    @disease = Disease.new
     respond_to do |format|
       if @disease.save
         format.html { redirect_to diseases_path, notice: 'User was successfully created.' }
@@ -33,8 +33,8 @@ class DiseasesController < ApplicationController
     end
   end
 
-  def disease_params
-    params.require(:disease).permit(:input1, :input2, :input3)
-  end
+  # def disease_params
+  #   params.require(:disease).permit(:input1, :input2, :input3)
+  # end
 
 end

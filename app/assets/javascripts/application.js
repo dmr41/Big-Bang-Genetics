@@ -18,6 +18,7 @@
 $('document').ready(function() {
 
   var raw_mutation_data = $(".monkeys").data('thong')
+
   // var thing2 = $(".monkeys").data('thong')
   // thang1 = $(".sheep").data('thang')
   var margin = {top: 20, right: 20, bottom: 30, left: 40},
@@ -71,7 +72,7 @@ $('document').ready(function() {
       return d.letter;
     }));
 
-    y.domain([0, d3.max(thing2, function(d) { console.log(d.frequency);return d.frequency/0.8; })]);
+    y.domain([0, d3.max(thing2, function(d) { return d.frequency/0.8; })]);
     svg.append("g")
     .attr("class", "x axis")
     .attr("transform", "translate(0," + height + ")")
@@ -90,10 +91,9 @@ $('document').ready(function() {
     .data(thing2)
     .enter()
     .append("svg:a")
-
-    .attr("xlink:href", function(d, i){
-      return i;
-     })
+    // .attr("xlink:href", function(d, i){
+    //   return i;
+    //  })
     .append("rect")
     .attr("class", "bar")
     .attr("x", function(d) { return x(d.letter); })
@@ -102,6 +102,9 @@ $('document').ready(function() {
     .attr("height", function(d) { return (height - y(d.frequency/0.99)); });
 
 
+  $(".bar").on('click', function(){
+    console.log($());
+  })
   function type(d) {
     d.frequency = +d.frequency;
     return d;
