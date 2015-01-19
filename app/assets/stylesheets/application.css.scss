@@ -5,7 +5,10 @@
 
 div.monkeys {
   background:white;
+  // overflow: scroll;
 }
+
+
 .bar {
   fill: blue;
 }
@@ -14,7 +17,7 @@ div.monkeys {
   fill: green;
 }
 
-.axis {
+.y.axis {
 
   font: 10px sans-serif;
   width: 100%;
@@ -24,18 +27,36 @@ div.monkeys {
 
 }
 
+
+.x.axis {
+  font: 10px sans-serif;
+  width: 100%;
+  overflow: scroll;
+  fill: transparent;
+  color: white;
+
+}
+.x.axis g:hover {
+  font: 10px sans-serif;
+  width: 100%;
+  overflow: scroll;
+  fill: purple;
+  color: white;
+}
+
 .axis path,
 .axis line {
   fill: none;
   stroke: red;
   color: white;
   shape-rendering: crispEdges;
+  overflow:scroll;
 }
 
-
 .x.axis path {
-  display: none;
+  overflow: scroll;
   color: white;
+
 }
 
 .chart {
@@ -43,6 +64,7 @@ div.monkeys {
   width: 100%;
   overflow: scroll;
 }
+
 
 
 .bar {

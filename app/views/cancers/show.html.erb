@@ -9,11 +9,12 @@
 <h4>Genes involved: <%=" #{@consensus_cancer_gene.gene_symbol}"%></h4>
 <h4>Mutations found: <%= @mutties.count %></h4>
 <h4>Unique Mutations found: <%= @uniq_mutation_count %></h4>
+<h4>Mutations with more than <%=  ActionController::Base.helpers.pluralize(@cut_off, 'hit')%>: <%= @mutties_counter %></h4>
 </div>
 <div>
-<!--
-#<div class="monkeys" data-thong="<%#=@thong.to_json%>"></div>
-</div> -->
+
+<div class="monkeys" data-thong="<%=@mutties.to_json%>"></div>
+</div>
 <div class="table">
   <table>
     <thead>
