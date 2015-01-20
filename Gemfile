@@ -50,6 +50,7 @@ group :development, :test do
   gem 'launchy'
 end
 
+gem 'smarter_csv', '~> 1.0.19'
 gem 'wikipedia-client'
 gem 'selenium-webdriver'
 # Use unicorn as the app server
