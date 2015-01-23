@@ -46,7 +46,21 @@ class ConsensusCancerGene < ActiveRecord::Base
   def census_file
     file = "/Users/dmr/Desktop/COSMIC/consensus.csv"
     ConsensusCancerGene.delete_all
+    puts "????????????????????"
+    puts "????????????????????"
+    puts "????????????????????"
+    puts "????????????????????"
+    puts "????????????????????"
+    puts "????????????????????"
+    puts "????????????????????"
     smart_import(file)
+    puts "!!!!!!!!!!!!!!!!!!!!!!!"
+    puts "!!!!!!!!!!!!!!!!!!!!!!!"
+    puts "!!!!!!!!!!!!!!!!!!!!!!!"
+    puts "!!!!!!!!!!!!!!!!!!!!!!!"
+    puts "!!!!!!!!!!!!!!!!!!!!!!!"
+    puts "!!!!!!!!!!!!!!!!!!!!!!!"
+    puts "!!!!!!!!!!!!!!!!!!!!!!!"
     mutations_join_table
   end
 
@@ -56,7 +70,31 @@ class ConsensusCancerGene < ActiveRecord::Base
    log_counter = 0
    SmarterCSV.process(file, options) do |chunk|
      log_counter += 1
-     logger.info "Chunk: #{log_counter}"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+     puts "---------------#{log_counter}--------------------"
+
 
      chunk.each do |data_hash|
        unless data_hash["mutation_types"].nil?
