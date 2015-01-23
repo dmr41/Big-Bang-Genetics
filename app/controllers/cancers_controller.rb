@@ -51,10 +51,12 @@ class CancersController < ApplicationController
 
   def import
     if params[:file]
+      puts "hai mark!!!!!!!!!!!"
       ConsensusCancerGene.delete_all
+      puts "Boommmm Gone"
       # CancerImporter.new(params[:file]).import
       ConsensusCancerGene.import(params[:file])
-      mutations_join_table
+      # mutations_join_table
 
       redirect_to cancers_path, notice: "COSMIC Consensus Cancer Genes successfully imported."
     else
