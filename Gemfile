@@ -5,6 +5,8 @@ gem "rails_12factor"
 
 end
 
+gem 'thin', '~> 1.6.3'
+
 gem 'kaminari', '~> 0.16.1'
 
 gem 'nokogiri', '~> 1.6.4.1'

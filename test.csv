@@ -5,3 +5,12 @@ oh,really,you
 think,so,guy?
 2015-01-23T19:14:48.268528+00:00 app[web.1]
 2015-01-23T20:11:30.068730+00:00 app[web.1]:
+
+
+2015-01-23T20:31:20.819614+00:00 heroku[router]: at=error code=H12 desc="Request timeout" method=GET path="/favicon.ico" host=big-bang-genetics.herokuapp.com request_id=9cfc4b95-ebbd-4653-8e06-f68e6896ee4a fwd="128.177.172.2" dyno=web.1 connect=2ms service=30005ms status=503 bytes=0
+2015-01-23T20:31:20.880249+00:00 app[web.1]: ----------
+
+
+Idling
+State changed from up to down
+Stopping all processes with SIGTERM
