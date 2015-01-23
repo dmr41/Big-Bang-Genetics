@@ -20,11 +20,13 @@ class Disease < ActiveRecord::Base
     end
   end
 
-  def smart_import
+  # def smart_import
+  def self.import(file)
     Disease.delete_all
+    file = file.path
     options = {chunk_size: 1000, keep_original_headers: true}
     log_counter = 0
-    SmarterCSV.process('/Users/dmr/Desktop/COSMIC/master_mutation.csv', options) do |chunk|
+    SmarterCSV.process(file, options) do |chunk|
       log_counter +=1
       puts "---------------#{log_counter}--------------------"
       puts "---------------#{log_counter}--------------------"
@@ -121,7 +123,7 @@ class Disease < ActiveRecord::Base
       puts "---------------#{log_counter}--------------------"
       puts "---------------#{log_counter}--------------------"
       puts "---------------#{log_counter}--------------------"
-      puts "---------------#{log_counter}--------------------"   
+      puts "---------------#{log_counter}--------------------"
       chunk.each do |data_hash|
         # if data_hash["in_cancer_census"] == "y"
           Disease.create!(data_hash)

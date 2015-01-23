@@ -10,7 +10,9 @@ class ConsensusCancerGene < ActiveRecord::Base
  def self.import(file)
    options = {chunk_size: 50, keep_original_headers: true}
    log_counter = 0
+   file = file.path
   SmarterCSV.process(file, options) do |chunk|
+    log_counter += 1
     chunk.each do |data_hash|
        unless data_hash["mutation_types"].nil?
          data_hash["mutation_types"].gsub!(/[ADFNOST]/, 'A' => 'Amplification', 'D' => 'Deletion(Large)', 'F' => 'Frameshift', 'N' => 'Nonsense', 'O' => 'Other', 'S' => 'Splice-site', 'T' => 'Translocation')
@@ -61,6 +63,7 @@ class ConsensusCancerGene < ActiveRecord::Base
     # ).save!
    end
  end
+ puts "#{log_counter} --------------------"
 end
 
  def self.search(search)
