@@ -56,6 +56,12 @@ class CancersController < ApplicationController
       puts "Boommmm Gone"
       # CancerImporter.new(params[:file]).import
       ConsensusCancerGene.import(params[:file])
+      puts "ready for Join table!!!!"
+      puts "ready for Join table!!!!"
+      puts "ready for Join table!!!!"
+      puts "ready for Join table!!!!"
+      puts "ready for Join table!!!!"
+      puts "ready for Join table!!!!"
       # mutations_join_table
 
       redirect_to cancers_path, notice: "COSMIC Consensus Cancer Genes successfully imported."
