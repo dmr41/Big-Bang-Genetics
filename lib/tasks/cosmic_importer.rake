@@ -51,7 +51,24 @@ namespace :cosmic_importer do
     SmarterCSV.process(file, options) do |chunk|
       chunk.each do |data_hash|
         # if data_hash["in_cancer_census"] == "y"
-        Disease.create!(data_hash)
+        Disease.new(
+        :cosmic_sample_id => data_hash["cosmic_sample_id"],
+        :sample_name => data_hash["sample_name"],
+        :sample_source => data_hash["sample_source"],
+        :tumour_source => data_hash["tumour_source"],
+        :gene_name => data_hash["gene_name"],
+        :accession_number => data_hash["accession_number"],
+        :cosmic_mutation_id => data_hash["cosmic_mutation_id"],
+        :cds_mutation_syntax => data_hash["cds_mutation_syntax"],
+        :aa_mutation_syntax => data_hash["aa_mutation_syntax"],
+        :zygosity => data_hash["zygosity"],
+        :primary_site => data_hash["primary_site"],
+        :primary_histology => data_hash["primary_histology"],
+        :pubmed_id => data_hash["pubmed_id"],
+        :gene_id => data_hash["gene_id"],
+        :in_cancer_census => data_hash["in_cancer_census"]
+        ).save!
+        # Disease.create!(data_hash)
         # end
       end
       log_counter +=10000
