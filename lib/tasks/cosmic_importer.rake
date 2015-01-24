@@ -1,11 +1,10 @@
 
-
 namespace :cosmic_importer do
   desc "imports single mutations from COSMIC selector"
   task :consensus_import, [:filename] => :environment do |t, args|
     args.with_default(:filename => :environment)
     puts "args = #{args.inspect}"
-    puts
+
     options = {chunk_size: 50, keep_original_headers: true}
     log_counter = 0
     file = args.filename
@@ -44,5 +43,20 @@ namespace :cosmic_importer do
   desc "imports single mutations from COSMIC selector"
   task :disease_import, [:filename] => :environment do |t, args|
     args.with_default(:filename => :environment)
+    Disease.delete_all
+    file = args.filename
+    options = {chunk_size: 10000, keep_original_headers: true}
+    log_counter = 0
+    puts "Disease import time started: " + Time.now.strftime("%I:%M:%S")
+    SmarterCSV.process(file, options) do |chunk|
+      chunk.each do |data_hash|
+        # if data_hash["in_cancer_census"] == "y"
+        Disease.create!(data_hash)
+        # end
+      end
+      log_counter +=10000
+      puts "--------#{log_counter}--------" + Time.now.strftime("%I:%M:%S")
+    end
+    puts "Disease import time ended: " + Time.now.strftime("%I:%M:%S")
   end
 end
