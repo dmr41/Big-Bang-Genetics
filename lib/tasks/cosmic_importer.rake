@@ -4,7 +4,6 @@ namespace :cosmic_importer do
   task :consensus_import, [:filename] => :environment do |t, args|
     args.with_default(:filename => :environment)
     puts "args = #{args.inspect}"
-
     options = {chunk_size: 50, keep_original_headers: true}
     log_counter = 0
     file = args.filename
@@ -42,21 +41,24 @@ namespace :cosmic_importer do
   end
 
   desc "imports single mutations from COSMIC selector"
-  task :disease_import, [:filename] => :environment do |t, args|
-    args.with_default(:filename => :environment)
-    file = args.filename
-    options = {chunk_size: 100000, keep_original_headers: true}
-    log_counter = 0
+  task :disease_import => :environment do
+    file_array = ["COSMIC/mutations1.csv", "COSMIC/mutations2.csv","COSMIC/mutations3.csv","COSMIC/mutations4.csv"]
+    # file = args.filename
     Disease.delete_all
-    puts "Disease import time started: " + Time.now.strftime("%I:%M:%S")
-    SmarterCSV.process(file, options) do |chunk|
-      chunk.each do |data_hash|
-        Disease.create!(data_hash)
+    log_counter = 0
+    file_array.each do |file|
+      puts "File: " + file + " started!"
+      options = {chunk_size: 100000, keep_original_headers: true}
+      puts "Disease import time started: " + Time.now.strftime("%I:%M:%S")
+      SmarterCSV.process(file, options) do |chunk|
+        chunk.each do |data_hash|
+          log_counter += 1
+          Disease.create!(data_hash)
+        end
+        puts "--------#{log_counter}--------" + Time.now.strftime("%I:%M:%S")
       end
-      log_counter +=100000
-      puts "--------#{log_counter}--------" + Time.now.strftime("%I:%M:%S")
+      puts "Disease import time ended: " + Time.now.strftime("%I:%M:%S")
     end
-    puts "Disease import time ended: " + Time.now.strftime("%I:%M:%S")
   end
 
   desc "imports single mutations from COSMIC selector"
