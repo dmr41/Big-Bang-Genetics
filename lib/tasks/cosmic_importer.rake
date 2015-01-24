@@ -9,6 +9,7 @@ namespace :cosmic_importer do
     log_counter = 0
     file = args.filename
     ConsensusCancerGene.delete_all
+    puts file
     SmarterCSV.process(file, options) do |chunk|
       log_counter += 5
       puts "#{log_counter} --------------------" + Time.now.strftime("%I:%M:%S %z")
@@ -43,37 +44,23 @@ namespace :cosmic_importer do
   desc "imports single mutations from COSMIC selector"
   task :disease_import, [:filename] => :environment do |t, args|
     args.with_default(:filename => :environment)
-    Disease.delete_all
     file = args.filename
-    options = {chunk_size: 10000, keep_original_headers: true}
+    options = {chunk_size: 100000, keep_original_headers: true}
     log_counter = 0
+    Disease.delete_all
     puts "Disease import time started: " + Time.now.strftime("%I:%M:%S")
     SmarterCSV.process(file, options) do |chunk|
       chunk.each do |data_hash|
-        # if data_hash["in_cancer_census"] == "y"
-        Disease.new(
-        :cosmic_sample_id => data_hash["cosmic_sample_id"],
-        :sample_name => data_hash["sample_name"],
-        :sample_source => data_hash["sample_source"],
-        :tumour_source => data_hash["tumour_source"],
-        :gene_name => data_hash["gene_name"],
-        :accession_number => data_hash["accession_number"],
-        :cosmic_mutation_id => data_hash["cosmic_mutation_id"],
-        :cds_mutation_syntax => data_hash["cds_mutation_syntax"],
-        :aa_mutation_syntax => data_hash["aa_mutation_syntax"],
-        :zygosity => data_hash["zygosity"],
-        :primary_site => data_hash["primary_site"],
-        :primary_histology => data_hash["primary_histology"],
-        :pubmed_id => data_hash["pubmed_id"],
-        :gene_id => data_hash["gene_id"],
-        :in_cancer_census => data_hash["in_cancer_census"]
-        ).save!
-        # Disease.create!(data_hash)
-        # end
+        Disease.create!(data_hash)
       end
-      log_counter +=10000
+      log_counter +=100000
       puts "--------#{log_counter}--------" + Time.now.strftime("%I:%M:%S")
     end
     puts "Disease import time ended: " + Time.now.strftime("%I:%M:%S")
+  end
+
+  desc "imports single mutations from COSMIC selector"
+  task :clear_diseases => :environment do
+    Disease.delete_all
   end
 end
