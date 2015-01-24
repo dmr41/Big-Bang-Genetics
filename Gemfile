@@ -6,7 +6,7 @@ gem 'thin', '~> 1.6.3'
 
 end
 
-gem 'thin', '~> 1.6.3'
+# gem 'thin', '~> 1.6.3'
 
 gem 'kaminari', '~> 0.16.1'
 

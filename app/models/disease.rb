@@ -24,7 +24,7 @@ class Disease < ActiveRecord::Base
   def self.import(file)
     Disease.delete_all
     file = file.path
-    options = {chunk_size: 100z000, keep_original_headers: true}
+    options = {chunk_size: 100000, keep_original_headers: true}
     log_counter = 0
     SmarterCSV.process(file, options) do |chunk|
       chunk.each do |data_hash|
