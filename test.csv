@@ -14,3 +14,12 @@ think,so,guy?
 Idling
 State changed from up to down
 Stopping all processes with SIGTERM
+
+------------17400--------------------
+2015-01-24T02:21:16.395908+00:00 app[web.1]: ---------------17500--------------------
+2015-01-24T02:21:17.088775+00:00 heroku[web.1]: Process running mem=512M(100.0%)
+2015-01-24T02:21:17.088775+00:00 heroku[web.1]: Error R14 (Memory quota exceeded)
+2015-01-24T02:21:17.235535+00:00 app[web.1]: ---------------17600--------------------
+2015-01-24T02:21:18.125024+00:00 app[web.1]: ---------------17700--------------------
+Process running mem=512M(100.0%)
+Error R14 (Memory quota exceeded)
