@@ -2,6 +2,7 @@
  ruby "2.1.3"
 group :production do
 gem "rails_12factor"
+gem 'thin', '~> 1.6.3'
 
 end
 
