@@ -1,13 +1,19 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+
 *, *:before, *:after {
 }
 
-div.monkeys {
+div.mutation_graph {
   background:white;
-  // overflow: scroll;
+  overflow: scroll;
 }
 
+div.mutation_graph.graph_hide {
+  display: none;
+}
+
+rect[colour="pinky"] {
+  fill: pink;
+}
 
 .bar {
   fill: blue;

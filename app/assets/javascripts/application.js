@@ -17,14 +17,30 @@
 
 $('document').ready(function() {
 
-  var raw_mutation_data = $(".monkeys").data('thong')
-
-  // var thing2 = $(".monkeys").data('thong')
-  // thang1 = $(".sheep").data('thang')
+  var raw_mutation_data = $(".mutation_graph").data('thong')
+  console.log(raw_mutation_data.length);
+  var mutation_number = raw_mutation_data.length
+  if (mutation_number === 0) {
+    $(".mutation_graph").addClass("graph_hide")
+  }
+  else {
+    $(".mutation_graph").removeClass("graph_hide")
+  }
+    variable_with_mulitplier = mutation_number/45;
+  if (mutation_number < 20) {
+    variable_with_mulitplier = .3;
+  }
+  else if (mutation_number < 30) {
+    variable_with_mulitplier = .5;
+  }
+  else if (mutation_number < 45) {
+    variable_with_mulitplier = 1;
+  }
+  else {
+  }
   var margin = {top: 20, right: 20, bottom: 30, left: 40},
-  // width = parseInt(d3.select('.monkeys').style('width'), 10),
-  width = 960 - margin.left - margin.right,
-  height = 500 - margin.top - margin.bottom;
+  width = 960*variable_with_mulitplier - margin.left - margin.right,
+  height = 250 - margin.top - margin.bottom;
 
   var final_mutation_data = []
   // console.log(raw_mutation_data)
@@ -62,7 +78,7 @@ $('document').ready(function() {
   // console.log(test);
   // // $index( "li" )
 
-  var svg = d3.select(".monkeys").append("svg")
+  var svg = d3.select(".mutation_graph").append("svg")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -96,10 +112,14 @@ $('document').ready(function() {
     //  })
     .append("rect")
     .attr("class", "bar")
-    .attr("x", function(d) { return x(d.letter); })
+    .attr("x", function(d, i) { return x(d.letter); })
     .attr("width", x.rangeBand())
     .attr("y", function(d) { return y((d.frequency/0.99)); })
-    .attr("height", function(d) { return (height - y(d.frequency/0.99)); });
+    .attr("height", function(d) { return (height - y(d.frequency/0.99)); })
+    .attr("colour",function(d) { if (d.frequency === 1) {return "pinky";} });
+
+
+
 
 
   $(".bar").on('click', function(){
@@ -109,5 +129,6 @@ $('document').ready(function() {
     d.frequency = +d.frequency;
     return d;
   }
+
 
  });

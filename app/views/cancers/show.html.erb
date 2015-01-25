@@ -5,97 +5,11 @@
 <% end %>
 <div class='container alert alert-warning col-md-12'>
 
-<h4>Full gene name: <%=" #{@consensus_cancer_gene.name}"%></h4>
-<h4>Genes abbr: <%=" #{@consensus_cancer_gene.gene_symbol}"%></h4>
-<h4>Unique Mutations: <%= @mutties_not_zero.count %></h4>
-<h4>Mutation counter: <%= @mutties_counter %> with <%=  ActionController::Base.helpers.pluralize(@cut_off, 'hit')%> or more</h4>
+<h5>Full gene name: <%=" #{@consensus_cancer_gene.name}"%></h5>
+<h5>Genes abbr: <%=" #{@consensus_cancer_gene.gene_symbol}"%></h5>
+<h5>Unique Mutations: <%= @mutties_not_zero.count %></h5>
+<h5>Mutation counter: <%= @mutties_counter %> with <%=ActionController::Base.helpers.pluralize(@cut_off, 'hit')%> or more</h5>
 </div>
-<div>
 
-<div class="monkeys" data-thong="<%=@mutties.to_json%>"></div>
-</div>
-<div class="table">
-  <table>
-    <thead>
-      <tr>
-        <th class="col-md-2 " >
-          mut id
-        </th>
-        <th class="col-md-2 " >
-          disease id
-        </th>
-        <th class="col-md-2 " >
-          consensus id
-        </th>
-        <th class="col-md-2 " >
-          Nature of Mutation
-        </th>
-        <th class="col-md-2 " >
-          Starting Position
-        </th>
-        <th class="col-md-2 " >
-          End position
-        </th>
-        <th class="col-md-2">
-          Original sequence
-        </th>
-        <th class="col-md-2">
-          Mutated sequence
-        </th>
-        <th class="col-md-2">
-          Unedited mut
-        </th>
-        <th class="col-md-2">
-          mutation counter
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-     <% @page_mutties.each do |genes| %>
-     <tr>
-       <td class="col-md-2">
-         <%= "#{genes.id}" %>
-       </td>
-       <td class="col-md-2">
-         <%= "#{genes.disease_id}" %>
-       </td>
-       <td class="col-md-2">
-         <%= "#{genes.consensus_cancer_gene_id}" %>
-       </td>
-       <td class="col-md-2">
-         <%= "#{genes.ins_del_single}" %>
-       </td>
-       <td class="col-md-2">
-         <%= "#{genes.nuc_position1}"%>
-       </td>
-       <td class="col-md-2">
-         <% if genes.nuc_position1 == genes.nuc_position2  %>
-           <%= "-" %>
-         <% else %>
-           <%= "#{genes.nuc_position2}"%>
-          <% end %>
-       </td>
-       <td class="col-md-2">
-         <% if genes.nuc_change_from.to_i == 0  %>
-           <%= "#{genes.nuc_change_from}"%>
-          <% else %>
-          <%= "unknown"%>
-          <% end %>
-       </td>
-       <td class="col-md-2">
-         <%= "#{genes.nuc_change_to}"%>
-       </td>
-       <td class="col-md-2">
-         <%= "#{genes.original_mutation_string}"%>
-       </td>
-       <td class="col-md-2">
-         <%= "#{genes.mutation_counter}"%>
-       </td>
-     </tr>
-     <%end %>
 
-    </tbody>
-  </table>
-
-</div>
-<%= paginate @page_mutties %>
+<div class="mutation_graph" data-thong="<%=@mutties.to_json%>"></div>
