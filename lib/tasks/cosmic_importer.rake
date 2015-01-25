@@ -16,25 +16,6 @@ namespace :cosmic_importer do
           data_hash["mutation_types"].gsub!(/Mis/, 'Missense')
         end
         ConsensusCancerGene.create!(data_hash)
-        # ConsensusCancerGene.new(
-        # :gene_symbol => data_hash["gene_symbol"],
-        # :name => data_hash["name"],
-        # :entrez_geneid => data_hash["entrez_geneid"],
-        # :chr => data_hash["chr"],
-        # :chr_band => data_hash["chr_band"],
-        # :somatic => data_hash["somatic"],
-        # :germline => data_hash["germline"],
-        # :tumour_types_somatic => data_hash["tumour_types_somatic"],
-        # :tumour_types_germline => data_hash["tumour_types_germline"],
-        # :cancer_syndrome => data_hash["cancer_syndrome"],
-        # :tissue_type => data_hash["tissue_type"],
-        # :molecular_genetics => data_hash["molecular_genetics"],
-        # :mutation_types => data_hash["mutation_types"],
-        # :translocation_partner => data_hash["translocation_partner"] ,
-        # :other_germline_mut => data_hash["other_germline_mut"],
-        # :other_syndrome => data_hash["other_syndrome"],
-        # :synonyms => data_hash["synonyms"]
-        # ).save!
       end
     end
   end
@@ -60,7 +41,8 @@ namespace :cosmic_importer do
   end
 
   desc "imports single mutations from COSMIC selector"
-  task :clear_diseases => :environment do
-    Disease.delete_all
+  task :mutation_table_builder => :environment do
+    @mutation_build = CancerImporter.new
+    @mutation_build.mutations_join_table
   end
 end

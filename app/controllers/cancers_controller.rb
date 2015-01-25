@@ -26,37 +26,23 @@ class CancersController < ApplicationController
 
     @mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).count
     @uniq_mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).select(:cds_mutation_syntax).map(&:cds_mutation_syntax).uniq.count
-    @cut_off = 10;
+    @cut_off = 1;
     @mutties_not_zero = @consensus_cancer_gene.mutations.where.not(nuc_position1: 0)
     @mutties = @mutties_not_zero.order('nuc_position1').where("mutation_counter >= ?", @cut_off)
     @mutties_counter = @mutties.count
     @page_mutties = @mutties.where.not(nuc_position1: 0).page params[:page]
     @uniq_array = @mutties.map(&:original_mutation_string).uniq
   end
-#postgres promote heroku
-#store file on s3 and write rake task to import it to heroku Or provide api and run locally.
-#increaes dyno count---- 50
+
   def acs_cancer_list
   end
 
-  # def import
-  #  Cancer.delete_all
-  #  if params[:file]
-  #   Cancer.import(params[:file])
-  #   redirect_to cancers_path, notice: "csv of Cancers imported."
-  #  else
-  #   redirect_to new_cancer_path, notice: "Error! Must upload cancer file."
-  #  end
-  # end
 
   def import
     if params[:file]
-      puts "hai mark!!!!!!!!!!!"
+
       ConsensusCancerGene.delete_all
-      puts "Boommmm Gone"
-      # CancerImporter.new(params[:file]).import
       ConsensusCancerGene.import(params[:file])
-      puts "ready for Join table!!!!"
       mutations_join_table
 
       redirect_to cancers_path, notice: "COSMIC Consensus Cancer Genes successfully imported."
@@ -65,16 +51,6 @@ class CancersController < ApplicationController
     end
   end
 
-  def consensus_cancer_create
-    @consensus_cancers = ConsensusCancerGene.new
-    respond_to do |format|
-      if @consensus_cancers.save
-        format.html { redirect_to cancers_path, notice: 'import of consensus gene successful!' }
-      else
-        format.html { render :new }
-      end
-    end
-  end
 
   def mutations_join_table
     Mutation.delete_all

@@ -21,10 +21,11 @@ class CancerImporter
 
 def new_mutation_table_core_ids
   @mutty = Mutation.new
-  @mutty[:consensus_cancer_gene_id] = consensus_cancer_gene.id
-  @mutty[:disease_id] = disease.id
-  @mutty[:original_mutation_string] = disease.cds_mutation_syntax
-  @allele = disease.cds_mutation_syntax
+  @mutty[:consensus_cancer_gene_id] = @current_cancer_gene.id
+
+  @mutty[:disease_id] =  @current_disease.id
+  @mutty[:original_mutation_string] = @current_disease.cds_mutation_syntax
+  @allele = @current_disease.cds_mutation_syntax
 end
 
 def empty_nucleotide_position_data
@@ -160,8 +161,8 @@ end
 
 
 def per_disease_mutation_finder
-  @diseases = Disease.where(gene_name: consensus_cancer_gene.gene_symbol)
   @diseases.each do |disease|
+    @current_disease = disease
     new_mutation_table_core_ids
     remove_beginning_allele
     if @allele.include?("?") && @allele.length == 1 || @allele.include?("?_?")
@@ -203,8 +204,13 @@ end
 
   def mutations_join_table
     Mutation.delete_all
+    puts "one"
     @consensus_cancer_genes = ConsensusCancerGene.all
+    puts "two"
     @consensus_cancer_genes.each do |consensus_cancer_gene|
+      @current_cancer_gene = consensus_cancer_gene
+      @diseases = Disease.where(gene_name: @current_cancer_gene.gene_symbol)
+      puts "four"
       per_disease_mutation_finder
     end
   end
