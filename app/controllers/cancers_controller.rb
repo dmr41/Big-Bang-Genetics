@@ -65,6 +65,17 @@ class CancersController < ApplicationController
     end
   end
 
+  def consensus_cancer_create
+    @consensus_cancers = ConsensusCancerGene.new
+    respond_to do |format|
+      if @consensus_cancers.save
+        format.html { redirect_to cancers_path, notice: 'import of consensus gene successful!' }
+      else
+        format.html { render :new }
+      end
+    end
+  end
+
   def mutations_join_table
     Mutation.delete_all
     @consensus_cancer_genes = ConsensusCancerGene.all
