@@ -22,6 +22,7 @@ $('document').ready(function() {
   var mutation_number = raw_mutation_data.length
   if (mutation_number === 0) {
     $(".mutation_graph").addClass("graph_hide")
+    $(".mutation_graph").attr("width", 1200)
   }
   else {
     $(".mutation_graph").removeClass("graph_hide")
@@ -41,7 +42,6 @@ $('document').ready(function() {
   var margin = {top: 20, right: 20, bottom: 30, left: 40},
   width = 960*variable_with_mulitplier - margin.left - margin.right,
   height = 250 - margin.top - margin.bottom;
-
   var final_mutation_data = []
   // console.log(raw_mutation_data)
   $(raw_mutation_data).each(function (index, obj) {

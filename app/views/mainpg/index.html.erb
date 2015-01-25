@@ -1,27 +1,30 @@
 <div>
-<h1 class="BBGhead"><strong>Big Bang Genetics</strong></h1>
+  <h1 class="BBGhead"><strong>Big Bang Genetics</strong></h1>
 
-  <div>
+  <div class="para_box">
+
     <h3>Welcome to Big Bang Genetics!<h3>
+    <article class="para_fit">
+      <section>
+        <p>
+          We provide current information about genetic mutations in the
+          <strong><%= @consensus_genes_count.count%></strong> genes known to be associated with cancer.
+        </p>
+      </section>
+      <section>
+        <p>
+        This portal is designed for both patients and doctors to learn
+        about specific cancer types and the genes/mutations associated with them
+        and build personal profiles that may prove helpful in discussing
+        health care options and true cancer risk for individuals with specific
+        genetic lesions.
+        </p>
+      </section>
+    </article>
     <br>
-    <p>
-      We provide current information about genetic mutations in the
-      <strong><%= @consensus_genes_count.count%></strong> genes known to be associated with cancer.
-    </p>
-
-    <p>
-      This portal is designed for both patients and doctors to learn
-      about specific cancer types and the genes/mutations associated with them
-      and build personal profiles that may prove helpful in discussing
-      health care options and true cancer risk for individuals with specific
-      genetic lesions.
-    </p>
-<br>
-    <div class="container">
-    <h2><div class="row col-md-9 col-md-offset-4">
-        <%= link_to "Cancers", cancers_path, class: "btn btn-primary" %>
-        <%= link_to "Genes", cancers_path, class: "btn btn-primary" %>
-    </div> </h2>
+      <div class="link-format">
+      <button class="cancer-entry"><%= link_to "Cancers", cancers_path, class: "" %></button>
+      </div>
 
     </div>
 

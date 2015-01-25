@@ -511,8 +511,9 @@ th {
 }
 
 div.mutation_graph {
-  background:white;
+  background:#C8CBDD;
   overflow: scroll;
+  width: 70%;
 }
 
 div.mutation_graph.graph_hide {
@@ -561,7 +562,7 @@ rect[colour="pinky"] {
 .axis path,
 .axis line {
   fill: none;
-  stroke: red;
+  stroke: #2F394D;
   color: white;
   shape-rendering: crispEdges;
   overflow:scroll;
@@ -598,7 +599,7 @@ div.well.col-md-3.col-md-offset-2.csvform h4 {color: black;}
 div.whitespace { padding-top:45em}
 
 text.pull-right {font-size: 75%;}
-div h3 {color: red;
+div h3 {color: #7F64AD;
         font-family: "Courier"}
 h2 {color: magenta;
          font-family: "Courier"}
@@ -610,25 +611,28 @@ div p {color: black;
     color: black}
 
 
-div p strong {color: red;}
+div p strong {color: #7F64AD;}
 
-div.navbar {background-color: #000000;
-         border: none;
-         color: #CCCCFF;
-         font-family: "Courier";
-         padding-bottom: .75em;
-         padding-top: .75em;}
+div.navbar {
+  background-color: #2F394D;
+  border: none;
+  color: #CCCCFF;
+  font-family: "Courier";
+  padding-bottom: .75em;
+  padding-top: .75em;
+  }
+
 body {
-        background-image: asset_url('46LYRs.jpg');
-        background-repeat:no-repeat;
-        background-size: 100%;
-        background-attachment: fixed;
-        margin:0;
-        padding:0;
-        height:100%;
-      }
+  background-image: asset_url('46LYRs.jpg');
+  background-repeat:no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  margin:0;
+  padding:0;
+  height:100%;
+}
 footer {
-  background-color: #000000;
+  background-color: #2F394D;
   border: none;
   color: #CCCCFF;
   font-family: "Courier";
@@ -646,7 +650,7 @@ footer {
 }
 
 div.form-group div.col-sm-2 { font-family: "Courier";
-                              color: red; }
+                              color: #2F394D; }
 
 h2.headformat { font-family: "Courier";
                 color: #EDE;}
@@ -666,8 +670,12 @@ th { font-size: 16px;}
 a {
    text-decoration: none;
    color: #CCCCFF;
-   font-size: 18px;
    }
+
+.link-format a {
+  color: #2F394D;
+
+}
 
 div.col-sm-offset-2.submit_fit {padding-left: 1em}
 
@@ -692,6 +700,37 @@ div.format-nav {
   width:90%;
   margin: 0 auto;
 }
+
+.footbar a {
+  font-size: 80%;
+}
+table {
+  overflow: scroll;
+}
+.column.column-two.signs {
+  text-align: right;
+  font-size: 125%;
+}
+
+.para_box {
+  background:#C8CBDD;
+  padding: 1em;
+  text-align: center;
+  border-radius: 10%;
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 22px 33px 8px 1px rgba(055, 055, 055, 0.2);
+}
+
+button.cancer-entry {
+  padding: .5em;
+  background: #C8CBDD;
+  border-radius: 50% 2%;
+  box-shadow: 2px 3px 8px 1px rgba(055, 055, 055, 0.2)
+}
+// .para_fit section p {
+//   width:
+// }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
