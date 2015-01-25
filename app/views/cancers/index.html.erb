@@ -17,18 +17,19 @@
  </p>
  <% end %>
 </div>
-<div class="table">
+
+<div class="manual-table columns">
   <table>
     <thead>
      <tr>
-      <th class="col-md-1">
+      <th class="column column-twelve">
        Cancer Genes
       </th>
-      <th class="col-md-1">
-       Somatic Tumours
+      <th class="column-eight">
+       Somatic
       </th>
-      <th class="col-md-1">
-       Germline Tumours
+      <th class="column-eight">
+       Germline
       </th>
       <th class="col-md-1">
        Chromosome
@@ -37,30 +38,27 @@
        Gene show page
       </th>
      </tr>
-      <!-- <tr>
-        <th class="col-md-1">
-          Cancer
-        </th>
-        <th class="col-md-3">
-          Associated Genes
-        </th>
-        <th class="col-md-1">
-          Edit
-        </th>
-      </tr> -->
+
     </thead>
     <tbody>
-
      <% @consensus_cancer_genes.sort.each do |cancer_genes| %>
      <tr>
-     <td class="col-md-1">
+     <td class="column column-twelve">
      <%= link_to "#{cancer_genes.gene_symbol}", "http://www.ncbi.nlm.nih.gov/gene/#{cancer_genes.entrez_geneid}"%>
     </td>
-    <td class="col-md-1">
-     <%= "#{cancer_genes.tumour_types_somatic}"%>
+    <td class="column-eight">
+      <%if cancer_genes.tumour_types_somatic == "false"%>
+        <%= "-" %>
+      <% else %>
+        <%= "+" %>
+      <% end %>
     </td>
-    <td class="col-md-1">
-     <%= "#{cancer_genes.tumour_types_germline}"%>
+    <td class="column-eight">
+      <%if cancer_genes.tumour_types_germline == "false"%>
+        <%= "-" %>
+      <% else %>
+        <%= "+" %>
+      <% end %>
     </td>
    <td class="col-md-1">
    <%= "#{cancer_genes.chr}"%>
@@ -72,19 +70,6 @@
  </tr>
  <% end %>
 
-      <!-- <%# @cancers.sort.each do |cancer| %>
-      <tr>
-        <td class="col-md-1">
-          <%#= link_to "#{cancer.name}", "http://en.wikipedia.org/wiki/#{cancer.search_name}" %>
-        </td>
-        <td class="col-md-3">
-          <%#= link_to "#{cancer.genes}", "http://en.wikipedia.org/wiki/#{cancer.gene_search_name}" %>
-        </td>
-        <td class="col-md-1">
-          <%#= link_to "Edit", edit_cancer_path(cancer) %>
-        </td>
-      </tr>
-      <%# end %> -->
     </tbody>
   </table>
 </div>

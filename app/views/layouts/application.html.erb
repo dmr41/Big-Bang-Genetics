@@ -10,37 +10,34 @@
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <%= javascript_include_tag 'application'%>
   </head>
-  <body>
   <div>
-
 </div>
-    <div class="navbar navbar-default navbar-fixed">
-      <div class="container">
-        <div class="row">
-            <%= link_to("BBGenetics", root_path) %>
-              <text class="pull-right">
-              <% if current_user %>
-                <%= link_to "Sign Out", signout_path %>
-              <% else  %>
-                <%= render "layouts/nav_login" unless @reg == "reg"  %>
-              <% end %>
-            </text>
-        </div>
-      </div>
+
+<body>
+<div class="navbar columns">
+  <div class="container">
+    <div class="column column-three ">
+      <%= link_to("BBGenetics", root_path) %>
     </div>
+    <div class="format-nav">
+      <% if current_user %>
+        <%= link_to "Sign Out", signout_path %>
+      <% else  %>
+        <%= render "layouts/nav_login" unless @reg == "reg"  %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
     <div class="container">
       <%= yield %>
-
+    </div>
       <footer>
-        <div class="row">
-          <div class="col-sm-5">
+        <div class="footbar columns">
             <%= link_to("Home", root_path) %> |
             <%= link_to("Users", users_path) %> |
             <%= link_to("Cancers", cancers_path) %>
-          </div>
         </div>
       </footer>
-    </div>
   </body>
 </html>

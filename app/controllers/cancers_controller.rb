@@ -2,13 +2,20 @@
 class CancersController < ApplicationController
 
   def index
-    @cancers = Cancer.order(params[:name])
+    @cut_off = 2
+    @mut_table = Mutation.where("mutation_counter >= ?", @cut_off).pluck(:consensus_cancer_gene_id).uniq
+
+    @mut_cnt = @mut_table.count
     if params[:search].present?
-      @consensus_cancer_genes = ConsensusCancerGene.search(params[:search]).order(params[:gene_symbol]).page params[:page]
+      @consensus_cancer_genes = ConsensusCancerGene.where(id: @mut_table).search(params[:search]).order(params[:gene_symbol]).page params[:page]
     else
-      @consensus_cancer_genes = ConsensusCancerGene.order(params[:gene_symbol]).page params[:page]
+      # @consensus_cancer_genes = ConsensusCancerGene.order(params[:gene_symbol]).page params[:page]
+      @consensus_cancer_genes = ConsensusCancerGene.where(id: @mut_table).order(params[:gene_symbol]).page params[:page]
+      puts @mut_cnt
+      puts "--------------------"
     end
     @consensus_genes_count = ConsensusCancerGene.order(params[:gene_symbol])
+
   end
 
   def new
@@ -24,7 +31,7 @@ class CancersController < ApplicationController
     @diseases = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol)
     @mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).count
     @uniq_mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).select(:cds_mutation_syntax).map(&:cds_mutation_syntax).uniq.count
-    @cut_off = 10;
+    @cut_off = 10
     @mutties_not_zero = @consensus_cancer_gene.mutations.where.not(nuc_position1: 0)
     @mutties = @mutties_not_zero.order('nuc_position1').where("mutation_counter >= ?", @cut_off)
     @mutties_counter = @mutties.count
