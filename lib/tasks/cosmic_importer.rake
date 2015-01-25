@@ -1,12 +1,10 @@
 
 namespace :cosmic_importer do
   desc "imports single mutations from COSMIC selector"
-  task :consensus_import, [:filename] => :environment do |t, args|
-    args.with_default(:filename => :environment)
-    puts "args = #{args.inspect}"
+  task :consensus_import=> :environment do |t, args|
+    file = "COSMIC/consensus.csv"
     options = {chunk_size: 50, keep_original_headers: true}
     log_counter = 0
-    file = args.filename
     ConsensusCancerGene.delete_all
     puts file
     SmarterCSV.process(file, options) do |chunk|
