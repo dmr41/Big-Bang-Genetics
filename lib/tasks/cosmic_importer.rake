@@ -15,26 +15,25 @@ namespace :cosmic_importer do
           data_hash["mutation_types"].gsub!(/[ADFNOST]/, 'A' => 'Amplification', 'D' => 'Deletion(Large)', 'F' => 'Frameshift', 'N' => 'Nonsense', 'O' => 'Other', 'S' => 'Splice-site', 'T' => 'Translocation')
           data_hash["mutation_types"].gsub!(/Mis/, 'Missense')
         end
-        ConsensusCancerGene.create!(data_hash)
-        # ConsensusCancerGene.new(
-        # :gene_symbol => data_hash["gene_symbol"],
-        # :name => data_hash["name"],
-        # :entrez_geneid => data_hash["entrez_geneid"],
-        # :chr => data_hash["chr"],
-        # :chr_band => data_hash["chr_band"],
-        # :somatic => data_hash["somatic"],
-        # :germline => data_hash["germline"],
-        # :tumour_types_somatic => data_hash["tumour_types_somatic"],
-        # :tumour_types_germline => data_hash["tumour_types_germline"],
-        # :cancer_syndrome => data_hash["cancer_syndrome"],
-        # :tissue_type => data_hash["tissue_type"],
-        # :molecular_genetics => data_hash["molecular_genetics"],
-        # :mutation_types => data_hash["mutation_types"],
-        # :translocation_partner => data_hash["translocation_partner"] ,
-        # :other_germline_mut => data_hash["other_germline_mut"],
-        # :other_syndrome => data_hash["other_syndrome"],
-        # :synonyms => data_hash["synonyms"]
-        # ).save!
+        ConsensusCancerGene.new(
+        :gene_symbol => data_hash["gene_symbol"],
+        :name => data_hash["name"],
+        :entrez_geneid => data_hash["entrez_geneid"],
+        :chr => data_hash["chr"],
+        :chr_band => data_hash["chr_band"],
+        :somatic => data_hash["somatic"],
+        :germline => data_hash["germline"],
+        :tumour_types_somatic => data_hash["tumour_types_somatic"],
+        :tumour_types_germline => data_hash["tumour_types_germline"],
+        :cancer_syndrome => data_hash["cancer_syndrome"],
+        :tissue_type => data_hash["tissue_type"],
+        :molecular_genetics => data_hash["molecular_genetics"],
+        :mutation_types => data_hash["mutation_types"],
+        :translocation_partner => data_hash["translocation_partner"] ,
+        :other_germline_mut => data_hash["other_germline_mut"],
+        :other_syndrome => data_hash["other_syndrome"],
+        :synonyms => data_hash["synonyms"]
+        ).save!
       end
     end
   end
