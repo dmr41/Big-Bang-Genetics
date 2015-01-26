@@ -1,9 +1,8 @@
- source 'https://rubygems.org'
- ruby "2.1.3"
+source 'https://rubygems.org'
+ruby "2.1.3"
 group :production do
-gem "rails_12factor"
-gem 'thin', '~> 1.6.3'
-
+  gem "rails_12factor"
+  gem 'thin', '~> 1.6.3'
 end
 
 # gem 'thin', '~> 1.6.3'
@@ -47,11 +46,10 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-group :development, :test do
-  gem 'rspec-rails'
-  gem 'capybara'
-  gem 'launchy'
-end
+# group :development, :test do
+gem 'rspec-rails'
+gem 'capybara'
+# end
 
 gem 'smarter_csv', '~> 1.0.19'
 gem 'wikipedia-client'
