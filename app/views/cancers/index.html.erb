@@ -17,14 +17,16 @@
  </p>
  <% end %>
 </div>
-<div class="container clearfix">
-
+<div class="container clearfix columns">
+  <div class="basic column column-four">Genes</div>
+  <div class="basic column column-four">Genes</div>
+</div>
 <div class="manual-table columns">
   <table>
     <thead>
      <tr>
       <th class="column column-twelve">
-       Cancer Genes
+        Gene show page
       </th>
       <th class="column-eight">
        Somatic
@@ -35,18 +37,15 @@
       <th class="col-md-1">
        Chromosome
       </th>
-      <th class="col-md-1">
-       Gene show page
-      </th>
      </tr>
 
     </thead>
     <tbody>
      <% @consensus_cancer_genes.sort.each do |cancer_genes| %>
      <tr>
-     <td class="column column-twelve">
-     <%= link_to "#{cancer_genes.gene_symbol}", "http://www.ncbi.nlm.nih.gov/gene/#{cancer_genes.entrez_geneid}"%>
-    </td>
+       <td class="column column-twelve">
+         <%= link_to "#{cancer_genes.gene_symbol}", cancer_path(cancer_genes)%>
+       </td>
     <td class="column-eight">
       <%if cancer_genes.tumour_types_somatic == "false"%>
         <%= "-" %>
@@ -63,10 +62,6 @@
     </td>
    <td class="col-md-1">
    <%= "#{cancer_genes.chr}"%>
-   <td class="col-md-1">
-    <%= link_to "#{cancer_genes.gene_symbol}", cancer_path(cancer_genes)%>
-   </td>
-
   </td>
  </tr>
  <% end %>
@@ -74,6 +69,6 @@
     </tbody>
   </table>
 </div>
-</div>
+
 
 <%= paginate @consensus_cancer_genes %>

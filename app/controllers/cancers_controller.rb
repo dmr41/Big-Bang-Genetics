@@ -26,15 +26,25 @@ class CancersController < ApplicationController
     @cancer =Cancer.find(params[:id])
   end
 
+  def count_somatic
+    @som_count = 0
+      if @consensus_cancer_gene.somatic == "false"
+        @som_count += 1
+      else
+      end
+  end
+
   def show
     @consensus_cancer_gene = ConsensusCancerGene.find(params[:id])
     @diseases = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol)
     @mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).count
     @uniq_mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).select(:cds_mutation_syntax).map(&:cds_mutation_syntax).uniq.count
-    @cut_off = 2
+    @cut_off = 1
     @mutties_not_zero = @consensus_cancer_gene.mutations.where.not(nuc_position1: 0)
+    count_somatic
     @mutties = @mutties_not_zero.order('nuc_position1').where("mutation_counter >= ?", @cut_off)
     @mutties_counter = @mutties.count
+
     @page_mutties = @mutties.where.not(nuc_position1: 0).page params[:page]
     @uniq_array = @mutties.map(&:original_mutation_string).uniq
   end

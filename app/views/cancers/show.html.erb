@@ -3,14 +3,28 @@
     <%= notice %>
 </div>
 <% end %>
-<div class='container alert alert-warning col-md-12'>
-
-<h5>Full gene name: <%=" #{@consensus_cancer_gene.name}"%></h5>
-<h5>Genes abbr: <%=" #{@consensus_cancer_gene.gene_symbol}"%></h5>
-<h5>Unique Mutations: <%= @mutties_not_zero.count %></h5>
-<h5>Mutation counter: <%= @mutties_counter %> with <%=ActionController::Base.helpers.pluralize(@cut_off, 'hit')%> or more</h5>
-</div>
-
+<article class='single-gene-details clearfix'>
+  <h3 class="gene-header"><%=" #{@consensus_cancer_gene.name.capitalize}"%></h3>
+    <section class="column column-four">
+      <p>Gene: <button class="link-format"><%= link_to " #{@consensus_cancer_gene.gene_symbol}", "http://www.ncbi.nlm.nih.gov/gene/#{@consensus_cancer_gene.entrez_geneid}" %></button></p>
+      <p>Unique Mutations: <%= @mutties_not_zero.count %></p>
+      <% if @consensus_cancer_gene.somatic == nil %>
+        <p>Somatic:<%= " No" %></p>
+      <% else %>
+        <p>Somatic:<%= " #{@consensus_cancer_gene.somatic.capitalize}" %></p>
+      <% end %>
+      <% if @consensus_cancer_gene.germline == nil %>
+        <p>Germline:<%= " No" %></p>
+      <% else %>
+        <p>Germline:<%= " #{@consensus_cancer_gene.germline}" %></p>
+      <% end %>
+    </section>
+    <section class="column column-four">
+      <p>Chromosome: <%=" #{@consensus_cancer_gene.chr}"%></p>
+      <p>Entrez id: <%= @consensus_cancer_gene.entrez_geneid %></p>
+      <!-- <p><%#= @mutties_counter %> with <%=ActionController::Base.helpers.pluralize(@cut_off, 'hit')%> or more</p> -->
+    </section>
+</article>
 
 
 <div class="mutation_graph" data-thong="<%=@mutties.to_json%>"></div>

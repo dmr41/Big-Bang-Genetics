@@ -580,8 +580,6 @@ rect[colour="pinky"] {
   overflow: scroll;
 }
 
-
-
 .bar {
   background: #515164;
   color: green;
@@ -594,15 +592,22 @@ rect[colour="pinky"] {
   font-size: 150%;
 }
 
-div.well.col-md-3.col-md-offset-2.csvform h4 {color: black;}
 
 div.whitespace { padding-top:45em}
 
 text.pull-right {font-size: 75%;}
+
 div h3 {color: #7F64AD;
         font-family: "Courier"}
-h2 {color: magenta;
-         font-family: "Courier"}
+
+h2 {
+  padding: .5em;
+  background: #98AFCE;
+  color:  #2F394D;
+  font-family: "Courier";
+  border-radius: 5px;
+  }
+
 div p {color: black;
        font-family: "Courier";
        font-size: 80% }
@@ -699,6 +704,7 @@ div.format-nav {
 .container {
   width:90%;
   margin: 0 auto;
+  position: auto;
 }
 
 .footbar a {
@@ -728,6 +734,33 @@ button.cancer-entry {
   border-radius: 50% 2%;
   box-shadow: 2px 3px 8px 1px rgba(055, 055, 055, 0.2)
 }
+
+div.basic {
+  display:inline
+}
+
+article.single-gene-details{
+  background: #98AFCE;
+  padding-left: 1em;
+  margin: 0 auto;
+  width: 100%;
+  border: 2px solid #98AFCE;
+  border-radius: 3px;
+  color: #2F394D;
+  margin-bottom: 0.25em;
+  margin-top: 0.25em;
+}
+.gene-header {
+  text-align: center;
+}
+
+p button.link-format {
+  background: white;
+  border-radius: 10%;
+  color: #7F64AD;
+
+}
+
 // .para_fit section p {
 //   width:
 // }
