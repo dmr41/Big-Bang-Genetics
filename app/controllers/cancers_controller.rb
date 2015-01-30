@@ -49,10 +49,6 @@ class CancersController < ApplicationController
     @json_mutations = @mutties_not_zero
     @page_mutties = @mutties.where.not(nuc_position1: 0).page params[:page]
     @uniq_array = @mutties.map(&:original_mutation_string).uniq
-    respond_to do |format|
-      format.json  { render :json => @json_mutations.to_json}
-    end
-
   end
 
   def acs_cancer_list

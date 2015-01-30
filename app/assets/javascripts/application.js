@@ -20,13 +20,13 @@ $('document').ready(function() {
   var raw_mutation_data = $(".mutation_graph").data('thong')
   console.log(raw_mutation_data.length);
   var mutation_number = raw_mutation_data.length
-  if (mutation_number === 0) {
-    $(".mutation_graph").addClass("graph_hide")
-    $(".mutation_graph").attr("width", 1200)
-  }
-  else {
-    $(".mutation_graph").removeClass("graph_hide")
-  }
+  // if (mutation_number === 0) {
+  //   $(".mutation_graph").addClass("graph_hide")
+  //   $(".mutation_graph").attr("width", 1200)
+  // }
+  // else {
+  //   $(".mutation_graph").removeClass("graph_hide")
+  // }
     variable_with_mulitplier = mutation_number/45;
   if (mutation_number < 20) {
     variable_with_mulitplier = .3;
@@ -34,8 +34,17 @@ $('document').ready(function() {
   else if (mutation_number < 30) {
     variable_with_mulitplier = .5;
   }
-  else if (mutation_number < 45) {
+  else if (mutation_number < 100) {
     variable_with_mulitplier = 1;
+  }
+  else if (mutation_number < 200) {
+    variable_with_mulitplier = 2;
+  }
+  else if (mutation_number < 400) {
+    variable_with_mulitplier = 3.5;
+  }
+  else if (mutation_number < 800) {
+    variable_with_mulitplier = 5
   }
   else {
     variable_with_mulitplier = 10;
@@ -88,6 +97,8 @@ $('document').ready(function() {
     x.domain(thing2.map(function(d) {
       return d.letter;
     }));
+
+  // $(".mutation_graph").append("div").attr("class", "chart-header-one").text("HI MARK")
 
     y.domain([0, d3.max(thing2, function(d) { return d.frequency/0.8; })]);
     svg.append("g")
