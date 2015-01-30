@@ -9,21 +9,16 @@
         <p>
           We provide current information about genetic mutations in the
           <strong><%= @consensus_genes_count.count%></strong> genes known to be associated with cancer.
-        </p>
-      </section>
-      <section>
         <p>
-        This portal is designed for both patients and doctors to learn
-        about specific cancer types and the genes/mutations associated with them
-        and build personal profiles that may prove helpful in discussing
-        health care options and true cancer risk for individuals with specific
-        genetic lesions.
+        This portal is currently in early development.  It currenty aggregates millions of
+        identified mutations found from sequencing of more than 500,000 tumours
+        identified in the <strong><%=link_to('Cancers Genome Project', 'http://en.wikipedia.org/wiki/Cancer_Genome_Project.')%></strong>
         </p>
       </section>
     </article>
     <br>
       <div class="link-format">
-      <button class="cancer-entry"><%= link_to "Cancers", cancers_path, class: "" %></button>
+      <button class="cancer-entry"><%= link_to "Cancer Gene List", cancers_path, class: "" %></button>
       </div>
 
     </div>

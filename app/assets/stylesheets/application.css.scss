@@ -658,10 +658,7 @@ a {
    color: #CCCCFF;
    }
 
-.link-format a {
-  color: #2F394D;
 
-}
 
 div.col-sm-offset-2.submit_fit {padding-left: 1em}
 
@@ -703,17 +700,21 @@ table {
   background:#C8CBDD;
   padding: 1em;
   text-align: center;
-  border-radius: 10%;
+  border-radius: 4px;
   width: 90%;
   margin: 0 auto;
-  box-shadow: 22px 33px 8px 1px rgba(055, 055, 055, 0.2);
 }
 
 button.cancer-entry {
-  padding: .5em;
-  background: #C8CBDD;
-  border-radius: 50% 2%;
-  box-shadow: 2px 3px 8px 1px rgba(055, 055, 055, 0.2)
+  padding: 1em;
+  background: #2F394D;
+  border: none;
+  border-radius: 3px;
+  font-size: 70%;
+}
+.cancer-entry:a {
+  color: white;
+
 }
 
 div.basic {
@@ -763,7 +764,7 @@ div.mutation_graph {
   width: 59%;
   height: 80%;
   float:left;
-  margin-left: 0.5em;
+  margin-left: 0.7em;
   border-radius: 4px;
 }
 
@@ -782,6 +783,10 @@ rect[colour="pinky"] {
 
 .bar:hover {
   fill: green;
+}
+
+strong a{
+  color: #7F64AD;
 }
 
 

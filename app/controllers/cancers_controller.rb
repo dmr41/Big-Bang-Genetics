@@ -35,6 +35,7 @@ class CancersController < ApplicationController
 
   def show
     @consensus_cancer_gene = ConsensusCancerGene.find(params[:id])
+
     @diseases = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol)
     @mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).count
     @uniq_mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).select(:cds_mutation_syntax).map(&:cds_mutation_syntax).uniq.count
@@ -44,8 +45,14 @@ class CancersController < ApplicationController
     @mutties = @mutties_not_zero.order('nuc_position1').where("mutation_counter >= ?", @cut_off)
     @mutties_counter = @mutties.count
 
+
+    @json_mutations = @mutties_not_zero
     @page_mutties = @mutties.where.not(nuc_position1: 0).page params[:page]
     @uniq_array = @mutties.map(&:original_mutation_string).uniq
+    respond_to do |format|
+      format.json  { render :json => @json_mutations.to_json}
+    end
+
   end
 
   def acs_cancer_list
