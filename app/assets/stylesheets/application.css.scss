@@ -510,27 +510,8 @@ th {
 *, *:before, *:after {
 }
 
-div.mutation_graph {
-  background:#C8CBDD;
-  overflow: scroll;
-  width: 70%;
-}
 
-div.mutation_graph.graph_hide {
-  display: none;
-}
 
-rect[colour="pinky"] {
-  fill: pink;
-}
-
-.bar {
-  fill: blue;
-}
-
-.bar:hover {
-  fill: green;
-}
 
 .y.axis {
 
@@ -760,6 +741,49 @@ p button.link-format {
   color: #7F64AD;
 
 }
+
+.mutation_container {
+  width: 100%;
+  height: 500px;
+}
+.single_mutation_data {
+  background: #98AFCE;
+  width:40%;
+  height: 80%;
+  float: left;
+  border-radius: 4px;
+}
+div.mutation_graph.graph_hide {
+  display: none;
+}
+
+div.mutation_graph {
+  background:#C8CBDD;
+  overflow: scroll;
+  width: 59%;
+  height: 80%;
+  float:left;
+  margin-left: 0.5em;
+  border-radius: 4px;
+}
+
+
+div.mutation_graph.graph_hide {
+  display: none;
+}
+
+rect[colour="pinky"] {
+  fill: pink;
+}
+
+.bar {
+  fill: blue;
+}
+
+.bar:hover {
+  fill: green;
+}
+
 
 // .para_fit section p {
 //   width:

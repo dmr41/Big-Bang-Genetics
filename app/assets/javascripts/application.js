@@ -38,10 +38,11 @@ $('document').ready(function() {
     variable_with_mulitplier = 1;
   }
   else {
+    variable_with_mulitplier = 10;
   }
   var margin = {top: 20, right: 20, bottom: 30, left: 40},
   width = 960*variable_with_mulitplier - margin.left - margin.right,
-  height = 250 - margin.top - margin.bottom;
+  height = 400 - margin.top - margin.bottom;
   var final_mutation_data = []
   // console.log(raw_mutation_data)
   $(raw_mutation_data).each(function (index, obj) {
