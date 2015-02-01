@@ -7,9 +7,9 @@ class CancersController < ApplicationController
 
     @mut_cnt = @mut_table.count
     if params[:search].present?
-      @consensus_cancer_genes = ConsensusCancerGene.where(id: @mut_table).search(params[:search]).order(params[:gene_symbol]).page params[:page]
+      @consensus_cancer_genes = ConsensusCancerGene.where(id: @mut_table).search(params[:search]).order(params[:gene_symbol])
     else
-      @consensus_cancer_genes = ConsensusCancerGene.where(id: @mut_table).order(params[:gene_symbol]).page params[:page]
+      @consensus_cancer_genes = ConsensusCancerGene.where(id: @mut_table).order(params[:gene_symbol])
       puts @mut_cnt
       puts "--------------------"
     end

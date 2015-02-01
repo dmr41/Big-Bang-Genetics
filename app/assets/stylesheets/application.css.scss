@@ -583,7 +583,7 @@ div h3 {color: #7F64AD;
 
 h2 {
   padding: .5em;
-  background: #98AFCE;
+  background: #C8CBDD;
   color:  #2F394D;
   font-family: "Courier";
   border-radius: 5px;
@@ -625,7 +625,7 @@ footer {
   padding-bottom: .5em;
   padding-top: .5em;
   margin: 0 auto;
-  position:absolute;
+  position:fixed;
   bottom:0;
   width:100%;
   }
@@ -665,6 +665,18 @@ div.col-sm-offset-2.submit_fit {padding-left: 1em}
 div.manual-table {
   width: 90%;
   margin: 0 auto;
+  background: #99B0C3;
+  padding: 0.5em 1em 0.5em 1em;
+  border-radius: 0 0 4px 4px;
+}
+
+div.manual-table-header {
+  width: 90%;
+  margin: 0 auto;
+  background: #99B0C3;
+  padding: 0.5em 1em 0.5em 1em;
+  border-bottom: 1px solid #2F394D;
+  border-radius: 4px 4px 0 0;
 }
 th, td {
   padding-right: 0.5em;
@@ -816,6 +828,17 @@ strong a{
   color: #7F64AD;
 }
 
+header {
+  position: fixed;
+}
+
+.marginalize {
+  margin: 0.25em;
+}
+
+div.filler {
+  height:200px;
+}
 
 // .para_fit section p {
 //   width:

@@ -10,65 +10,30 @@
 </div>
 <br>
 <div>
- <%= form_tag cancers_path, :method => 'get' do %>
- <p>
-  <%= text_field_tag :search, params[:search], class: "label-control" %>
-  <%= submit_tag "Search", name: nil%>
- </p>
- <% end %>
+
 </div>
-<div class="container clearfix columns">
-  <div class="basic column column-four">Genes</div>
-  <div class="basic column column-four">Genes</div>
+<div class="container clearfix columns manual-table-header">
+  <%= form_tag cancers_path, :method => 'get' do %>
+   <p>
+    <%= text_field_tag :search, params[:search], class: "label-control" %>
+    <%= submit_tag "Search", name: nil%>
+   </p>
+   <% end %>
 </div>
 <div class="manual-table columns">
   <table>
     <thead>
      <tr>
-      <th class="column column-twelve">
-        Gene show page
-      </th>
-      <th class="column-eight">
-       Somatic
-      </th>
-      <th class="column-eight">
-       Germline
-      </th>
-      <th class="col-md-1">
-       Chromosome
-      </th>
      </tr>
 
     </thead>
     <tbody>
      <% @consensus_cancer_genes.sort.each do |cancer_genes| %>
-     <tr>
-       <td class="column column-twelve">
-         <%= link_to "#{cancer_genes.gene_symbol}", cancer_path(cancer_genes)%>
-       </td>
-    <td class="column-eight">
-      <%if cancer_genes.tumour_types_somatic == "false"%>
-        <%= "-" %>
-      <% else %>
-        <%= "+" %>
-      <% end %>
-    </td>
-    <td class="column-eight">
-      <%if cancer_genes.tumour_types_germline == "false"%>
-        <%= "-" %>
-      <% else %>
-        <%= "+" %>
-      <% end %>
-    </td>
-   <td class="col-md-1">
-   <%= "#{cancer_genes.chr}"%>
-  </td>
- </tr>
- <% end %>
-
+         <button class="cancer-entry marginalize"><%= link_to "#{cancer_genes.gene_symbol}", cancer_path(cancer_genes)%></button>
+       <% end %>
     </tbody>
   </table>
 </div>
+<div class='filler'>
 
-
-<%= paginate @consensus_cancer_genes %>
+</div>
