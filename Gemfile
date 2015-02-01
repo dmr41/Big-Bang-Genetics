@@ -13,6 +13,8 @@ gem 'nokogiri', '~> 1.6.4.1'
 
 gem 'json'
 
+gem 'mechanize'
+
 gem 'bootstrap-sass', '~> 3.2.0'
 
 gem 'autoprefixer-rails'
