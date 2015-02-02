@@ -3,8 +3,8 @@ class CancersController < ApplicationController
 
   def index
     @cut_off = 2
+    @mutation_list = Mutation.order(:original_histology).select(:original_histology).uniq
     @mut_table = Mutation.where("mutation_counter >= ?", @cut_off).pluck(:consensus_cancer_gene_id).uniq
-
     @mut_cnt = @mut_table.count
     if params[:search].present?
       @consensus_cancer_genes = ConsensusCancerGene.where(id: @mut_table).search(params[:search]).order(params[:gene_symbol])

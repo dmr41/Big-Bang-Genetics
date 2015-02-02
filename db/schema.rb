@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150126160834) do
+ActiveRecord::Schema.define(version: 20150201223825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20150126160834) do
     t.string   "nuc_change_to"
     t.string   "original_mutation_string"
     t.integer  "mutation_counter"
+    t.string   "original_histology"
   end
 
   create_table "users", force: true do |t|

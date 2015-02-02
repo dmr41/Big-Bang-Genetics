@@ -6,19 +6,26 @@
 </div>
 <% end %>
 <div>
-<h2><%= "There are currently #{@consensus_genes_count.count} genes linked to cancer."%></h2>
+<h2 class="header-normalizer"><%= "This is a complete list of the #{@consensus_genes_count.count} known genes involved in human cancers"%></h2>
 </div>
 <br>
 <div>
-
 </div>
 <div class="container clearfix columns manual-table-header">
+  <div class="tumor-collection">
+    <%= form_tag do %>
+    <%=collection_select(:cancer, Mutation.unique_histology, @mutation_list, :id, :original_histology, {:include_blank=> "Pick tumor type"}, {:class=>'shrink-me'})%>
+    <% end %>
+  </div>
+
   <%= form_tag cancers_path, :method => 'get' do %>
    <p>
-    <%= text_field_tag :search, params[:search], class: "label-control" %>
+    <%= text_field_tag :search, params[:search], class: "search-float" %>
     <%= submit_tag "Search", name: nil%>
    </p>
    <% end %>
+
+
 </div>
 <div class="manual-table columns">
   <table>

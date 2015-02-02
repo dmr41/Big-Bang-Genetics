@@ -755,6 +755,14 @@ p button.link-format {
   border:none;
 
 }
+
+.header-normalizer {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 1em;
+  text-align: center;
+  padding: 1em .5em 1em 0.5em;
+}
 .single_mutation_header {
   background: #98AFCE;
   width:40%;
@@ -840,6 +848,14 @@ div.filler {
   height:200px;
 }
 
+div.search-float {
+  float:left;
+}
+
+.tumor-collection .shrink-me {
+  width: 16.75em;
+  font-size: 60%;
+}
 // .para_fit section p {
 //   width:
 // }
