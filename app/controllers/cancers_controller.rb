@@ -6,12 +6,11 @@ class CancersController < ApplicationController
     @mutation_list = Mutation.order(:original_histology).select(:original_histology).uniq
     @mut_table = Mutation.where("mutation_counter >= ?", @cut_off).pluck(:consensus_cancer_gene_id).uniq
     @mut_cnt = @mut_table.count
+    @mutation_test= Mutation.pluck(:original_histology).uniq.sort
     if params[:search].present?
       @consensus_cancer_genes = ConsensusCancerGene.where(id: @mut_table).search(params[:search]).order(params[:gene_symbol])
     else
       @consensus_cancer_genes = ConsensusCancerGene.where(id: @mut_table).order(params[:gene_symbol])
-      puts @mut_cnt
-      puts "--------------------"
     end
     @consensus_genes_count = ConsensusCancerGene.order(params[:gene_symbol])
 
