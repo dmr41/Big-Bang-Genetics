@@ -6,27 +6,48 @@
 </div>
 <% end %>
 <div>
-<h2 class="header-normalizer"><%= "This is a complete list of the #{@consensus_genes_count.count} known genes involved in human cancers"%></h2>
+  <% if (params[:search] == nil || params[:search] == "") && (params[:original_histology] == nil || params[:original_histology] == "")%>
+    <h2 class="header-normalizer"><%= "List of #{@consensus_genes_count} known genes involved in human cancers."%></h2>
+  <% elsif  (params[:search] == nil || params[:search] == "")%>
+    <h2 class="header-normalizer"><%= "#{params[:original_histology].capitalize} associated genes"%></h2>
+  <% else %>
+  <h2 class="header-normalizer"><%= "Genes associated with your search."%></h2>
+
+  <% end %>
 </div>
 <br>
 <div>
 </div>
 <div class="container clearfix columns manual-table-header">
   <div>
-<%= params[:original_histology] %>
-  <%=form_tag({ :action => "index"}, { :method => "get" }) do %>
-    <%=select_tag(:original_histology, options_for_select(@mutation_test, :original_histology), {:include_blank => "", class: "tumor-collection"} )%>
-    <%= submit_tag("find") %>
-  <% end %>
-  </div>
 
+      <span class="shift">
+          Tumour type select
+        </span>
+        <span class="shift-back">
+          <% if (params[:search] == nil || params[:search] == "") && (params[:original_histology] == nil || params[:original_histology] == "")%>
+            <%= "All #{@consensus_genes_count} genes currently showing. Please narrow your search" %>
+            <% else %>
+        <%=ActionController::Base.helpers.pluralize(@consensus_genes_count, 'gene')%>
+        <%="found in your search."%>
+        <% end %>
+        </span>
+  </div>
+  <div class="two-column column ">
   <%= form_tag cancers_path, :method => 'get' do %>
    <p>
     <%= text_field_tag :search, params[:search], class: "search-float" %>
-    <%= submit_tag "Search", name: nil%>
+    <%= submit_tag "Search", name: nil, class: "search-form"%>
    </p>
    <% end %>
-
+ </div>
+  <div class="six-column column pulldown-format">
+  <%=form_tag({ :action => "index"}, { :method => "get" }) do %>
+    <% @fillers = "Select tumour type...."%>
+    <%=select_tag(:original_histology, options_for_select(@mutation_test, "really"), {:include_blank => true, class: "search-float"} )%>
+    <%= submit_tag("Submit", name: "Tumour-types", class: "search-form smaller") %>
+  <% end %>
+  </div>
 
 </div>
 <div class="manual-table columns">
@@ -34,7 +55,6 @@
     <thead>
      <tr>
      </tr>
-
     </thead>
     <tbody>
      <% @consensus_cancer_genes.sort.each do |cancer_genes| %>
