@@ -24,6 +24,12 @@
       <p>Entrez id: <%= @consensus_cancer_gene.entrez_geneid %></p>
       <!-- <p><%#= @mutties_counter %> with <%=ActionController::Base.helpers.pluralize(@cut_off, 'hit')%> or more</p> -->
     </section>
+    <section class="column column-four">
+      <%=form_tag({ :action => "show"}, { :method => "get" }) do %>
+        <%=select_tag(:mutation_cut_off, options_for_select([1,2,5,10,50,100,500,1000], "really"), {:include_blank => true, class: "search-float"} )%>
+        <%= submit_tag("Select mutation cuttoff", name: nil, class: "search-form smaller") %>
+      <% end %>
+    </section>
 </article>
 <div class="clearfix">
   <div class="mutation_container_header clearfix">

@@ -2,13 +2,7 @@
 class CancersController < ApplicationController
 
   def index
-    @cut_off = 2
-
-    if params[:original_histology]
-      puts "Yep + #{params[:original_histology]}"
-    else
-      puts "NOPE"
-    end
+    @cut_off = 1
     @mutation_list = Mutation.order(:original_histology).select(:original_histology).uniq
     @mutation_test= Mutation.pluck(:original_histology).uniq.sort
     @mut_table = Mutation.where("mutation_counter >= ?", @cut_off).pluck(:consensus_cancer_gene_id).uniq
@@ -45,11 +39,14 @@ class CancersController < ApplicationController
 
   def show
     @consensus_cancer_gene = ConsensusCancerGene.find(params[:id])
-
+    if params[:mutation_cut_off].present?
+      @cut_off = params[:mutation_cut_off]
+    else
+      @cut_off = 1
+    end
     @diseases = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol)
     @mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).count
     @uniq_mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).select(:cds_mutation_syntax).map(&:cds_mutation_syntax).uniq.count
-    @cut_off = 1
     @mutties_not_zero = @consensus_cancer_gene.mutations.where.not(nuc_position1: 0)
     count_somatic
     @mutties = @mutties_not_zero.order('nuc_position1').where("mutation_counter >= ?", @cut_off)

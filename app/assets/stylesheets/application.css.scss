@@ -625,14 +625,14 @@ footer {
   padding-bottom: .5em;
   padding-top: .5em;
   margin: 0 auto;
-  position:fixed;
   bottom:0;
   width:100%;
+
   }
 
 .footbar {
   margin: 0 auto;
-  width: 90%
+  width: 90%;
 }
 
 div.form-group div.col-sm-2 { font-family: "Courier";
@@ -668,6 +668,7 @@ div.manual-table {
   background: #99B0C3;
   padding: 0.5em 1em 0.5em 1em;
   border-radius: 0 0 4px 4px;
+  opacity: 0.9;
 }
 
 div.manual-table-header {
@@ -677,6 +678,7 @@ div.manual-table-header {
   padding: 0.5em 1em 0.5em 1em;
   border-bottom: 1px solid #2F394D;
   border-radius: 4px 4px 0 0;
+  opacity: 0.9;
 }
 th, td {
   padding-right: 0.5em;
@@ -715,6 +717,7 @@ table {
   border-radius: 4px;
   width: 90%;
   margin: 0 auto;
+  opacity: 0.8;
 }
 
 button.cancer-entry {
@@ -762,6 +765,7 @@ p button.link-format{
   margin-top: 1em;
   text-align: center;
   padding: 1em .5em 1em 0.5em;
+  opacity: 0.8;
 }
 .single_mutation_header {
   background: #98AFCE;
@@ -889,6 +893,11 @@ span.shift {
 }
 span.shift-back {
   margin-right: 200em;
+}
+
+.search-form:hover {
+  color:#7F66AB;
+  background: #C8CBDC;
 }
 
 // .para_fit section p {
