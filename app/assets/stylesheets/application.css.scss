@@ -717,14 +717,14 @@ table {
   margin: 0 auto;
 }
 
-button.cancer-entry {
+button.cancer-entry, input.link-format {
   padding: 1em;
   background: #2F394D;
   border: none;
   border-radius: 3px;
   font-size: 70%;
 }
-.cancer-entry:a {
+.cancer-entry:a, input.link-format {
   color: white;
 
 }
@@ -748,7 +748,7 @@ article.single-gene-details{
   text-align: center;
 }
 
-p button.link-format {
+p button.link-format{
   background: #2F394D;
   border-radius: 5px;
   color: #7F64AD;
@@ -853,9 +853,10 @@ div.search-float {
 }
 
 .tumor-collection {
-  width: 10em;
+  width: 17em;
   font-size: 60%;
 }
+
 // .para_fit section p {
 //   width:
 // }

@@ -100,7 +100,7 @@ $('document').ready(function() {
 
   // $(".mutation_graph").append("div").attr("class", "chart-header-one").text("HI MARK")
 
-    y.domain([0, d3.max(thing2, function(d) { return d.frequency/0.8; })]);
+    y.domain([0, d3.max(thing2, function(d) { return (d.frequency/0.8); })]);
     svg.append("g")
     .attr("class", "x axis")
     .attr("transform", "translate(0," + height + ")")

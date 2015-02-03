@@ -12,16 +12,12 @@
 <div>
 </div>
 <div class="container clearfix columns manual-table-header">
-  <div class="tumor-collection">
-    <%=form_tag({ :action => "index"}, { :method => "get" }) do %>
-  <%=select_tag(:original_histology, options_for_select(@mutation_test))%>
-  <%= submit_tag("Submit") %>
+  <div>
+<%= params[:original_histology] %>
+  <%=form_tag({ :action => "index"}, { :method => "get" }) do %>
+    <%=select_tag(:original_histology, options_for_select(@mutation_test, :original_histology), {:include_blank => "", class: "tumor-collection"} )%>
+    <%= submit_tag("find") %>
   <% end %>
-
- <%#=form_tag({ :action => "index"}, { :method => "get" }) do %>
-    <%#=collection_select(:original_histology, @mutation_test, @mutation_list, :id, :original_histology, {:selected => params[:original_histology], :include_blank=> "Pick tumor type"}, {:class=>'shrink-me'})%>
-    <%#= submit_tag %>
-  <% #end %>
   </div>
 
   <%= form_tag cancers_path, :method => 'get' do %>
