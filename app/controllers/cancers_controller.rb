@@ -8,7 +8,10 @@ class CancersController < ApplicationController
     @mut_table = Mutation.where("mutation_counter >= ?", @cut_off).pluck(:consensus_cancer_gene_id).uniq
     @mut_cnt = @mut_table.count
     if params[:search].present?
-      @consensus_cancer_genes = ConsensusCancerGene.where(id: @mut_table).search(params[:search]).order(params[:gene_symbol])
+      # @consensus_cancer_genes = ConsensusCancerGene.where(id: @mut_table).search(params[:search]).order(params[:gene_symbol])
+      @consensus_cancer_genes = ConsensusCancerGene.where("gene_symbol like ? OR name like ?", 
+      "%#{ params[:search] }%", "%#{ params[:search] }%").order(params[:gene_symbol])
+
       @consensus_genes_count = @consensus_cancer_genes.count
     elsif params[:original_histology].present?
       @mutation_selector = Mutation.where(original_histology: params[:original_histology]).order(params[:gene_symbol])
