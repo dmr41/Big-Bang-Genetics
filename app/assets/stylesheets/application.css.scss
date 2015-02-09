@@ -532,7 +532,7 @@ th {
   color: white;
 
 }
-.x.axis g:hover {
+.x.axis g {
   font: 10px sans-serif;
   width: 100%;
   overflow: scroll;
@@ -829,6 +829,7 @@ rect[colour="pinky"] {
   fill: pink;
 }
 
+
 .bar {
   fill: blue;
 }
@@ -901,9 +902,7 @@ span.shift-back {
   background: #C8CBDC;
 }
 
-// .para_fit section p {
-//   width:
-// }
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

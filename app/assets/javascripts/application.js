@@ -18,24 +18,26 @@
 $('document').ready(function() {
 
   var raw_mutation_data = $(".mutation_graph").data('thong')
-  console.log(raw_mutation_data.length);
   var mutation_number = raw_mutation_data.length
-  // if (mutation_number === 0) {
-  //   $(".mutation_graph").addClass("graph_hide")
-  //   $(".mutation_graph").attr("width", 1200)
-  // }
-  // else {
-  //   $(".mutation_graph").removeClass("graph_hide")
-  // }
-    variable_with_mulitplier = mutation_number/45;
-  if (mutation_number < 20) {
+  var variable_with_mulitplier = mutation_number/45;
+
+  if (mutation_number < 5) {
+      variable_with_mulitplier = .2;
+  }
+  else if (mutation_number < 10) {
+    variable_with_mulitplier = 0.25;
+  }
+  else if (mutation_number < 20) {
     variable_with_mulitplier = .3;
   }
   else if (mutation_number < 30) {
     variable_with_mulitplier = .5;
   }
+  else if (mutation_number < 80) {
+    variable_with_mulitplier = 2.8;
+  }
   else if (mutation_number < 100) {
-    variable_with_mulitplier = 1;
+    variable_with_mulitplier = 2;
   }
   else if (mutation_number < 200) {
     variable_with_mulitplier = 2;
@@ -44,7 +46,7 @@ $('document').ready(function() {
     variable_with_mulitplier = 3.5;
   }
   else if (mutation_number < 800) {
-    variable_with_mulitplier = 5
+    variable_with_mulitplier = 24
   }
   else {
     variable_with_mulitplier = 10;
@@ -75,6 +77,7 @@ $('document').ready(function() {
   .scale(x)
   .orient("bottom");
 
+
   // console.log( "I am xAxis: "+ xAxis);
 
   var yAxis = d3.svg.axis()
@@ -94,17 +97,17 @@ $('document').ready(function() {
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 // console.log(svg[0][0].attr(".x"));
-    x.domain(thing2.map(function(d) {
+    x.domain(thing2.map(function(d, i) {
       return d.letter;
     }));
 
-  // $(".mutation_graph").append("div").attr("class", "chart-header-one").text("HI MARK")
 
-    y.domain([0, d3.max(thing2, function(d) { return (d.frequency/0.8); })]);
+  // $(".mutation_graph").append("div").attr("class", "chart-header-one").text("HI MARK")
+    y.domain([0, d3.max(thing2, function(d) { console.log(Math.round(Math.log(d.frequency/0.8))/Math.LN10);return (d.frequency/0.8); })]);
     svg.append("g")
     .attr("class", "x axis")
     .attr("transform", "translate(0," + height + ")")
-    .call(xAxis);
+    .call(xAxis)
     svg.append("g")
     .attr("class", "y axis")
     .call(yAxis)
@@ -119,12 +122,12 @@ $('document').ready(function() {
     .data(thing2)
     .enter()
     .append("svg:a")
-    // .attr("xlink:href", function(d, i){
-    //   return i;
-    //  })
     .append("rect")
     .attr("class", "bar")
-    .attr("x", function(d, i) { return x(d.letter); })
+    .attr("mutation", function(d, i){
+      return "mutation" + i;
+    })
+    .attr("x", function(d, i) {return x(d.letter); })
     .attr("width", x.rangeBand())
     .attr("y", function(d) { return y((d.frequency/0.99)); })
     .attr("height", function(d) { return (height - y(d.frequency/0.99)); })
@@ -132,15 +135,8 @@ $('document').ready(function() {
 
 
 
-
-
-  $(".bar").on('click', function(){
-    console.log($());
-  })
-  function type(d) {
-    d.frequency = +d.frequency;
-    return d;
-  }
-
+  svg.selectAll(".x.axis g text").attr("mutation", function(d, i){
+    return "mutation" + i;
+  });
 
  });
