@@ -74,7 +74,10 @@ $('document').ready(function() {
   $(raw_mutation_data).each(function (index, obj) {
     hash = {
            letter: obj.nuc_position1.toString(),
-           frequency: obj.mutation_counter
+           frequency: obj.mutation_counter,
+           mutation_type: obj.ins_del_single,
+           mutation_from: obj.nuc_change_from,
+           mutation_to: obj.nuc_change_to
            }
     final_mutation_data.push(hash);
   });
@@ -153,7 +156,20 @@ $('document').ready(function() {
 
   $(".mutation_graph").on("click", "rect", function(){
     var single_mutation = $(this).data("ids");
-    console.log(thing2[single_mutation]);
+    console.log(thing2[single_mutation].mutation_type);
+    $(".single_mutation_data").addClass("visible");
+    var mut_type = thing2[single_mutation].mutation_type;
+    if (mut_type === "standard") {
+      mut_type = "point";
+    }
+    var mut_from = thing2[single_mutation].mutation_from;
+    var mut_to = thing2[single_mutation].mutation_to;
+    var inital_position = thing2[single_mutation].letter;
+    $("#mtype").text(mut_type);
+    $("#wtype").text(mut_from);
+    $("#specific_mutation").text(mut_to);
+    $("#initial_position").text(inital_position);
+
   });
 
  });
