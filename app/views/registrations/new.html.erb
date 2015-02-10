@@ -1,8 +1,8 @@
 <div class="well col-sm-5 col-sm-offset-3">
   <% @reg = "reg" %>
 <%= form_for(@user, url: signup_path) do |f| %>
-  <h1>Register</h1>
-
+<div class="login-box">
+  <h3 class="header-shift">Register</h3>
   <% if f.object.errors.any? %>
     <ul class="errors">
       <% f.object.errors.full_messages.each do |error| %>
@@ -10,40 +10,34 @@
       <% end %>
     </ul>
   <% end %>
-
-  <div class="form-group">
-    <%= f.label :first_name, class: "control-label"%>
-    <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
+  <div class="input-spacing">
+    <%= f.text_field :first_name, autofocus: true, class: "field", placeholder: "First name"%>
   </div>
 
-  <div class="form-group">
-    <%= f.label :last_name, class: "control-label" %>
-    <%= f.text_field :last_name, class: "form-control" %>
+  <div class="input-spacing">
+    <%= f.text_field :last_name, class: "field", placeholder: "Last name" %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :age, class: "control-label" %>
-    <%= f.number_field :age, class: "form-control"%>
-  </div class="form-group">
-
-  <div class="form-group">
-    <%= f.label :email, class: "control-label" %>
-    <%= f.email_field :email, class: "form-control" %>
+  <div class="input-spacing">
+    <%= f.number_field :age,  class: "field", placeholder: "Age" %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :password, class: "control-label" %>
-    <%= f.password_field :password, class: "form-control" %>
+  <div class="input-spacing">
+    <%= f.email_field :email, class: "field", placeholder: "Email" %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :password_confirmation, "Confirm", class: "control-label" %>
-    <%= f.password_field :password_confirmation, class: "form-control" %>
+  <div class="input-spacing">
+    <%= f.password_field :password, class: "field", placeholder: "Password" %>
   </div>
 
-  <div>
-    <%= f.submit "Register" %>
+  <div class="input-spacing">
+    <%= f.password_field :password_confirmation, class: "field", placeholder: "Confirm password"%>
   </div>
+
+  <div class="input-spacing">
+    <%= f.submit "Register", class: "field cancer-entry" %>
+  </div>
+</div>
 <% end %>
 </div>
 <div class="whitespace">
