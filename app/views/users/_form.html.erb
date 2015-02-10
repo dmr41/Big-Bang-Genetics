@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container columns clearfix">
 <%= form_for(@user, {class: "form-horizontal center"}) do |f| %>
 
   <% if f.object.errors.any? %>
@@ -9,11 +9,11 @@
     </ul>
   <% end %>
 
-    <div class="form-group">
-      <div class="col-sm-2">
+    <div class="form-group two-column">
+      <div class="col-sm-2 ">
         <%= f.label :first_name, class: "control-label"%>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-3 two-column column">
         <%= f.text_field :first_name, class: "form-control"%>
       </div>
     </div>

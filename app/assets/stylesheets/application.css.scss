@@ -653,6 +653,9 @@ table { font-family: "Courier";
       }
 th { font-size: 16px;}
 
+.form-group {
+  float:left;
+}
 
 a {
    text-decoration: none;
@@ -820,14 +823,14 @@ div.mutation_graph {
   border-radius: 0 0 4px 4px;
 }
 
-div.mutation_graph.graph_hide {
-  display: none;
-}
 
 
-rect[colour="pinky"] {
-  fill: pink;
+.control-label {
+
 }
+// rect[colour="pinky"] {
+//   fill: pink;
+// }
 
 
 .bar {

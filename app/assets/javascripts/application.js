@@ -25,25 +25,40 @@ $('document').ready(function() {
       variable_with_mulitplier = .2;
   }
   else if (mutation_number < 10) {
-    variable_with_mulitplier = 0.25;
+    variable_with_mulitplier = 0.4;
   }
   else if (mutation_number < 20) {
-    variable_with_mulitplier = .3;
+    variable_with_mulitplier = .5;
   }
   else if (mutation_number < 30) {
-    variable_with_mulitplier = .5;
+    variable_with_mulitplier = .7;
+  }
+  else if (mutation_number < 40) {
+    variable_with_mulitplier = 1.1;
+  }
+  else if (mutation_number < 50) {
+    variable_with_mulitplier = 1.6;
+  }
+  else if (mutation_number < 60) {
+    variable_with_mulitplier = 2;
+  }
+  else if (mutation_number < 70) {
+    variable_with_mulitplier = 2.5;
   }
   else if (mutation_number < 80) {
     variable_with_mulitplier = 2.8;
   }
   else if (mutation_number < 100) {
-    variable_with_mulitplier = 2;
+    variable_with_mulitplier = 3.4;
   }
   else if (mutation_number < 200) {
-    variable_with_mulitplier = 2;
+    variable_with_mulitplier = 4;
   }
   else if (mutation_number < 400) {
-    variable_with_mulitplier = 3.5;
+    variable_with_mulitplier = 7;
+  }
+  else if (mutation_number < 500) {
+    variable_with_mulitplier = 7.5;
   }
   else if (mutation_number < 800) {
     variable_with_mulitplier = 24
@@ -103,7 +118,7 @@ $('document').ready(function() {
 
 
   // $(".mutation_graph").append("div").attr("class", "chart-header-one").text("HI MARK")
-    y.domain([0, d3.max(thing2, function(d) { console.log(Math.round(Math.log(d.frequency/0.8))/Math.LN10);return (d.frequency/0.8); })]);
+    y.domain([0, d3.max(thing2, function(d) {return (d.frequency/0.8); })]);
     svg.append("g")
     .attr("class", "x axis")
     .attr("transform", "translate(0," + height + ")")
@@ -124,19 +139,21 @@ $('document').ready(function() {
     .append("svg:a")
     .append("rect")
     .attr("class", "bar")
-    .attr("mutation", function(d, i){
-      return "mutation" + i;
+    .attr("data-ids", function(d, i){
+      return i;
     })
     .attr("x", function(d, i) {return x(d.letter); })
     .attr("width", x.rangeBand())
     .attr("y", function(d) { return y((d.frequency/0.99)); })
     .attr("height", function(d) { return (height - y(d.frequency/0.99)); })
-    .attr("colour",function(d) { if (d.frequency === 1) {return "pinky";} });
 
+  svg.selectAll(".x.axis g text").attr("data-ids", function(d, i){
+    return i;
+  });
 
-
-  svg.selectAll(".x.axis g text").attr("mutation", function(d, i){
-    return "mutation" + i;
+  $(".mutation_graph").on("click", "rect", function(){
+    var single_mutation = $(this).data("ids");
+    console.log(thing2[single_mutation]);
   });
 
  });
