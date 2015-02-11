@@ -48,7 +48,7 @@ class CancerImporter
     @mutty[:consensus_cancer_gene_id] = @current_cancer_gene.id
     @mutty[:disease_id] =  @current_disease.id
     @mutty[:original_mutation_string] = @current_disease.cds_mutation_syntax
-    @mutty[:original_histology] = @current_disease.primary_histology
+    @mutty[:original_histology] = [@current_disease.primary_histology]
     @allele = @current_disease.cds_mutation_syntax
   end
 
@@ -68,6 +68,7 @@ class CancerImporter
     current_mutation = Mutation.where(:original_mutation_string => @mutty.original_mutation_string)
     if current_mutation.exists?
       @hold_original = current_mutation.first
+      # @mutty[:original_histology].push()
       @hold_original[:mutation_counter] = @hold_original.mutation_counter + 1
       @hold_original.save
     else

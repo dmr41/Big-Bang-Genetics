@@ -54,14 +54,17 @@ $('document').ready(function() {
   else if (mutation_number < 200) {
     variable_with_mulitplier = 4;
   }
+  else if (mutation_number < 300) {
+    variable_with_mulitplier = 6;
+  }
   else if (mutation_number < 400) {
-    variable_with_mulitplier = 7;
+    variable_with_mulitplier = 12;
   }
   else if (mutation_number < 500) {
     variable_with_mulitplier = 7.5;
   }
   else if (mutation_number < 800) {
-    variable_with_mulitplier = 24
+    variable_with_mulitplier = 24;
   }
   else {
     variable_with_mulitplier = 10;
@@ -148,7 +151,7 @@ $('document').ready(function() {
     .attr("x", function(d, i) {return x(d.letter); })
     .attr("width", x.rangeBand())
     .attr("y", function(d) { return y((d.frequency/0.99)); })
-    .attr("height", function(d) { return (height - y(d.frequency/0.99)); })
+    .attr("height", function(d) { return (height - y(d.frequency/0.99)); });
 
   svg.selectAll(".x.axis g text").attr("data-ids", function(d, i){
     return i;
