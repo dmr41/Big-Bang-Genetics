@@ -1,0 +1,51 @@
+.y.axis {
+
+  font: 12px sans-serif;
+  width: 100%;
+  overflow: scroll;
+  fill: $p3;
+  color: white;
+
+}
+
+.x.axis {
+  font: 10px sans-serif;
+  width: 100%;
+  overflow: scroll;
+  fill: transparent;
+  color: white;
+
+}
+.x.axis g {
+  font: 12px sans-serif;
+  width: 100%;
+  overflow: scroll;
+  fill: $p3;
+  color: white;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #464655;
+  color: white;
+  shape-rendering: crispEdges;
+  overflow:scroll;
+}
+
+.x.axis path {
+  overflow: scroll;
+  color: white;
+
+}
+
+.chart {
+  background: white;
+  width: 100%;
+  overflow: scroll;
+}
+
+.bar {
+  background: #515164;
+  color: green;
+}

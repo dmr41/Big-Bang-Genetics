@@ -72,6 +72,7 @@ class CancerImporter
       @hold_original[:mutation_counter] = @hold_original.mutation_counter + 1
       @hold_original.save
     else
+      
       @mutty[:mutation_counter] = 1
       @mutty.save
     end
