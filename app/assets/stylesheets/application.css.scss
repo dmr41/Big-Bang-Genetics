@@ -506,6 +506,18 @@ th {
   width: 8.333333333%;
 }
 
+$b1:#04080F;
+$b2:#507DBC;
+$b3:#A1C6EA;
+$b4:#BBD1EA;
+$b5:#DAE3E5;
+
+$p1:#2D2327;
+$p2:#45364B;
+$p3:#62466B;
+$p4:#8C93A8;
+$p5:#B5C2B7;
+
 
 *, *:before, *:after {
 }
@@ -515,10 +527,10 @@ th {
 
 .y.axis {
 
-  font: 10px sans-serif;
+  font: 12px sans-serif;
   width: 100%;
   overflow: scroll;
-  fill: purple;
+  fill: $p3;
   color: white;
 
 }
@@ -533,17 +545,17 @@ th {
 
 }
 .x.axis g {
-  font: 10px sans-serif;
+  font: 12px sans-serif;
   width: 100%;
   overflow: scroll;
-  fill: purple;
+  fill: $p3;
   color: white;
 }
 
 .axis path,
 .axis line {
   fill: none;
-  stroke: #2F394D;
+  stroke: #464655;
   color: white;
   shape-rendering: crispEdges;
   overflow:scroll;
@@ -566,7 +578,6 @@ th {
   color: green;
 }
 
-
 .whitey {
   color: white;
   font-family: "Courier";
@@ -578,13 +589,13 @@ div.whitespace { padding-top:45em}
 
 text.pull-right {font-size: 75%;}
 
-div h3 {color: #7F64AD;
+div h3 {color: $p3;
         font-family: "Courier"}
 
 h2 {
   padding: .5em;
-  background: #C8CBDD;
-  color:  #2F394D;
+  background: $p5;
+  color:  $p1;
   font-family: "Courier";
   border-radius: 5px;
   }
@@ -595,21 +606,20 @@ div p {color: black;
 
 .field input {
     color: black}
-
-
 div p strong {color: #7F64AD;}
 
 div.navbar {
-  background-color: #2F394D;
+  background-color: $p1;
   border: none;
-  color: #CCCCFF;
+  color: #94958B;
   font-family: "Courier";
   padding-bottom: .75em;
   padding-top: .75em;
   }
 
 body {
-  background-image: asset_url('46LYRs.jpg');
+  // background-image: asset_url('46LYRs.jpg');
+  background: $p4;
   background-repeat:no-repeat;
   background-size: 100%;
   background-attachment: fixed;
@@ -618,7 +628,7 @@ body {
   height:100%;
 }
 footer {
-  background-color: #2F394D;
+  background-color: $p1;
   border: none;
   color: #CCCCFF;
   font-family: "Courier";
@@ -637,14 +647,14 @@ footer {
 }
 
 div.form-group div.col-sm-2 { font-family: "Courier";
-                              color: #2F394D; }
+                              color: #464655; }
 
 h2.headformat { font-family: "Courier";
-                color: #EDE;}
+                color: black;}
 
 .BBGhead {
           font-family: "Courier";
-          color: #CCCCFF;
+          color: #464655;
           text-align: center;
           }
 
@@ -656,7 +666,7 @@ th { font-size: 16px;}
 
 a {
    text-decoration: none;
-   color: #CCCCFF;
+   color: #94958B;
    }
 
 
@@ -667,7 +677,7 @@ a {
 
 .login-box {
   padding: 1em;
-  background:#C8CBDD;
+  background:#94958B;
   border-radius: 0 0 4px 4px;
   width: 30%;
   margin: 0 auto;
@@ -703,7 +713,7 @@ div.col-sm-offset-2.submit_fit {padding-left: 1em}
 div.manual-table {
   width: 90%;
   margin: 0 auto;
-  background: #99B0C3;
+  background: $p5;
   padding: 0.5em 1em 0.5em 1em;
   border-radius: 0 0 4px 4px;
   opacity: 0.9;
@@ -712,9 +722,9 @@ div.manual-table {
 div.manual-table-header {
   width: 90%;
   margin: 0 auto;
-  background: #99B0C3;
+  background: $p5;
   padding: 0.5em 1em 0.5em 1em;
-  border-bottom: 1px solid #2F394D;
+  border-bottom: 1px solid #464655;
   border-radius: 4px 4px 0 0;
   opacity: 0.9;
 }
@@ -727,8 +737,9 @@ td.column-eight {
 }
 
 div.format-nav {
-  font-size: 75%;
-  margin-left: 40%;
+  font-size: 100%;
+  margin-left: 60%;
+  width:100%;
 }
 
 .container {
@@ -749,7 +760,7 @@ table {
 }
 
 .para_box {
-  background:#C8CBDD;
+  background:$p5;
   padding: 1em;
   text-align: center;
   border-radius: 4px;
@@ -758,30 +769,32 @@ table {
   opacity: 0.8;
 }
 
+.para_box p, .para_box h3 {
+  color: $p1;
+}
+
+
 button.cancer-entry, input.cancer-entry{
   padding: 0.7em;
-  background: #2F394D;
+  background: $p1;
   border: none;
   border-radius: 3px;
-  font-size: 70%;
+  font-size: 90%;
 }
-.cancer-entry:a {
-  color: white;
 
-}
 
 div.basic {
   display:inline
 }
 
 article.single-gene-details{
-  background: #98AFCE;
+  background: $p5;
   padding-left: 1em;
   margin: 0 auto;
   width: 100%;
-  border: 2px solid #98AFCE;
+  border: 2px solid #94958B;
   border-radius: 3px;
-  color: #2F394D;
+  color: $p5;
   margin-bottom: 0.25em;
   margin-top: 0.25em;
 }
@@ -790,7 +803,7 @@ article.single-gene-details{
 }
 
 p button.link-format{
-  background: #2F394D;
+  background: #464655;
   border-radius: 4px;
   color: #7F64AD;
   border:none;
@@ -806,18 +819,18 @@ p button.link-format{
   opacity: 0.8;
 }
 .single_mutation_header {
-  background: #98AFCE;
+  background: $p5;
   width:40%;
   height: 100%;
   float: left;
   border-radius: 4px 4px 0 0;
   text-align: center;
-  color: #7F64AD;
+  color: $p3;
   padding-top: 0.5em;
 }
 
 .single_mutation_data {
-  background: #98AFCE;
+  background: $p5;
   width:40%;
   height: 80%;
   float: left;
@@ -825,8 +838,8 @@ p button.link-format{
 }
 
 div.mutation_graph_header {
-  color: #7F64AD;
-  background:#C8CBDD;
+  color: $p3;
+  background:$p5;
   width: 59%;
   height: 100%;
   float:left;
@@ -848,7 +861,7 @@ div.mutation_graph_header {
 
 
 div.mutation_graph {
-  background:#C8CBDD;
+  background:$p5;
   overflow: scroll;
   width: 59%;
   height: 80%;
@@ -866,11 +879,11 @@ div.mutation_graph {
 
 
 .bar {
-  fill: blue;
+  fill: $p2;
 }
 
 .bar:hover {
-  fill: green;
+  fill: $p3;
 }
 
 strong a{
@@ -901,19 +914,19 @@ div.search-float {
 
 .search-float{
   padding: 0.3em;
-  background: #C8CBDD;
+  background: $p2;
   border: none;
   border-radius: 3px;
-  color: #2F394D;
+  color: #B7B6C1;
   width: 8em;
 }
 
 .search-form {
   padding: 0.3em;
-  background: #2F394D;
+  background: #464655;
   border: none;
   border-radius: 3px;
-  color: #C8CBDD;
+  color: #94958B;
 }
 .smaller {
   font-size: 80%;
@@ -937,7 +950,13 @@ span.shift-back {
   background: #C8CBDC;
 }
 
+input#authy_password, input#authy_email{
+  width: 10%;
+}
 
+section.column-four p {
+  font-size: 100%;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
