@@ -1,0 +1,14 @@
+.para_box {
+  background:$p5;
+  padding: 1em;
+  text-align: center;
+  border-radius: 4px;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 4em;
+  opacity: 0.8;
+}
+
+.para_box p, .para_box h3 {
+  color: $p1;
+}

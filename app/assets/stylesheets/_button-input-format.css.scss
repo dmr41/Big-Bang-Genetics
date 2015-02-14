@@ -1,0 +1,81 @@
+//registration text_field
+.field {
+  width: 55%;
+  margin-left: 3em;
+}
+
+.field input {
+    color: black}
+
+a {
+   text-decoration: none;
+   color: $p5;
+   }
+
+a:hover {
+  color: $p1
+}
+
+.login-box {
+  padding: 1em;
+  background:$p1;
+  border-radius: 0 0 4px 4px;
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 4em;
+  border-radius: 4px 4px 4px 4px;
+}
+
+.input-spacing {
+  margin-bottom: 0.5em;
+  margin-left: 1.8em;
+}
+
+.field.cancer-entry {
+  color: white;
+  margin-left: 4.4em;
+}
+
+.search-form:hover {
+  color:$p2;
+  background: $p1;
+}
+div.search-float {
+  float:left;
+}
+
+.tumor-collection {
+  width: 17em;
+  font-size: 60%;
+}
+
+.search-float{
+  padding: 0.3em;
+  background: $p2;
+  border: none;
+  border-radius: 3px;
+  color: $p5;
+  width: 8em;
+}
+
+.search-form {
+  padding: 0.3em;
+  background: $p1;
+  border: none;
+  border-radius: 3px;
+  color: $p5;
+}
+
+.smaller {
+  font-size: 80%;
+}
+
+.pulldown-format {
+  margin-top: 0.9em;
+  margin-left: 1em;
+  float:left;
+}
+
+input#authy_password, input#authy_email{
+  width: 10%;
+}

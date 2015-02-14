@@ -45,7 +45,11 @@
   overflow: scroll;
 }
 
+
 .bar {
-  background: #515164;
-  color: green;
+  fill: $p1;
+}
+
+.bar:hover {
+  fill: $p3;
 }

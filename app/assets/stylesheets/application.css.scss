@@ -2,7 +2,11 @@
 @import 'columns';
 @import 'font-colors';
 @import 'd3SVG';
-
+@import 'starry';
+@import 'footer-header-body';
+@import 'cancer-show-page';
+@import 'button-input-format';
+@import 'mainpg-index';
 
 div.whitespace { padding-top:45em}
 
@@ -23,50 +27,12 @@ div p {color: black;
        font-family: "Courier";
        font-size: 80% }
 
-.field input {
-    color: black}
-div p strong {color: #7F64AD;}
 
-div.navbar {
-  background-color: $p1;
-  border: none;
-  color: #94958B;
-  font-family: "Courier";
-  padding-bottom: .75em;
-  padding-top: .75em;
-  }
+div p strong {color: $p2;}
 
-body {
-  // background-image: asset_url('46LYRs.jpg');
-  background: $p4;
-  background-repeat:no-repeat;
-  background-size: 100%;
-  background-attachment: fixed;
-  margin:0;
-  padding:0;
-  height:100%;
-}
-footer {
-  background-color: $p1;
-  border: none;
-  color: #CCCCFF;
-  font-family: "Courier";
-  padding-bottom: .5em;
-  padding-top: .5em;
-  margin: 0 auto;
-  bottom:0;
-  position: fixed;
-  width:100%;
-
-  }
-
-.footbar {
-  margin: 0 auto;
-  width: 90%;
-}
 
 div.form-group div.col-sm-2 { font-family: "Courier";
-                              color: #464655; }
+                              color: $p5; }
 
 h2.headformat { font-family: "Courier";
                 color: black;}
@@ -83,36 +49,6 @@ table { font-family: "Courier";
 th { font-size: 16px;}
 
 
-a {
-   text-decoration: none;
-   color: #94958B;
-   }
-
-
-.field {
-  width: 55%;
-  margin-left: 3em;
-}
-
-.login-box {
-  padding: 1em;
-  background:#94958B;
-  border-radius: 0 0 4px 4px;
-  width: 30%;
-  margin: 0 auto;
-  margin-top: 4em;
-  border-radius: 4px 4px 4px 4px;
-}
-
-.input-spacing {
-  margin-bottom: 0.5em;
-  margin-left: 1.8em;
-}
-
-.field.cancer-entry {
-  color: white;
-  margin-left: 4.4em;
-}
 
 .inner-container {
   margin: 2em;
@@ -129,24 +65,7 @@ h3.header-shift {
 }
 div.col-sm-offset-2.submit_fit {padding-left: 1em}
 
-div.manual-table {
-  width: 90%;
-  margin: 0 auto;
-  background: $p5;
-  padding: 0.5em 1em 0.5em 1em;
-  border-radius: 0 0 4px 4px;
-  opacity: 0.9;
-}
 
-div.manual-table-header {
-  width: 90%;
-  margin: 0 auto;
-  background: $p5;
-  padding: 0.5em 1em 0.5em 1em;
-  border-bottom: 1px solid #464655;
-  border-radius: 4px 4px 0 0;
-  opacity: 0.9;
-}
 th, td {
   padding-right: 0.5em;
 }
@@ -167,9 +86,7 @@ div.format-nav {
   position: auto;
 }
 
-.footbar a {
-  font-size: 80%;
-}
+
 table {
   overflow: scroll;
 }
@@ -178,19 +95,6 @@ table {
   font-size: 125%;
 }
 
-.para_box {
-  background:$p5;
-  padding: 1em;
-  text-align: center;
-  border-radius: 4px;
-  width: 90%;
-  margin: 0 auto;
-  opacity: 0.8;
-}
-
-.para_box p, .para_box h3 {
-  color: $p1;
-}
 
 
 button.cancer-entry, input.cancer-entry{
@@ -199,6 +103,10 @@ button.cancer-entry, input.cancer-entry{
   border: none;
   border-radius: 3px;
   font-size: 90%;
+}
+
+button.cancer-entry:hover, input.cancer-entry:hover {
+  background: $p3;
 }
 
 
@@ -211,7 +119,7 @@ article.single-gene-details{
   padding-left: 1em;
   margin: 0 auto;
   width: 100%;
-  border: 2px solid #94958B;
+  border: none;
   border-radius: 3px;
   color: $p5;
   margin-bottom: 0.25em;
@@ -222,9 +130,9 @@ article.single-gene-details{
 }
 
 p button.link-format{
-  background: #464655;
+  background: $p1;
   border-radius: 4px;
-  color: #7F64AD;
+  color: $p5;
   border:none;
 
 }
@@ -237,77 +145,20 @@ p button.link-format{
   padding: 1em .5em 1em 0.5em;
   opacity: 0.8;
 }
-.single_mutation_header {
-  background: $p5;
-  width:40%;
-  height: 100%;
-  float: left;
-  border-radius: 4px 4px 0 0;
-  text-align: center;
-  color: $p3;
-  padding-top: 0.5em;
-}
-
-.single_mutation_data {
-  background: $p5;
-  width:40%;
-  height: 80%;
-  float: left;
-  border-radius: 0 0 4px 4px;
-}
-
-div.mutation_graph_header {
-  color: $p3;
-  background:$p5;
-  width: 59%;
-  height: 100%;
-  float:left;
-  margin-left: 0.7em;
-  border-radius: 4px 4px 0 0;
-  text-align: center;
-  padding-top: 0.5em;
-}
-
-.mutation_container_header {
-  width: 100%;
-  height: 2em;
-}
-
-.mutation_container {
-  width: 100%;
-  height: 500px;
-}
-
-
-div.mutation_graph {
-  background:$p5;
-  overflow: scroll;
-  width: 59%;
-  height: 80%;
-  float:left;
-  margin-left: 0.7em;
-  border-radius: 0 0 4px 4px;
-}
-
-
 
 
 // rect[colour="pinky"] {
 //   fill: pink;
 // }
 
-
-.bar {
-  fill: $p2;
-}
-
-.bar:hover {
-  fill: $p3;
-}
-
 strong a{
-  color: #7F64AD;
+  color: $p3;
 }
+
+strong a:hover {
+  color: $p4;
+}
+
 
 header {
   position: fixed;
@@ -321,56 +172,11 @@ div.filler {
   height:200px;
 }
 
-div.search-float {
-  float:left;
-}
-
-.tumor-collection {
-  width: 17em;
-  font-size: 60%;
-}
-
-
-.search-float{
-  padding: 0.3em;
-  background: $p2;
-  border: none;
-  border-radius: 3px;
-  color: #B7B6C1;
-  width: 8em;
-}
-
-.search-form {
-  padding: 0.3em;
-  background: #464655;
-  border: none;
-  border-radius: 3px;
-  color: #94958B;
-}
-.smaller {
-  font-size: 80%;
-}
-
-.pulldown-format {
-  margin-top: 0.9em;
-  margin-left: 1em;
-  float:left;
-}
-
 span.shift {
   margin: 11em;
 }
 span.shift-back {
   margin-right: 200em;
-}
-
-.search-form:hover {
-  color:#7F66AB;
-  background: #C8CBDC;
-}
-
-input#authy_password, input#authy_email{
-  width: 10%;
 }
 
 section.column-four p {

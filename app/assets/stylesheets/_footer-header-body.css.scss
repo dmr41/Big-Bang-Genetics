@@ -1,0 +1,41 @@
+div.navbar {
+  background-color: $p1;
+  border: none;
+  color: $p5;
+  font-family: "Courier";
+  padding-bottom: .75em;
+  padding-top: .75em;
+  }
+
+body {
+  // background-image: asset_url('46LYRs.jpg');
+  background: $p5;
+  background-repeat:no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  margin:0;
+  padding:0;
+  height:100%;
+}
+footer {
+  background-color: $p1;
+  border: none;
+  color: $p5;
+  font-family: "Courier";
+  padding-bottom: .5em;
+  padding-top: .5em;
+  margin: 0 auto;
+  bottom:0;
+  position: fixed;
+  width:100%;
+
+  }
+
+.footbar {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.footbar a {
+  font-size: 80%;
+}
