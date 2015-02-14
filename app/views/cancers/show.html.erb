@@ -24,12 +24,10 @@
       <p>Entrez id: <%= @consensus_cancer_gene.entrez_geneid %></p>
       <!-- <p><%#= @mutties_counter %> with <%=ActionController::Base.helpers.pluralize(@cut_off, 'hit')%> or more</p> -->
     </section>
-
-    <ul>
-      <%@all_gene_mutations.each do |tumour|  %>
-      <li><%= tumour%></li>
-      <% end %>
-    </ul>
+    <section class="column column-two fixed-tumuor-height">
+      <text>Associated Tumuors</text>
+      <p> <%= @final_hist %></p>
+  </section>
 </article>
 <div class="clearfix">
   <div class="mutation_container_header clearfix">
@@ -57,19 +55,19 @@
       <section>
         <div class="inner-container">
           <div class="push-apart">
-          <span class=>Mutation type:</span><span class="push-right" id="mtype"> none</span>
+          <span class=>Type of mutation:</span><span class="push-right" id="mtype"> none</span>
           </div>
           <div class="push-apart">
-          <span class=>Mutation position:</span><span class="push-right" id="initial_position"> none</span>
+          <span class=>Position from ATG:</span><span class="push-right" id="initial_position"> none</span>
           </div>
           <div class="push-apart">
-          <span>Wildtype:</span><span class="push-right" id="wtype"> none</span>
+          <span>Wildtype allele:</span><span class="push-right" id="wtype"> none</span>
           </div>
           <div class="push-apart">
-          <span>Mutation:</span><span class="push-right" id="specific_mutation"> none</span>
+          <span>Mutant allele:</span><span class="push-right" id="specific_mutation"> none</span>
           </div>
           <div class="push-apart">
-          <span>Hit count:</span><span class="push-right" id="mutation_count"> none</span>
+          <span># of times found:</span><span class="push-right" id="mutation_count"> none</span>
           </div>
 
           <div>

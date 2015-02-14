@@ -180,6 +180,15 @@ section.column-four p {
 .mutation_graph_header span.shift-right {
   margin-left: 10em;
 }
+
+text, li {
+  color: $p1;
+}
+
+section.fixed-tumuor-height {
+  height: 200px;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
