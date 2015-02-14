@@ -55,7 +55,7 @@ div.search-float {
   border: none;
   border-radius: 3px;
   color: $p5;
-  width: 8em;
+  width: 4em;
 }
 
 .search-form {
@@ -64,6 +64,18 @@ div.search-float {
   border: none;
   border-radius: 3px;
   color: $p5;
+}
+
+button.cancer-entry, input.cancer-entry{
+  padding: 0.7em;
+  background: $p1;
+  border: none;
+  border-radius: 3px;
+  font-size: 90%;
+}
+
+button.cancer-entry:hover, input.cancer-entry:hover {
+  background: $p3;
 }
 
 .smaller {
@@ -78,4 +90,8 @@ div.search-float {
 
 input#authy_password, input#authy_email{
   width: 10%;
+}
+
+.cuttoffCounter {
+  float:right;
 }

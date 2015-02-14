@@ -80,7 +80,8 @@ $('document').ready(function() {
            frequency: obj.mutation_counter,
            mutation_type: obj.ins_del_single,
            mutation_from: obj.nuc_change_from,
-           mutation_to: obj.nuc_change_to
+           mutation_to: obj.nuc_change_to,
+           mutation_count: obj.mutation_counter
            }
     final_mutation_data.push(hash);
   });
@@ -168,10 +169,12 @@ $('document').ready(function() {
     var mut_from = thing2[single_mutation].mutation_from;
     var mut_to = thing2[single_mutation].mutation_to;
     var inital_position = thing2[single_mutation].letter;
+    var repeat_hits = thing2[single_mutation].mutation_count
     $("#mtype").text(mut_type);
     $("#wtype").text(mut_from);
     $("#specific_mutation").text(mut_to);
     $("#initial_position").text(inital_position);
+    $("#mutation_count").text(repeat_hits)
 
   });
 

@@ -8,8 +8,7 @@ class CancersController < ApplicationController
     @mut_table = Mutation.where("mutation_counter >= ?", @cut_off).pluck(:consensus_cancer_gene_id).uniq
     @mut_cnt = @mut_table.count
     if params[:search].present?
-      # @consensus_cancer_genes = ConsensusCancerGene.where(id: @mut_table).search(params[:search]).order(params[:gene_symbol])
-      @consensus_cancer_genes = ConsensusCancerGene.where("gene_symbol like ? OR name like ?", 
+      @consensus_cancer_genes = ConsensusCancerGene.where("gene_symbol like ? OR name like ?",
       "%#{ params[:search] }%", "%#{ params[:search] }%").order(params[:gene_symbol])
 
       @consensus_genes_count = @consensus_cancer_genes.count
@@ -42,6 +41,7 @@ class CancersController < ApplicationController
 
   def show
     @consensus_cancer_gene = ConsensusCancerGene.find(params[:id])
+    @all_gene_mutations = Mutation.where(consensus_cancer_gene_id: @consensus_cancer_gene.id).pluck(:original_histology).uniq
     if params[:mutation_cut_off].present?
       @cut_off = params[:mutation_cut_off]
     else
@@ -51,11 +51,12 @@ class CancersController < ApplicationController
     @mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).count
     @uniq_mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).select(:cds_mutation_syntax).map(&:cds_mutation_syntax).uniq.count
     @mutties_not_zero = @consensus_cancer_gene.mutations.where.not(nuc_position1: 0)
+    # if @cut_off > 1
+    #   @selected_cuttoff_alleles = @mutties_not_zero.where(:mutation_counter)
+    # end
     count_somatic
     @mutties = @mutties_not_zero.order('nuc_position1').where("mutation_counter >= ?", @cut_off)
     @mutties_counter = @mutties.count
-
-
     @json_mutations = @mutties_not_zero
     @page_mutties = @mutties.where.not(nuc_position1: 0).page params[:page]
     @uniq_array = @mutties.map(&:original_mutation_string).uniq

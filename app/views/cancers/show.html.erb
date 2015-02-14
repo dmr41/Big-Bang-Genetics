@@ -19,17 +19,17 @@
         <p>Germline:<%= " #{@consensus_cancer_gene.germline}" %></p>
       <% end %>
     </section>
-    <section class="column column-four">
+    <section class="column column-eight">
       <p>Chromosome: <%=" #{@consensus_cancer_gene.chr}"%></p>
       <p>Entrez id: <%= @consensus_cancer_gene.entrez_geneid %></p>
       <!-- <p><%#= @mutties_counter %> with <%=ActionController::Base.helpers.pluralize(@cut_off, 'hit')%> or more</p> -->
     </section>
-    <section class="column column-four">
-      <%=form_tag({ :action => "show"}, { :method => "get" }) do %>
-        <%=select_tag(:mutation_cut_off, options_for_select([1,2,5,10,50,100,500,1000], "really"), {:include_blank => true, class: "search-float"} )%>
-        <%= submit_tag("Select mutation cuttoff", name: nil, class: "search-form smaller") %>
+
+    <ul>
+      <%@all_gene_mutations.each do |tumour|  %>
+      <li><%= tumour%></li>
       <% end %>
-    </section>
+    </ul>
 </article>
 <div class="clearfix">
   <div class="mutation_container_header clearfix">
@@ -38,7 +38,18 @@
       <div class="mutation_graph_header"><%="#{@consensus_cancer_gene.gene_symbol}: No mutations found by those parameters."%></div>
     <% else %>
       <div class="single_mutation_header"><%="#{@consensus_cancer_gene.gene_symbol} single mutation table"%> </div>
-      <div class="mutation_graph_header"><%="#{@consensus_cancer_gene.gene_symbol}: #{@mutties_not_zero.count} mutations"%></div>
+      <div class="mutation_graph_header">
+        <span class="shift-right">
+
+          <%="#{@consensus_cancer_gene.gene_symbol}: #{@mutties_counter} sites hit #{@cut_off} or more times "%>
+        <span>
+        <span class="cuttoffCounter">
+          <%=form_tag({ :action => "show"}, { :method => "get" }) do %>
+            <%=select_tag(:mutation_cut_off, options_for_select([1,2,5,10,50,100,500,1000], "really"), {:include_blank => true, class: "search-float"} )%>
+            <%= submit_tag("Site hit", name: nil, class: "search-form smaller") %>
+          <% end %>
+        </span>
+      </div>
     <% end %>
   </div>
   <div class="mutation_container clearfix">
@@ -56,6 +67,9 @@
           </div>
           <div class="push-apart">
           <span>Mutation:</span><span class="push-right" id="specific_mutation"> none</span>
+          </div>
+          <div class="push-apart">
+          <span>Hit count:</span><span class="push-right" id="mutation_count"> none</span>
           </div>
 
           <div>

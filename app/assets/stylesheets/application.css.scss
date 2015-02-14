@@ -8,12 +8,18 @@
 @import 'button-input-format';
 @import 'mainpg-index';
 
-div.whitespace { padding-top:45em}
+div.whitespace {
+  padding-top:45em;
+}
 
-text.pull-right {font-size: 75%;}
+text.pull-right {
+  font-size: 75%;
+}
 
-div h3 {color: $p3;
-        font-family: "Courier"}
+div h3 {
+  color: $p3;
+  font-family: "Courier"
+  }
 
 h2 {
   padding: .5em;
@@ -21,34 +27,42 @@ h2 {
   color:  $p1;
   font-family: "Courier";
   border-radius: 5px;
-  }
+}
 
-div p {color: black;
-       font-family: "Courier";
-       font-size: 80% }
+div p {
+  color: black;
+  font-family: "Courier";
+  font-size: 80%
+}
 
 
 div p strong {color: $p2;}
 
 
-div.form-group div.col-sm-2 { font-family: "Courier";
-                              color: $p5; }
+div.form-group div.col-sm-2 {
+  font-family: "Courier";
+  color: $p5;
+}
 
-h2.headformat { font-family: "Courier";
-                color: black;}
+h2.headformat {
+  font-family: "Courier";
+  color: black;
+}
 
 .BBGhead {
-          font-family: "Courier";
-          color: #464655;
-          text-align: center;
-          }
+  font-family: "Courier";
+  color: #464655;
+  text-align: center;
+}
 
-table { font-family: "Courier";
-        color: white;
-      }
-th { font-size: 16px;}
+table {
+  font-family: "Courier";
+  color: white;
+}
 
-
+th {
+  font-size: 16px;
+}
 
 .inner-container {
   margin: 2em;
@@ -63,8 +77,9 @@ th { font-size: 16px;}
 h3.header-shift {
   margin-left: 5em;
 }
-div.col-sm-offset-2.submit_fit {padding-left: 1em}
-
+div.col-sm-offset-2.submit_fit {
+  padding-left: 1em
+}
 
 th, td {
   padding-right: 0.5em;
@@ -86,7 +101,6 @@ div.format-nav {
   position: auto;
 }
 
-
 table {
   overflow: scroll;
 }
@@ -94,21 +108,6 @@ table {
   text-align: right;
   font-size: 125%;
 }
-
-
-
-button.cancer-entry, input.cancer-entry{
-  padding: 0.7em;
-  background: $p1;
-  border: none;
-  border-radius: 3px;
-  font-size: 90%;
-}
-
-button.cancer-entry:hover, input.cancer-entry:hover {
-  background: $p3;
-}
-
 
 div.basic {
   display:inline
@@ -147,10 +146,6 @@ p button.link-format{
 }
 
 
-// rect[colour="pinky"] {
-//   fill: pink;
-// }
-
 strong a{
   color: $p3;
 }
@@ -158,7 +153,6 @@ strong a{
 strong a:hover {
   color: $p4;
 }
-
 
 header {
   position: fixed;
@@ -181,6 +175,10 @@ span.shift-back {
 
 section.column-four p {
   font-size: 100%;
+}
+
+.mutation_graph_header span.shift-right {
+  margin-left: 10em;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
