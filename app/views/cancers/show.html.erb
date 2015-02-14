@@ -25,17 +25,16 @@
       <!-- <p><%#= @mutties_counter %> with <%=ActionController::Base.helpers.pluralize(@cut_off, 'hit')%> or more</p> -->
     </section>
     <section class="column column-two fixed-tumuor-height">
-      <text>Associated Tumuors</text>
-      <p> <%= @final_hist %></p>
+      <p>Associated Tumuors: <%= @final_hist %></p>
   </section>
 </article>
 <div class="clearfix">
   <div class="mutation_container_header clearfix">
     <% if @mutties_not_zero.count == 0 %>
       <div class="single_mutation_header"><%="#{@consensus_cancer_gene.gene_symbol} single mutation table (N/A)"%> </div>
-      <div class="mutation_graph_header"><%="#{@consensus_cancer_gene.gene_symbol}: No mutations found by those parameters."%></div>
+      <div class="mutation_graph_header"><%="#{@consensus_cancer_gene.gene_symbol}: No mutations found"%></div>
     <% else %>
-      <div class="single_mutation_header"><%="#{@consensus_cancer_gene.gene_symbol} single mutation table"%> </div>
+      <div class="single_mutation_header"><%="Select a mutation for #{@consensus_cancer_gene.gene_symbol}"%></div>
       <div class="mutation_graph_header">
         <span class="shift-right">
 
@@ -55,19 +54,19 @@
       <section>
         <div class="inner-container">
           <div class="push-apart">
-          <span class=>Type of mutation:</span><span class="push-right" id="mtype"> none</span>
+          <span class=>Type of mutation:</span><span class="push-right" id="mtype"></span>
           </div>
           <div class="push-apart">
-          <span class=>Position from ATG:</span><span class="push-right" id="initial_position"> none</span>
+          <span class=>Position from start:</span><span class="push-right" id="initial_position"> </span>
           </div>
           <div class="push-apart">
-          <span>Wildtype allele:</span><span class="push-right" id="wtype"> none</span>
+          <span>Wildtype allele:</span><span class="push-right" id="wtype"></span>
           </div>
           <div class="push-apart">
-          <span>Mutant allele:</span><span class="push-right" id="specific_mutation"> none</span>
+          <span>Mutant allele:</span><span class="push-right" id="specific_mutation"> </span>
           </div>
           <div class="push-apart">
-          <span># of times found:</span><span class="push-right" id="mutation_count"> none</span>
+          <span># of times found:</span><span class="push-right" id="mutation_count"> </span>
           </div>
 
           <div>
@@ -81,9 +80,6 @@
             </p>
             <p>
               2. Pull all tumour types found associated with mutation.
-            </p>
-            <p>
-              3. Adjust counter based off select menu option.
             </p>
             </section>
           </div>
