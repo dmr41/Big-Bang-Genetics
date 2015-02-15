@@ -57,7 +57,8 @@ class CancersController < ApplicationController
     @mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).count
     @uniq_mutation_count = Disease.where(gene_name: @consensus_cancer_gene.gene_symbol).select(:cds_mutation_syntax).map(&:cds_mutation_syntax).uniq.count
     @mutties_not_zero = @consensus_cancer_gene.mutations.where.not(nuc_position1: 0)
-
+    @mutties_not_zero = @mutties_not_zero.where.not(nuc_position1: -100)
+    @mutties_not_zero = @mutties_not_zero.where.not(nuc_change_from: nil)
     count_somatic
     @mutties = @mutties_not_zero.order('nuc_position1').where("mutation_counter >= ?", @cut_off)
     @mutties_counter = @mutties.count

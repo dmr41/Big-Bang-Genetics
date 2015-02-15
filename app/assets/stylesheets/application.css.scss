@@ -188,7 +188,11 @@ p.error-format {
 }
 
 .format-nav.column-two.nav-right {
-  margin: 36em;
+  color: $y1;
+}
+.nav-right {
+  color: $y1;
+  float: right;
 }
 
 input.smaller {
