@@ -41,13 +41,10 @@ div.form-group div.col-sm-2 {
   color: #464655;
   text-align: center;
 }
-
 table {
-  color: white;
+  color: $p1;
 }
 
-th {
-}
 
 .inner-container {
   margin: 2em;
@@ -174,7 +171,14 @@ section.fixed-tumuor-height {
 .single-gene-details {
   font-size: 14px;
 }
+tr li {
+  font-size: 100%;
+}
 
+th {
+  text-align: left;
+  padding-bottom: 0.25em;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

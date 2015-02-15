@@ -3,15 +3,20 @@
     <%= notice %>
 </div>
 <% end %>
-  <h2 class="gene-header"><%=" #{@consensus_cancer_gene.name.capitalize}"%></h2>
-
+<h2 class="gene-header"><%=" #{@consensus_cancer_gene.name.capitalize}"%></h2>
 <div class="clearfix">
   <div class="mutation_container_header clearfix">
     <% if @mutties_not_zero.count == 0 %>
-      <div class="single_mutation_header"><%="#{@consensus_cancer_gene.gene_symbol} single mutation table (N/A)"%> </div>
-      <div class="mutation_graph_header"><%="#{@consensus_cancer_gene.gene_symbol}: No mutations found"%></div>
+      <div class="single_mutation_header">
+        <%="#{@consensus_cancer_gene.gene_symbol} single mutation table (N/A)"%>
+      </div>
+      <div class="mutation_graph_header">
+        <%="#{@consensus_cancer_gene.gene_symbol}: No mutations found"%>
+      </div>
     <% else %>
-      <div class="single_mutation_header"><%="Select a mutation for #{@consensus_cancer_gene.gene_symbol}"%></div>
+      <div class="single_mutation_header">
+        <%="#{@consensus_cancer_gene.gene_symbol.upcase}"%>
+      </div>
       <div class="mutation_graph_header">
         <span class="shift-right">
 
@@ -19,7 +24,8 @@
         <span>
         <span class="cuttoffCounter">
           <%=form_tag({ :action => "show"}, { :method => "get" }) do %>
-            <%=select_tag(:mutation_cut_off, options_for_select([1,2,5,10,50,100,500,1000], "really"), {:include_blank => true, class: "search-float"} )%>
+            <%=select_tag(:mutation_cut_off, options_for_select([1,2,5,10,50,100,500,1000], "really"),
+            {:include_blank => true, class: "search-float"} )%>
             <%= submit_tag("Site hit", name: nil, class: "search-form smaller") %>
           <% end %>
         </span>
@@ -30,65 +36,71 @@
     <div class="single_mutation_data">
       <section>
         <div class="inner-container">
-          <div class="push-apart">
-          <span class=>Type of mutation:</span><span class="push-right" id="mtype"></span>
-          </div>
-          <div class="push-apart">
-          <span class=>Position from start:</span><span class="push-right" id="initial_position"> </span>
-          </div>
-          <div class="push-apart">
-          <span>Wildtype allele:</span><span class="push-right" id="wtype"></span>
-          </div>
-          <div class="push-apart">
-          <span>Mutant allele:</span><span class="push-right" id="specific_mutation"> </span>
-          </div>
-          <div class="push-apart">
-          <span># of times found:</span><span class="push-right" id="mutation_count"> </span>
-          </div>
-
-          <div>
-
-          </div>
-          <div>
-            <section>
-              <h4>Development notes:</h4>
-            <p>
-              1. Need Log base-10 Y-Axis on chart.
-            </p>
-            <p>
-              2. Pull all tumour types found associated with mutation.
-            </p>
-            </section>
-          </div>
+            <article class='single-gene-details clearfix'>
+                <section class="column column-two">
+                  <p>Gene: <button class="link-format"><%= link_to " #{@consensus_cancer_gene.gene_symbol}",
+                  "http://www.ncbi.nlm.nih.gov/gene/#{@consensus_cancer_gene.entrez_geneid}" %></button></p>
+                  <p>Unique Mutations: <%= @mutties_not_zero.count %></p>
+                </section>
+                <section class="column column-two">
+                  <% if @consensus_cancer_gene.somatic == nil %>
+                    <p>Somatic:<%= " No" %></p>
+                  <% else %>
+                    <p>Somatic:<%= " #{@consensus_cancer_gene.somatic.capitalize}" %></p>
+                  <% end %>
+                  <% if @consensus_cancer_gene.germline == nil %>
+                    <p>Germline:<%= " No" %></p>
+                  <% else %>
+                    <p>Germline:<%= " #{@consensus_cancer_gene.germline}" %></p>
+                  <% end %>
+                </section>
+              </article>
+              <article class="single-gene-details clearfix">
+                <section class="">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>
+                          Associated tumuors
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <%@new_hist_array.each do |tumuor|%>
+                      <tr>
+                        <td>
+                        <%= tumuor %>
+                        </td>
+                      </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+              </section>
+            </article>
         </div>
       </section>
     </div>
-    <div class="mutation_graph" data-thong="<%=@mutties.to_json%>"></div>
-<article class='single-gene-details clearfix'>
-    <section class="column column-six">
-      <p>Gene: <button class="link-format"><%= link_to " #{@consensus_cancer_gene.gene_symbol}", "http://www.ncbi.nlm.nih.gov/gene/#{@consensus_cancer_gene.entrez_geneid}" %></button></p>
-      <p>Unique Mutations: <%= @mutties_not_zero.count %></p>
-    </section>
-    <section class="column column-eigth">
-      <% if @consensus_cancer_gene.somatic == nil %>
-        <p>Somatic:<%= " No" %></p>
-      <% else %>
-        <p>Somatic:<%= " #{@consensus_cancer_gene.somatic.capitalize}" %></p>
-      <% end %>
-      <% if @consensus_cancer_gene.germline == nil %>
-        <p>Germline:<%= " No" %></p>
-      <% else %>
-        <p>Germline:<%= " #{@consensus_cancer_gene.germline}" %></p>
-      <% end %>
-    </section>
-    <section class="column column-eight">
-      <p>Chromosome: <%=" #{@consensus_cancer_gene.chr}"%></p>
-      <p>Entrez id: <%= @consensus_cancer_gene.entrez_geneid %></p>
-      <!-- <p><%#= @mutties_counter %> with <%=ActionController::Base.helpers.pluralize(@cut_off, 'hit')%> or more</p> -->
-    </section>
-    <section class="column column-two fixed-tumuor-height">
-      <p>Associated Tumuors: <%= @final_hist %></p>
+        <article class="columns clearfix">
+        <section class="column column-two">
+        </section>
+        <section class="column column-two">
+    <div class="push-apart">
+    <span class=>Type of mutation:</span><span class="push-right" id="mtype"></span>
+    </div>
+    <div class="push-apart">
+    <span class=>Position from start:</span><span class="push-right" id="initial_position"> </span>
+    </div>
+    <div class="push-apart">
+    <span>Wildtype allele:</span><span class="push-right" id="wtype"></span>
+    </div>
+    <div class="push-apart">
+    <span>Mutant allele:</span><span class="push-right" id="specific_mutation"> </span>
+    </div>
+    <div class="push-apart">
+    <span># of times found:</span><span class="push-right" id="mutation_count"> </span>
+    </div>
   </section>
 </article>
+    <div class="mutation_graph" data-thong="<%=@mutties.to_json%>"></div>
   </div>
 </div>
