@@ -34,40 +34,40 @@ $('document').ready(function() {
     variable_with_mulitplier = .7;
   }
   else if (mutation_number < 30) {
-    variable_with_mulitplier = .8;
+    variable_with_mulitplier = 1.8;
   }
   else if (mutation_number < 40) {
-    variable_with_mulitplier = 1.1;
+    variable_with_mulitplier = 2;
   }
   else if (mutation_number < 50) {
-    variable_with_mulitplier = 1.6;
+    variable_with_mulitplier = 2.3;
   }
   else if (mutation_number < 60) {
-    variable_with_mulitplier = 2.2;
-  }
-  else if (mutation_number < 70) {
     variable_with_mulitplier = 2.5;
   }
-  else if (mutation_number < 80) {
+  else if (mutation_number < 70) {
     variable_with_mulitplier = 2.8;
   }
+  else if (mutation_number < 80) {
+    variable_with_mulitplier = 3;
+  }
   else if (mutation_number < 100) {
-    variable_with_mulitplier = 3.4;
+    variable_with_mulitplier = 4.4;
   }
   else if (mutation_number < 200) {
-    variable_with_mulitplier = 6;
-  }
-  else if (mutation_number < 250) {
     variable_with_mulitplier = 8;
   }
+  else if (mutation_number < 250) {
+    variable_with_mulitplier = 10;
+  }
   else if (mutation_number < 300) {
-    variable_with_mulitplier = 9;
+    variable_with_mulitplier = 13;
   }
   else if (mutation_number < 400) {
-    variable_with_mulitplier = 12;
+    variable_with_mulitplier = 16;
   }
   else if (mutation_number < 500) {
-    variable_with_mulitplier = 7.5;
+    variable_with_mulitplier = 18;
   }
   else if (mutation_number < 800) {
     variable_with_mulitplier = 24;
