@@ -24,8 +24,9 @@ div.manual-table-header {
   float: left;
   border-radius: 4px 4px 0 0;
   text-align: center;
-  color: $p3;
+  color: $p1;
   padding-top: 0.5em;
+  font-size: 18px;
 }
 
 .single_mutation_data {
@@ -37,7 +38,7 @@ div.manual-table-header {
 }
 
 div.mutation_graph_header {
-  color: $p3;
+  color: $p1;
   background:$p5;
   width: 59%;
   height: 100%;
@@ -46,6 +47,7 @@ div.mutation_graph_header {
   border-radius: 4px 4px 0 0;
   text-align: center;
   padding-top: 0.5em;
+  font-size: 18px;
 }
 
 .mutation_container_header {
