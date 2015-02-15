@@ -3,31 +3,8 @@
     <%= notice %>
 </div>
 <% end %>
-<article class='single-gene-details clearfix'>
-  <h3 class="gene-header"><%=" #{@consensus_cancer_gene.name.capitalize}"%></h3>
-    <section class="column column-four">
-      <p>Gene: <button class="link-format"><%= link_to " #{@consensus_cancer_gene.gene_symbol}", "http://www.ncbi.nlm.nih.gov/gene/#{@consensus_cancer_gene.entrez_geneid}" %></button></p>
-      <p>Unique Mutations: <%= @mutties_not_zero.count %></p>
-      <% if @consensus_cancer_gene.somatic == nil %>
-        <p>Somatic:<%= " No" %></p>
-      <% else %>
-        <p>Somatic:<%= " #{@consensus_cancer_gene.somatic.capitalize}" %></p>
-      <% end %>
-      <% if @consensus_cancer_gene.germline == nil %>
-        <p>Germline:<%= " No" %></p>
-      <% else %>
-        <p>Germline:<%= " #{@consensus_cancer_gene.germline}" %></p>
-      <% end %>
-    </section>
-    <section class="column column-eight">
-      <p>Chromosome: <%=" #{@consensus_cancer_gene.chr}"%></p>
-      <p>Entrez id: <%= @consensus_cancer_gene.entrez_geneid %></p>
-      <!-- <p><%#= @mutties_counter %> with <%=ActionController::Base.helpers.pluralize(@cut_off, 'hit')%> or more</p> -->
-    </section>
-    <section class="column column-two fixed-tumuor-height">
-      <p>Associated Tumuors: <%= @final_hist %></p>
-  </section>
-</article>
+  <h2 class="gene-header"><%=" #{@consensus_cancer_gene.name.capitalize}"%></h2>
+
 <div class="clearfix">
   <div class="mutation_container_header clearfix">
     <% if @mutties_not_zero.count == 0 %>
@@ -87,5 +64,31 @@
       </section>
     </div>
     <div class="mutation_graph" data-thong="<%=@mutties.to_json%>"></div>
+<article class='single-gene-details clearfix'>
+    <section class="column column-six">
+      <p>Gene: <button class="link-format"><%= link_to " #{@consensus_cancer_gene.gene_symbol}", "http://www.ncbi.nlm.nih.gov/gene/#{@consensus_cancer_gene.entrez_geneid}" %></button></p>
+      <p>Unique Mutations: <%= @mutties_not_zero.count %></p>
+    </section>
+    <section class="column column-eigth">
+      <% if @consensus_cancer_gene.somatic == nil %>
+        <p>Somatic:<%= " No" %></p>
+      <% else %>
+        <p>Somatic:<%= " #{@consensus_cancer_gene.somatic.capitalize}" %></p>
+      <% end %>
+      <% if @consensus_cancer_gene.germline == nil %>
+        <p>Germline:<%= " No" %></p>
+      <% else %>
+        <p>Germline:<%= " #{@consensus_cancer_gene.germline}" %></p>
+      <% end %>
+    </section>
+    <section class="column column-eight">
+      <p>Chromosome: <%=" #{@consensus_cancer_gene.chr}"%></p>
+      <p>Entrez id: <%= @consensus_cancer_gene.entrez_geneid %></p>
+      <!-- <p><%#= @mutties_counter %> with <%=ActionController::Base.helpers.pluralize(@cut_off, 'hit')%> or more</p> -->
+    </section>
+    <section class="column column-two fixed-tumuor-height">
+      <p>Associated Tumuors: <%= @final_hist %></p>
+  </section>
+</article>
   </div>
 </div>

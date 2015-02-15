@@ -1,3 +1,4 @@
+@import 'vfont';
 @import 'reset';
 @import 'columns';
 @import 'font-colors';
@@ -27,11 +28,6 @@ h2 {
   border-radius: 5px;
 }
 
-div p {
-  color: black;
-
-}
-
 
 div p strong {color: $p2;}
 
@@ -40,9 +36,6 @@ div.form-group div.col-sm-2 {
   color: $p5;
 }
 
-h2.headformat {
-  color: black;
-}
 
 .BBGhead {
   color: #464655;
@@ -176,6 +169,10 @@ text, li {
 
 section.fixed-tumuor-height {
   height: 200px;
+}
+
+.single-gene-details {
+  font-size: 14px;
 }
 
 /*
