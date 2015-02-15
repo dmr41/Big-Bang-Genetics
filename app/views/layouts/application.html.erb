@@ -18,13 +18,15 @@
     <div class="column column-two ">
       <%= link_to("BBGenetics", root_path) %>
     </div>
-    <div class="format-nav column-two">
       <% if current_user %>
+      <span class="format-nav column-two nav-right">
         <%= link_to "Sign Out", signout_path %>
+      </span>
       <% else  %>
+      <div class="format-nav column-two">
         <%= render "layouts/nav_login" unless @reg == "reg"  %>
+      </div>
       <% end %>
-    </div>
   </div>
 </div>
 
@@ -37,9 +39,11 @@
             <%= link_to("Home", root_path) %> |
             <%= link_to("Cancers", cancers_path) %>
           </div>
+          <% unless current_user%>
           <div class="column column-two signs">
             <%= link_to"Sign Up", signup_path %>
           </div>
+          <% end %>
         </div>
       </footer>
   </body>

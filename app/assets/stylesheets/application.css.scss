@@ -113,7 +113,9 @@ p button.link-format{
   border-radius: 4px;
   color: $p5;
   border:none;
+}
 
+.link-format  {
 }
 
 .header-normalizer {
@@ -178,6 +180,14 @@ tr li {
 th {
   text-align: left;
   padding-bottom: 0.25em;
+}
+
+p.error-format {
+  color: $p5;
+}
+
+.format-nav.column-two.nav-right {
+  margin: 36em;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

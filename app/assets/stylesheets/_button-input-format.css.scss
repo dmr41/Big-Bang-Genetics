@@ -58,7 +58,7 @@ div.search-float {
 }
 
 .search-form {
-  padding: 0.3em;
+  padding: 0.2em 0.4em 0.2em 0.4em;
   background: $p1;
   border: none;
   border-radius: 3px;
@@ -76,8 +76,6 @@ button.cancer-entry:hover, input.cancer-entry:hover {
   background: $p3;
 }
 
-.smaller {
-}
 
 .pulldown-format {
   margin-top: 0.9em;

@@ -4,9 +4,4 @@ class MainpgController < ApplicationController
    @consensus_genes_count = ConsensusCancerGene.all
   end
 
-  def import
-   Users.import(params[:file])
-  end
-
-
 end

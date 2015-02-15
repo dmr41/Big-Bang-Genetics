@@ -1,14 +1,14 @@
 <%= form_for :authy, url: signin_path do |f| %>
-  <% if @sign_in_error %>
-      <p><%= @sign_in_error %></p>
-  <% end %>
   <div>
     <% if signup_path %>
-    <%= f.label :email%>
-    <%= f.email_field :email%>
-    <%= f.label :password%>
-    <%= f.password_field :password %>
-    <%= f.submit "Login" %>
+      <%= f.label :email%>
+      <%= f.email_field :email%>
+      <%= f.label :password%>
+      <%= f.password_field :password %>
+      <%= f.submit "Login" %>
+      <% end %>
   </div>
-<% end %>
+  <% if @sign_in_error %>
+      <p class="error-format"><%= @sign_in_error %></p>
+  <% end %>
 <% end %>
