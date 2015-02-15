@@ -158,7 +158,7 @@ $('document').ready(function() {
     return i;
   });
 
-  $(".mutation_graph").on("click", "rect", function(){
+  $(".mutation_graph").on("mouseenter mouseleave", "rect", function(){
     var single_mutation = $(this).data("ids");
     console.log(thing2[single_mutation].mutation_type);
     $(".single_mutation_data").addClass("visible");

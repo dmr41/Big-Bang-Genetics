@@ -80,27 +80,21 @@
         </div>
       </section>
     </div>
-        <article class="columns clearfix">
-        <section class="column column-two">
-        </section>
-        <section class="column column-two">
-    <div class="push-apart">
-    <span class=>Type of mutation:</span><span class="push-right" id="mtype"></span>
-    </div>
-    <div class="push-apart">
-    <span class=>Position from start:</span><span class="push-right" id="initial_position"> </span>
-    </div>
-    <div class="push-apart">
-    <span>Wildtype allele:</span><span class="push-right" id="wtype"></span>
-    </div>
-    <div class="push-apart">
-    <span>Mutant allele:</span><span class="push-right" id="specific_mutation"> </span>
-    </div>
-    <div class="push-apart">
-    <span># of times found:</span><span class="push-right" id="mutation_count"> </span>
-    </div>
-  </section>
-</article>
+    <article class="columns clearfix shift">
+      <section class="column column-three">
+        <p>Type:<span class="push-right" id="mtype"></span></p>
+        <p> cDNA pos:<span class="push-right" id="initial_position"> </span></p>
+      </section>
+      <section class="column column-three">
+        <p>WT nt:<span class="push-right" id="wtype"></span></p>
+        <p>Mutant nt:<span class="push-right" id="specific_mutation"> </span></p>
+      </section>
+      <section class="column column-three">
+        <p><span class="push-right" id="empty"></span></p>
+
+        <p>Seq count:<span class="push-right" id="mutation_count"> X</span> </p>
+      </section>
+    </article>
     <div class="mutation_graph" data-thong="<%=@mutties.to_json%>"></div>
   </div>
 </div>
