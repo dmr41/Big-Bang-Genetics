@@ -29,7 +29,8 @@ h2 {
 }
 
 
-div p strong {color: $p2;}
+div p strong {
+  color: $p2;}
 
 
 div.form-group div.col-sm-2 {
@@ -111,7 +112,7 @@ article.single-gene-details{
 p button.link-format{
   background: $p1;
   border-radius: 4px;
-  color: $p5;
+  color: $y1;
   border:none;
 }
 
@@ -188,6 +189,24 @@ p.error-format {
 
 .format-nav.column-two.nav-right {
   margin: 36em;
+}
+
+input.smaller {
+  color: $y1;
+}
+
+label {
+  color: $y1;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+input[value="Login"] {
+  color: $y1;
+  background: $p4;
+  border:none;
+  border-radius: 2px;
+  margin-left: 0.75em;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
