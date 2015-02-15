@@ -58,7 +58,11 @@ table {
 }
 
 h3.header-shift {
-  margin-left: 5em;
+  color: $p1;
+  background: $p5;
+  width: 30%;
+  margin-left: 7em;
+
 }
 div.col-sm-offset-2.submit_fit {
   padding-left: 1em
@@ -212,6 +216,19 @@ input[value="Login"] {
   border-radius: 2px;
   margin-left: 0.75em;
 }
+
+td {
+  font-size: 11px;
+  padding-bottom:0.25em;
+}
+
+th  {
+  font-size: 18px;
+}
+.highlight {
+  color:$y1;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

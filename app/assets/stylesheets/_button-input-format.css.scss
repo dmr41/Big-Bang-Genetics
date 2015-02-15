@@ -1,7 +1,7 @@
 //registration text_field
 .field {
   width: 55%;
-  margin-left: 3em;
+  margin-left: 4.5em;
 }
 
 .field input {
@@ -18,7 +18,7 @@ a:hover {
 
 .login-box {
   padding: 1em;
-  background:$p1;
+  background:$p5;
   border-radius: 0 0 4px 4px;
   width: 30%;
   margin: 0 auto;
@@ -33,7 +33,8 @@ a:hover {
 
 .field.cancer-entry {
   color: white;
-  margin-left: 4.4em;
+  margin-left: 7.25em;
+  width:30%;
 }
 
 .search-form:hover {
@@ -54,7 +55,8 @@ div.search-float {
   border: none;
   border-radius: 3px;
   color: $p5;
-  width: 4em;
+  width: 5em;
+  font-size: 80%;
 }
 
 .search-form {
@@ -89,8 +91,26 @@ input#authy_password, input#authy_email{
   background: $p5;
   width: 10%;
   color: $p1;
+  font-size: 80%;
 }
 
 .cuttoffCounter {
   float:right;
+}
+
+.input-spacing .field {
+  background: $p4;
+  border: none;
+  border-radius: 3px;
+  padding: 0.25em;
+
+}
+
+.adjust-right {
+  margin-left: 4em;
+}
+
+
+table {
+  display: scroll;
 }

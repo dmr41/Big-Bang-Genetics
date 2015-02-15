@@ -55,28 +55,18 @@
                   <% end %>
                 </section>
               </article>
+              <div class="tummie-list">
               <article class="single-gene-details clearfix">
-                <section class="">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>
-                          Associated tumuors
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <%@new_hist_array.each do |tumuor|%>
-                      <tr>
-                        <td>
-                        <%= tumuor %>
-                        </td>
-                      </tr>
-                      <% end %>
-                    </tbody>
-                  </table>
-              </section>
+                <section>
+                    <p >Associated tumour types: <%= @new_hist_array.count  %></p>
+                    <ol>
+                    <%@new_hist_array.each do |tumuor|%>
+                      <li><%= tumuor %></li>
+                    <% end %>
+                    </ol>
+                </section>
             </article>
+          </div>
         </div>
       </section>
     </div>

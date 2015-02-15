@@ -35,6 +35,7 @@ div.manual-table-header {
   height: 80%;
   float: left;
   border-radius: 0 0 4px 4px;
+  overflow: scroll;
 }
 
 div.mutation_graph_header {
@@ -52,7 +53,7 @@ div.mutation_graph_header {
 
 .mutation_container_header {
   width: 100%;
-  height: 2em;
+  height: 3em;
 }
 
 .mutation_container {

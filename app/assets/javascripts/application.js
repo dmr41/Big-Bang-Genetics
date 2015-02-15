@@ -21,17 +21,20 @@ $('document').ready(function() {
   var mutation_number = raw_mutation_data.length
   var variable_with_mulitplier = mutation_number/45;
 
-  if (mutation_number < 5) {
-      variable_with_mulitplier = .2;
+  if (mutation_number === 1) {
+      variable_with_mulitplier = .3;
+  }
+  else if (mutation_number < 3) {
+      variable_with_mulitplier = .4;
   }
   else if (mutation_number < 10) {
-    variable_with_mulitplier = 0.4;
+    variable_with_mulitplier = 0.5;
   }
   else if (mutation_number < 20) {
-    variable_with_mulitplier = .5;
+    variable_with_mulitplier = .7;
   }
   else if (mutation_number < 30) {
-    variable_with_mulitplier = .7;
+    variable_with_mulitplier = .8;
   }
   else if (mutation_number < 40) {
     variable_with_mulitplier = 1.1;
@@ -40,7 +43,7 @@ $('document').ready(function() {
     variable_with_mulitplier = 1.6;
   }
   else if (mutation_number < 60) {
-    variable_with_mulitplier = 2;
+    variable_with_mulitplier = 2.2;
   }
   else if (mutation_number < 70) {
     variable_with_mulitplier = 2.5;
@@ -52,10 +55,13 @@ $('document').ready(function() {
     variable_with_mulitplier = 3.4;
   }
   else if (mutation_number < 200) {
-    variable_with_mulitplier = 4;
+    variable_with_mulitplier = 6;
+  }
+  else if (mutation_number < 250) {
+    variable_with_mulitplier = 8;
   }
   else if (mutation_number < 300) {
-    variable_with_mulitplier = 6;
+    variable_with_mulitplier = 9;
   }
   else if (mutation_number < 400) {
     variable_with_mulitplier = 12;
@@ -65,6 +71,12 @@ $('document').ready(function() {
   }
   else if (mutation_number < 800) {
     variable_with_mulitplier = 24;
+  }
+  else if (mutation_number < 1000) {
+    variable_with_mulitplier = 26;
+  }
+  else if (mutation_number < 1200) {
+    variable_with_mulitplier = 28;
   }
   else {
     variable_with_mulitplier = 10;

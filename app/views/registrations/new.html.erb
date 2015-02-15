@@ -2,9 +2,8 @@
   <% @reg = "reg" %>
 <%= form_for(@user, url: signup_path) do |f| %>
 <div class="login-box">
-  <h3 class="header-shift">Register</h3>
   <% if f.object.errors.any? %>
-    <ul class="errors">
+    <ul class="errors adjust-right">
       <% f.object.errors.full_messages.each do |error| %>
         <li><%= error %></li>
       <% end %>
