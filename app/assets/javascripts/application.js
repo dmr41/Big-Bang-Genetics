@@ -94,13 +94,13 @@ $('document').ready(function() {
            mutation_from: obj.nuc_change_from,
            mutation_to: obj.nuc_change_to,
            mutation_count: obj.mutation_counter
-           }
+         };
     final_mutation_data.push(hash);
   });
-  var thing2 = final_mutation_data
+  var thing2 = final_mutation_data;
 
   var x = d3.scale.ordinal()
-  .rangeRoundBands([0, width], .1);
+  .rangeRoundBands([0, width], 0.1);
   // console.log( "I am x: "+ x);
 
   // var y = d3.scale.linear()
@@ -138,7 +138,7 @@ $('document').ready(function() {
 
 
   // $(".mutation_graph").append("div").attr("class", "chart-header-one").text("HI MARK")
-    y.domain([0.1, d3.max(thing2, function(d) {return (d.frequency/0.8); })]);
+    y.domain([0.5, d3.max(thing2, function(d) {return (d.frequency/0.8); })]);
     svg.append("g")
     .attr("class", "x axis")
     .attr("transform", "translate(0," + height + ")")
