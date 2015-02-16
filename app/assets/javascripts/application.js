@@ -103,9 +103,10 @@ $('document').ready(function() {
   .rangeRoundBands([0, width], .1);
   // console.log( "I am x: "+ x);
 
-  var y = d3.scale.linear()
-  .range([height, 0]);
-  // console.log( "I am y: "+ y);
+  // var y = d3.scale.linear()
+  // .range([height, 0]);
+
+   var y = d3.scale.log().range([height, 0]);
 
   var xAxis = d3.svg.axis()
   .scale(x)
@@ -137,7 +138,7 @@ $('document').ready(function() {
 
 
   // $(".mutation_graph").append("div").attr("class", "chart-header-one").text("HI MARK")
-    y.domain([0, d3.max(thing2, function(d) {return (d.frequency/0.8); })]);
+    y.domain([0.1, d3.max(thing2, function(d) {return (d.frequency/0.8); })]);
     svg.append("g")
     .attr("class", "x axis")
     .attr("transform", "translate(0," + height + ")")
