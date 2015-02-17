@@ -45,4 +45,17 @@ namespace :cosmic_importer do
     @mutation_build = CancerImporter.new
     @mutation_build.mutations_join_table
   end
+
+  desc "removes underscores from Mutation table data"
+  task :clean_underscores => :environment do
+    # @diseases = Disease.all
+    # @diseases.each do |disease|
+
+    # end
+    @mutations = Mutation.all
+    @mutations.each do |mutation|
+      mutation.original_histology = mutation.original_histology.gsub(/_/, " ").capitalize
+      mutation.save
+    end
+  end
 end

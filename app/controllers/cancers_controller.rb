@@ -5,6 +5,7 @@ class CancersController < ApplicationController
     @cut_off = 1
     @mutation_list = Mutation.order(:original_histology).select(:original_histology).uniq
     @mutation_test= Mutation.pluck(:original_histology).uniq.sort
+    @mutation_test = @mutation_test
     @mut_table = Mutation.where("mutation_counter >= ?", @cut_off).pluck(:consensus_cancer_gene_id).uniq
     @mut_cnt = @mut_table.count
     if params[:search].present?
