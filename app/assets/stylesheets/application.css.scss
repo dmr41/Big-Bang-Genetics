@@ -237,6 +237,11 @@ form.button_to{
   background: $p5;
 }
 
+input.link-format:hover {
+  background:$y1;
+  color: $p1;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

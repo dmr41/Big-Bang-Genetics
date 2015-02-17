@@ -38,9 +38,12 @@
         <div class="inner-container">
             <article class='single-gene-details clearfix'>
                 <section class="column column-two">
-                  <p>Gene: <%= button_to "#{@consensus_cancer_gene.gene_symbol}",
-                  "http://www.ncbi.nlm.nih.gov/gene/#{@consensus_cancer_gene.entrez_geneid}",
-                  class: "link-format adjustable", method: :get %></p>
+                  <p>
+                    <%= button_to "NCBI: #{@consensus_cancer_gene.gene_symbol}",
+                    "http://www.ncbi.nlm.nih.gov/gene/#{@consensus_cancer_gene.entrez_geneid}",
+                    class: "link-format adjustable", method: :get %>
+                  </p>
+
 
                   <p>Unique Mutations: <%= @mutties_not_zero.count %></p>
                 </section>
