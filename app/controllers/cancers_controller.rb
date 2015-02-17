@@ -61,6 +61,7 @@ class CancersController < ApplicationController
     @mutties_not_zero = @mutties_not_zero.where.not(nuc_change_from: nil)
     count_somatic
     @mutties = @mutties_not_zero.order('nuc_position1').where("mutation_counter >= ?", @cut_off)
+    @mutties_json = @mutties.to_json
     @mutties_counter = @mutties.count
     @json_mutations = @mutties_not_zero
     @page_mutties = @mutties.where.not(nuc_position1: 0).page params[:page]
