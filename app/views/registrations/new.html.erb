@@ -1,5 +1,9 @@
 <div class="well col-sm-5 col-sm-offset-3">
   <% @reg = "reg" %>
+  <br>
+<div class="adjust-right" style="text-align: center; color: gold; font-size: 18px">
+  Currently registered users do not have user specific content!
+</div>
 <%= form_for(@user, url: signup_path) do |f| %>
 <div class="login-box">
   <% if f.object.errors.any? %>
@@ -36,6 +40,7 @@
   <div class="input-spacing">
     <%= f.submit "Register", class: "field cancer-entry" %>
   </div>
+
 </div>
 <% end %>
 </div>
