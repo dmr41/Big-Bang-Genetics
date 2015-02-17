@@ -26,7 +26,7 @@
           <%=form_tag({ :action => "show"}, { :method => "get" }) do %>
             <%=select_tag(:mutation_cut_off, options_for_select([1,2,5,10,50,100,500,1000], "really"),
             {:include_blank => true, class: "search-float"} )%>
-            <%= submit_tag("Site hit", name: nil, class: "search-form smaller") %>
+            <%= submit_tag("Mutation count", name: nil, class: "search-form smaller") %>
           <% end %>
         </span>
       </div>

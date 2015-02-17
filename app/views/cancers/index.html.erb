@@ -44,7 +44,7 @@
   <div class="six-column column pulldown-format">
   <%=form_tag({ :action => "index"}, { :method => "get" }) do %>
     <% @fillers = "Select tumour type...."%>
-    <%=select_tag(:original_histology, options_for_select(@mutation_test, "really"), {:include_blank => true, class: "search-float"} )%>
+    <%=select_tag(:original_histology, options_for_select(@mutation_test), {:select => "Select tumour type...", class: "search-float"} )%>
     <%= submit_tag("Submit", name: "Tumour-types", class: "search-form smaller") %>
   <% end %>
   </div>

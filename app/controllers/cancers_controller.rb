@@ -4,8 +4,8 @@ class CancersController < ApplicationController
   def index
     @cut_off = 1
     @mutation_list = Mutation.order(:original_histology).select(:original_histology).uniq
-    @mutation_test= Mutation.pluck(:original_histology).uniq.sort
-    @mutation_test = @mutation_test
+    @mutation_test = Mutation.pluck(:original_histology).uniq.sort.reverse
+    @mutation_test = @mutation_test.push("Select tumour type...").reverse
     @mut_table = Mutation.where("mutation_counter >= ?", @cut_off).pluck(:consensus_cancer_gene_id).uniq
     @mut_cnt = @mut_table.count
     if params[:search].present?
@@ -13,6 +13,9 @@ class CancersController < ApplicationController
       "%#{ params[:search] }%", "%#{ params[:search] }%").order(params[:gene_symbol])
 
       @consensus_genes_count = @consensus_cancer_genes.count
+    elsif params[:original_histology] == "Select tumour type..."
+      @consensus_cancer_genes = ConsensusCancerGene.where(id: @mut_table).order(params[:gene_symbol])
+      @consensus_genes_count = ConsensusCancerGene.order(params[:gene_symbol]).count
     elsif params[:original_histology].present?
       @mutation_selector = Mutation.where(original_histology: params[:original_histology]).order(params[:gene_symbol])
       @holding = @mutation_selector.pluck(:consensus_cancer_gene_id).sort.uniq

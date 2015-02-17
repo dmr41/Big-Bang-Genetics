@@ -12,3 +12,12 @@
 .para_box p, .para_box h3 {
   color: $p1;
 }
+
+
+nav ul {
+  display: none;
+}
+
+nav ul:hover {
+  display: block;
+}

@@ -38,8 +38,8 @@ a:hover {
 }
 
 .search-form:hover {
-  color:$p1;
-  background: $y1;
+  color:$p5;
+  background: $p3;
 }
 div.search-float {
   float:left;
@@ -51,12 +51,15 @@ div.search-float {
 
 .search-float{
   padding: 0.3em;
-  background: $p2;
+  background: $p3;
   border: none;
   border-radius: 3px;
   color: $p5;
-  width: 10em;
+  width: 12em;
   font-size: 80%;
+}
+.search-float#mutation_cut_off {
+  width: 5em;
 }
 
 .search-form {
@@ -77,8 +80,8 @@ button.cancer-entry, input.cancer-entry{
 }
 
 button.cancer-entry:hover, input.cancer-entry:hover {
-  background: $y1;
-  color: $p1;
+  background: $p3;
+  color: $p5;
 }
 
 
@@ -129,4 +132,8 @@ input[value="Login"]:hover {
   background: $y1;
   color: $p1;
 
+}
+
+.link-format.adjustable {
+  padding: 0.3em;
 }

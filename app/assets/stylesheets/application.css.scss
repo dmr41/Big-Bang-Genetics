@@ -197,6 +197,7 @@ p.error-format {
 
 .format-nav.column-two.nav-right {
   color: $y1;
+
 }
 .nav-right {
   color: $y1;
@@ -206,11 +207,13 @@ p.error-format {
 input.smaller {
   background: $p1;
   color: $y1;
+  font-size: 80%
 }
 
 input.smaller:hover {
-  background: $y1;
-  color: $p1;
+  background: $p3;
+  color: $p5;
+
 }
 
 label {
@@ -244,8 +247,12 @@ form.button_to{
 }
 
 input.link-format:hover {
-  background:$y1;
-  color: $p1;
+  background:$p3;
+  color: $p5;
+}
+
+.signup-adjust {
+  margin: 1em;
 }
 
 /*
