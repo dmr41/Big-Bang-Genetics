@@ -37,17 +37,15 @@
       <section>
         <div class="inner-container">
             <article class='single-gene-details clearfix'>
-                <section class="column column-two">
+                <section class="column show-column">
                   <p>
                     <%= button_to "NCBI: #{@consensus_cancer_gene.gene_symbol}",
                     "http://www.ncbi.nlm.nih.gov/gene/#{@consensus_cancer_gene.entrez_geneid}",
                     class: "link-format adjustable", method: :get %>
                   </p>
-
-
-                  <p>Unique Mutations: <%= @mutties_not_zero.count %></p>
+                  <p>Mutations: <%= @mutties_not_zero.count %></p>
                 </section>
-                <section class="column column-two">
+                <section class="column show-column">
                   <% if @consensus_cancer_gene.somatic == nil %>
                     <p>Somatic:<%= " No" %></p>
                   <% else %>
@@ -63,7 +61,7 @@
               <div class="tummie-list">
               <article class="single-gene-details clearfix">
                 <section>
-                    <p class="highlights" >Associated tumour types: <%= @new_hist_array.count  %></p>
+                    <p class="highlights" >Associated tumours: <%= @new_hist_array.count  %></p>
                     <ol>
                     <%@new_hist_array.each do |tumuor|%>
                       <li><%= tumuor.capitalize %></li>

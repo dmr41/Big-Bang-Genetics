@@ -1,4 +1,4 @@
-div.manual-table {
+sdiv.manual-table {
   width: 90%;
   margin: 0 auto;
   background: $p5;
@@ -81,4 +81,9 @@ article.shift section p {
 
 .highlights {
   color: $y2;
+  text-align:center;
+}
+
+.column.show-column, .tummie-list {
+  margin-left: 2em;
 }
