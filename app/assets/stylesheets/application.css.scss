@@ -204,7 +204,13 @@ p.error-format {
 }
 
 input.smaller {
+  background: $p1;
   color: $y1;
+}
+
+input.smaller:hover {
+  background: $y1;
+  color: $p1;
 }
 
 label {

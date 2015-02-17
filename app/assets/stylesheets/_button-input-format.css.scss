@@ -124,3 +124,9 @@ table {
 .cancer-entry.center-text {
   float: none;
 }
+
+input[value="Login"]:hover {
+  background: $y1;
+  color: $p1;
+
+}
