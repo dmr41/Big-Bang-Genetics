@@ -38,8 +38,8 @@ a:hover {
 }
 
 .search-form:hover {
-  color:$p2;
-  background: $p1;
+  color:$p1;
+  background: $y1;
 }
 div.search-float {
   float:left;
@@ -55,7 +55,7 @@ div.search-float {
   border: none;
   border-radius: 3px;
   color: $p5;
-  width: 5em;
+  width: 10em;
   font-size: 80%;
 }
 
@@ -64,7 +64,7 @@ div.search-float {
   background: $p1;
   border: none;
   border-radius: 3px;
-  color: $p5;
+  color: $y1;
 }
 
 button.cancer-entry, input.cancer-entry{
