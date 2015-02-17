@@ -58,7 +58,7 @@
     </thead>
     <tbody>
      <% @consensus_cancer_genes.sort.each do |cancer_genes| %>
-         <button class="cancer-entry marginalize"><%= link_to "#{cancer_genes.gene_symbol}", cancer_path(cancer_genes)%></button>
+     <%= button_to "#{cancer_genes.gene_symbol}", cancer_path(cancer_genes), class: "cancer-entry marginalize", method: :get %>
        <% end %>
     </tbody>
   </table>

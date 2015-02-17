@@ -121,6 +121,10 @@ p button.link-format{
 }
 
 .link-format  {
+  background: $p1;
+  border: none;
+  border-radius: 4px;
+  color: $y1;
 }
 
 .header-normalizer {
@@ -227,6 +231,10 @@ th  {
 }
 .highlight {
   color:$y1;
+}
+
+form.button_to{
+  background: $p5;
 }
 
 /*

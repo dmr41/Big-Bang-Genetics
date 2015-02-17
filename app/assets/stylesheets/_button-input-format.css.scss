@@ -72,6 +72,8 @@ button.cancer-entry, input.cancer-entry{
   background: $p1;
   border: none;
   border-radius: 3px;
+  float: left;
+  color: $y1;
 }
 
 button.cancer-entry:hover, input.cancer-entry:hover {
@@ -117,4 +119,7 @@ table {
 
 .input-spacing .field.cancer-entry {
   color: $y1;
+}
+.cancer-entry.center-text {
+  float: none;
 }
