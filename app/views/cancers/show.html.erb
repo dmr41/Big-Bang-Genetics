@@ -61,7 +61,7 @@
                     <p class="highlights" >Associated tumour types: <%= @new_hist_array.count  %></p>
                     <ol>
                     <%@new_hist_array.each do |tumuor|%>
-                      <li><%= tumuor %></li>
+                      <li><%= tumuor.capitalize %></li>
                     <% end %>
                     </ol>
                 </section>
