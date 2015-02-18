@@ -57,7 +57,7 @@ div.mutation_graph_header {
 
 .mutation_container {
   width: 100%;
-  height: 550px;
+  height: 600px;
   margin-bottom: 0;
 }
 
@@ -87,3 +87,106 @@ article.shift section p {
 .column.show-column, .tummie-list {
   margin-left: 2em;
 }
+
+section.title-center {
+  float:right;
+  font-size: 18px;
+  padding-bottom: 1em;
+  padding-right: 4em;
+}
+
+.inner-container .single_mutation_header, .inner-container .mutation_graph_header {
+  margin-left: 9em;
+}
+
+.single_mutation_header {
+  margin-left: 6em;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.tummie-media {
+  display: none;
+}
+
+section.column.show-column.first {
+  margin-top: .45em;
+}
+
+div.container {
+  overflow: scroll;
+}
+@media (max-width: 975px) {
+  section.title-center  {
+    padding-right: 2em;
+    // display: none;
+  }
+}
+
+@media (max-width: 975px) {
+  .mutation_container  {
+    overflow: scroll;
+  }
+}
+
+@media (max-width: 975px) {
+  .single_mutation_data  {
+    float: none;
+    width: 100%;
+    height: auto;
+    // display: none;
+  }
+}
+
+@media (max-width: 975px) {
+  .highlights {
+    text-align: left;
+    // display: none;
+  }
+}
+@media (max-width: 975px) {
+  .tummie-list {
+    // float:left;
+    display: none;
+  }
+}
+
+@media (max-width: 975px) {
+  .tummie-media {
+    // float:left;
+    display: block;
+  }
+}
+@media (max-width: 975px) {
+  article.columns.shift{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: left;
+    // float: right;
+  }
+}
+
+@media (max-width: 975px) {
+  section.title-center {
+    text-align: center;
+    float: none;
+    padding-left: 7em;
+  }
+}
+
+@media (max-width: 975px) {
+  div.mutation_graph {
+    width: 100%;
+  }
+}
+
+// .single_mutation_data {
+//   background: $p5;
+//   width:40%;
+//   height: 80%;
+//   float: left;
+//   border-radius: 0 0 4px 4px;
+//   overflow: scroll;
+// }

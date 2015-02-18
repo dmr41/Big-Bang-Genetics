@@ -4,45 +4,16 @@
 </div>
 <% end %>
 <h2 class="gene-header"><%=" #{@consensus_cancer_gene.name.capitalize}"%></h2>
-<div class="clearfix">
-  <div class="mutation_container_header clearfix">
-    <% if @mutties_not_zero.count == 0 %>
-      <div class="single_mutation_header">
-        <%="#{@consensus_cancer_gene.gene_symbol} single mutation table (N/A)"%>
-      </div>
-      <div class="mutation_graph_header">
-        <%="#{@consensus_cancer_gene.gene_symbol}: No mutations found"%>
-      </div>
-    <% else %>
-      <div class="single_mutation_header">
-        <%="#{@consensus_cancer_gene.gene_symbol.upcase}"%>
-      </div>
-      <div class="mutation_graph_header">
-        <span class="shift-right">
-
-          <%="#{@consensus_cancer_gene.gene_symbol}: #{@mutties_counter} sites hit #{@cut_off} or more times "%>
-        <span>
-        <span class="cuttoffCounter">
-          <%=form_tag({ :action => "show"}, { :method => "get" }) do %>
-            <%=select_tag(:mutation_cut_off, options_for_select([1,2,5,10,50,100,500,1000], "really"),
-            {:include_blank => true, class: "search-float"} )%>
-            <%= submit_tag("Mutation count", name: nil, class: "search-form smaller") %>
-          <% end %>
-        </span>
-      </div>
-    <% end %>
-  </div>
   <div class="mutation_container clearfix">
     <div class="single_mutation_data">
-      <section>
         <div class="inner-container">
             <article class='single-gene-details clearfix'>
-                <section class="column show-column">
-                  <p>
+                <section class="column show-column first">
+
                     <%= button_to "NCBI: #{@consensus_cancer_gene.gene_symbol}",
                     "http://www.ncbi.nlm.nih.gov/gene/#{@consensus_cancer_gene.entrez_geneid}",
                     class: "link-format adjustable", method: :get %>
-                  </p>
+
                   <p>Mutations: <%= @mutties_not_zero.count %></p>
                 </section>
                 <section class="column show-column">
@@ -56,6 +27,14 @@
                   <% else %>
                     <p>Germline:<%= " #{@consensus_cancer_gene.germline}" %></p>
                   <% end %>
+                </section>
+                <section class="column show-column tummie-media">
+                  <p class="highlights" >Associated tumours: <%= @new_hist_array.count  %></p>
+                  <p>
+                  <%@new_hist_array.each do |tumuor|%>
+                    <%= " #{tumuor.capitalize}," %></li>
+                  <% end %>
+                  </p>
                 </section>
               </article>
               <div class="tummie-list">
@@ -71,23 +50,30 @@
             </article>
           </div>
         </div>
-      </section>
     </div>
     <article class="columns clearfix shift">
-      <section class="column column-three">
-        <p>Type:<span class="push-right" id="mtype"></span></p>
-        <p> cDNA pos:<span class="push-right" id="initial_position"> </span></p>
+        <span class="cuttoffCounter">
+          <%=form_tag({ :action => "show"}, { :method => "get" }) do %>
+            <%=select_tag(:mutation_cut_off, options_for_select([1,2,5,10,50,100,500,1000], "really"),
+            {:include_blank => true, class: "search-float"} )%>
+            <%= submit_tag("Hit rate", name: nil, class: "search-form smaller") %>
+          <% end %>
+        </span>
+      <section class="title-center">
+        <%="#{@mutties_counter} mutations (Hit rate: #{@cut_off})"%>
       </section>
-      <section class="column column-three">
+
+        <br>
+      <section class="column column-two media-change">
+        <p>Type:<span class="push-right" id="mtype"></span></p>
+        <p>cDNA pos:<span class="push-right" id="initial_position"> </span></p>
+        <p>Seq count:<span class="push-right" id="mutation_count"> X</span> </p>
+      </section>
+      <section class="column">
+        <p>Hit rate:<span class="push-right"><%="#{@cut_off}"%></span></p>
         <p>WT nt:<span class="push-right" id="wtype"></span></p>
         <p>Mutant nt:<span class="push-right" id="specific_mutation"> </span></p>
-      </section>
-      <section class="column column-three">
-        <p><span class="push-right" id="empty"></span></p>
-
-        <p>Seq count:<span class="push-right" id="mutation_count"> X</span> </p>
       </section>
     </article>
     <div class="mutation_graph" data-thong="<%=@mutties_json%>"></div>
   </div>
-</div>
