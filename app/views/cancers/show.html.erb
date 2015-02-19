@@ -41,9 +41,7 @@
                 <section class="column show-column tummie-media">
                   <p class="highlights" >Associated tumours: <%= @new_hist_array.count  %></p>
                   <p>
-                  <%@new_hist_array.each do |tumuor|%>
-                    <%= " #{tumuor.capitalize}," %></li>
-                  <% end %>
+                    <%=@histology_list%>
                   </p>
                 </section>
               </article>

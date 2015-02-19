@@ -55,6 +55,7 @@ class CancersController < ApplicationController
       gene = gene.gsub(/_/, " ")
       @new_hist_array.push(gene)
     end
+    @histology_list =@new_hist_array.join(", ")
     @final_hist = @new_hist_array.join(", ")
     if params[:mutation_cut_off].present?
       @cut_off = params[:mutation_cut_off]

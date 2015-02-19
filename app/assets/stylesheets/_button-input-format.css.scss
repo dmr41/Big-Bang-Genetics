@@ -33,7 +33,7 @@ a:hover {
 
 .field.cancer-entry {
   color: white;
-  margin-left: 7.25em;
+  margin-left: 6.5em;
   width:30%;
 }
 
@@ -137,4 +137,8 @@ input[value="Login"]:hover {
 
 .link-format.adjustable {
   padding: 0.3em;
+}
+
+.temp-text {
+  color: $p1;
 }
