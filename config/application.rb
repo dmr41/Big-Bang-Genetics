@@ -15,5 +15,6 @@ Bundler.require(*Rails.groups)
 module BigBangGenetics
   class Application < Rails::Application
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'd3')
   end
 end
