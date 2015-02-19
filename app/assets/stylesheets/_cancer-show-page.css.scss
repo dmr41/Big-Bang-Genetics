@@ -1,5 +1,5 @@
 sdiv.manual-table {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   background: $p5;
   padding: 0.5em 1em 0.5em 1em;
@@ -7,14 +7,35 @@ sdiv.manual-table {
   opacity: 0.9;
 }
 
+// ul.whate {
+//   li {
+//     display: inline;
+//
+//     & + & {
+//       &:before {
+//         content: ", "
+//       }
+//     }
+//   }
+//   
+// }
+//
+// @media screen and (min-width) {
+//   ul.whate {
+//     li {
+//       display: block;
+//       etc...
+//     }
+//   }
+// }
+
 div.manual-table-header {
-  width: 90%;
-  margin: 0 auto;
   background: $p5;
-  padding: 0.5em 1em 0.5em 1em;
+  padding: 0.5em 0;
   border-bottom: 1px solid #464655;
   border-radius: 4px 4px 0 0;
   opacity: 0.9;
+  margin: 0 0 1em 0.25em;
 }
 
 .single_mutation_header {

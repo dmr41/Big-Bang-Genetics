@@ -61,10 +61,9 @@
     </div>
     <article class="columns clearfix shift">
         <span class="cuttoffCounter">
-          <%=form_tag({ :action => "show"}, { :method => "get" }) do %>
-            <%=select_tag(:mutation_cut_off, options_for_select([1,2,5,10,50,100,500,1000], "really"),
-            {:include_blank => true, class: "search-float"} )%>
-            <%= submit_tag("Hit rate", name: nil, class: "search-form smaller") %>
+          <%=form_tag({ :action => "show"}, { :method => "get"}) do %>
+            <%=select_tag(:mutation_cut_off, options_for_select([1,2,5,10,50,100,500,1000], params[:mutation_cut_off]),
+            {:include_blank => true, class: "search-float",  data: {behavior: "autosubmit"}} )%>
           <% end %>
         </span>
       <section class="title-center">
@@ -83,5 +82,13 @@
         <p>Mutant nt:<span class="push-right" id="specific_mutation"> </span></p>
       </section>
     </article>
-    <div class="mutation_graph" data-thong="<%=@mutties_json%>"></div>
+    <div class="mutation_graph"></div>
   </div>
+
+<% content_for(:js) do %>
+  <script>
+    $(function () {
+      SingleGeneGraph.init(<%= @mutties_json.html_safe %>);
+    });
+  </script>
+<% end %>

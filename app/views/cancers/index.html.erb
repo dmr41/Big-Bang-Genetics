@@ -18,7 +18,7 @@
 <br>
 <div>
 </div>
-<div class="container clearfix columns manual-table-header">
+<div class="clearfix columns manual-table-header">
   <div>
 
         <span class="shift-back">
@@ -41,8 +41,10 @@
   <div class="six-column column pulldown-format">
   <%=form_tag({ :action => "index"}, { :method => "get" }) do %>
     <% @fillers = "Select tumour type...."%>
-    <%=select_tag(:original_histology, options_for_select(@mutation_test), {:select => "Select tumour type...", class: "search-float"} )%>
-    <%= submit_tag("Submit", name: "Tumour-types", class: "search-form smaller") %>
+    <%=select_tag(:original_histology,
+                  options_for_select(@mutation_test, params[:original_histology]),
+                  {:select => "Select tumour type...", class: "search-float", :data => {behavior: "autosubmit"}} )%>
+
   <% end %>
   </div>
 
