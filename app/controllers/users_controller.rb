@@ -34,7 +34,9 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to users_path, notice: "You successfully updated!"
+      single_gene = @user.my_genes.last
+      gene_name = ConsensusCancerGene.find_by(id: single_gene)
+      redirect_to cancers_path, notice: "#{gene_name.gene_symbol} added to your collection!"
     else
       render :edit
     end
@@ -43,7 +45,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :age, :email)
+      params.require(:user).permit(:first_name, :last_name, :age, :email, {:my_genes=> []})
     end
 
 end

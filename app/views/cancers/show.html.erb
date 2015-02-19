@@ -9,12 +9,22 @@
         <div class="inner-container">
             <article class='single-gene-details clearfix'>
                 <section class="column show-column first">
+                    <% if current_user %>
+                    <%@current_gene_array.push(@consensus_cancer_gene.id) %>
+                    <%@current_gene_array = @current_gene_array.uniq%>
+                    <span><%=button_to "Add gene",
+                  { :controller=>'users', :action=>'update',
+                    'user'=>{:my_genes=>@current_gene_array}, :id=>current_user.id },
+                    class: "link-format adjustable add-gene", :method => :patch %>
+                    <% end %></span>
 
                     <%= button_to "NCBI: #{@consensus_cancer_gene.gene_symbol}",
                     "http://www.ncbi.nlm.nih.gov/gene/#{@consensus_cancer_gene.entrez_geneid}",
                     class: "link-format adjustable", method: :get %>
 
                   <p>Mutations: <%= @mutties_not_zero.count %></p>
+
+
                 </section>
                 <section class="column show-column">
                   <% if @consensus_cancer_gene.somatic == nil %>

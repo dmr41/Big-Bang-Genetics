@@ -1,7 +1,7 @@
 
 
 <% if notice != nil %>
-  <div class="alert alert-danger">
+  <div class="alert alert-danger cancer-index-notice">
     <%= notice %>
 </div>
 <% end %>
@@ -21,12 +21,9 @@
 <div class="container clearfix columns manual-table-header">
   <div>
 
-      <span class="shift">
-          Tumour type select
-        </span>
         <span class="shift-back">
           <% if (params[:search] == nil || params[:search] == "") && (params[:original_histology] == nil || params[:original_histology] == "")%>
-            <%= "All #{@consensus_genes_count} genes currently showing. Please narrow your search" %>
+            <%= "All #{@consensus_genes_count} genes currently showing." %>
             <% else %>
         <%=ActionController::Base.helpers.pluralize(@consensus_genes_count, 'gene')%>
         <%="found in your search."%>

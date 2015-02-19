@@ -44,6 +44,8 @@ class CancersController < ApplicationController
   end
 
   def show
+    @current_user = User.find(current_user.id)
+    @current_gene_array = @current_user.my_genes
     @consensus_cancer_gene = ConsensusCancerGene.find(params[:id])
     @all_gene_mutations = Mutation.where(consensus_cancer_gene_id: @consensus_cancer_gene.id).pluck(:original_histology).uniq
     @new_hist_array = []
