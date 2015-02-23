@@ -4,6 +4,10 @@
 <div class="adjust-right temp-text" style="text-align: center; font-size: 18px">
   Currently, logged in users can store visited gene information!
 </div>
+<div class="adjust-right temp-text" style="text-align: center; font-size: 18px">
+  However no unique User specific views are yet available....to be added.
+</div>
+</div>
 <%= form_for(@user, url: signup_path) do |f| %>
 <div class="login-box">
   <% if f.object.errors.any? %>
@@ -19,10 +23,6 @@
 
   <div class="input-spacing">
     <%= f.text_field :last_name, class: "field", placeholder: "Last name" %>
-  </div>
-
-  <div class="input-spacing">
-    <%= f.number_field :age,  class: "field", placeholder: "Age" %>
   </div>
 
   <div class="input-spacing">
