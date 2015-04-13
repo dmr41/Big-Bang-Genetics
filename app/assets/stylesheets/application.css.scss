@@ -9,6 +9,10 @@
 @import 'button-input-format';
 @import 'mainpg-index';
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 div.whitespace {
   padding-top:45em;
 }
