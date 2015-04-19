@@ -12,7 +12,9 @@
 ::-webkit-scrollbar {
     display: none;
 }
-
+.navabar {
+  -ms-overflow-style: none;
+}
 div.whitespace {
   padding-top:45em;
 }
