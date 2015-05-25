@@ -1,4 +1,4 @@
-class ConsensusCancerGene < ActiveRecord::Base
+om class ConsensusCancerGene < ActiveRecord::Base
 
   has_many :mutations
   has_many :diseases, through: :mutations
