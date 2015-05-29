@@ -1,12 +1,9 @@
 == README
 
-https://codeship.com/projects/8eb20fe0-e7fb-0132-4a19-4e340869c11f/status?branch=master
 
+![App Logo](https://codeship.com/projects/8eb20fe0-e7fb-0132-4a19-4e340869c11f/status?branch=master)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+Project details:
 
 * Ruby version 2.2.0
 
