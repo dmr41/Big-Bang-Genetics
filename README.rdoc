@@ -1,7 +1,6 @@
 == README
 
-
-[![App Logo](https://codeship.com/projects/8eb20fe0-e7fb-0132-4a19-4e340869c11f/status?branch=master)]
+![Build Status](https://codeship.com/projects/8eb20fe0-e7fb-0132-4a19-4e340869c11f/status?branch=master)
 
 Project details:
 
