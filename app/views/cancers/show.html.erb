@@ -3,7 +3,7 @@
     <%= notice %>
 </div>
 <% end %>
-<h2 class="gene-header"><%=" #{@consensus_cancer_gene.name.capitalize}"%></h2>
+<h2 class="gene-header"><%=" #{@consensus_cancer_gene.gene_symbol} - #{@consensus_cancer_gene.name.capitalize}"%></h2>
   <div class="mutation_container clearfix">
     <div class="single_mutation_data">
         <div class="inner-container">
