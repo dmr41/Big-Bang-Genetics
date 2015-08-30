@@ -16,14 +16,14 @@ ActiveRecord::Schema.define(version: 20150219012419) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "cancers", force: true do |t|
+  create_table "cancers", force: :cascade do |t|
     t.string "name"
     t.string "genes"
     t.string "search_name"
     t.string "gene_search_name"
   end
 
-  create_table "consensus_cancer_genes", force: true do |t|
+  create_table "consensus_cancer_genes", force: :cascade do |t|
     t.string "gene_symbol"
     t.string "name"
     t.string "entrez_geneid"
@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20150219012419) do
     t.string "chr_band"
     t.string "somatic"
     t.string "germline"
-    t.string "tumour_types_somatic",  default: false
-    t.string "tumour_types_germline", default: false
+    t.string "tumour_types_somatic",  default: "false"
+    t.string "tumour_types_germline", default: "false"
     t.string "cancer_syndrome"
     t.string "tissue_type"
     t.string "molecular_genetics"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20150219012419) do
     t.string "synonyms"
   end
 
-  create_table "diseases", force: true do |t|
+  create_table "diseases", force: :cascade do |t|
     t.integer "cosmic_sample_id"
     t.string  "sample_name"
     t.string  "sample_source"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20150219012419) do
     t.string  "in_cancer_census"
   end
 
-  create_table "mutations", force: true do |t|
+  create_table "mutations", force: :cascade do |t|
     t.integer  "consensus_cancer_gene_id"
     t.integer  "disease_id"
     t.datetime "created_at"
@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 20150219012419) do
     t.string   "original_histology"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string  "first_name"
     t.string  "last_name"
     t.integer "age"

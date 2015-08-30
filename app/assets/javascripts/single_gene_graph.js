@@ -8,13 +8,13 @@ var SingleGeneGraph = {
         variable_with_mulitplier = 0.3;
     }
     else if (mutation_number < 3) {
-        variable_with_mulitplier = .4;
+        variable_with_mulitplier = 0.4;
     }
     else if (mutation_number < 10) {
       variable_with_mulitplier = 0.5;
     }
     else if (mutation_number < 20) {
-      variable_with_mulitplier = .7;
+      variable_with_mulitplier = 0.7;
     }
     else if (mutation_number < 30) {
       variable_with_mulitplier = 1.8;
@@ -67,7 +67,7 @@ var SingleGeneGraph = {
     var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 960*variable_with_mulitplier - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
-    var final_mutation_data = []
+    var final_mutation_data = [];
     // console.log(raw_mutation_data)
     $(raw_mutation_data).each(function (index, obj) {
       hash = {
@@ -125,7 +125,7 @@ var SingleGeneGraph = {
       svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(xAxis)
+      .call(xAxis);
       svg.append("g")
       .attr("class", "y axis")
       .call(yAxis)
