@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.2.0"
+ruby "2.3.0"
 group :production do
   gem "rails_12factor"
   gem 'thin'
@@ -9,15 +9,15 @@ end
 
 gem 'kaminari'
 
-gem 'nokogiri'
+gem 'nokogiri', '~> 1.6.7.2'
 
 gem 'json'
 
 gem 'mechanize'
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.3.6'
 
-gem 'autoprefixer-rails'
+gem 'autoprefixer-rails', '~> 6.3.1'
 
 gem 'pry'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
